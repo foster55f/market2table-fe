@@ -59,7 +59,9 @@ export const ZipCodeForm = () => {
               Enter zip code to find farmer's markets near you:
         </label>
         <input onChange={(e) => setZipCode(e.target.value)} value={zipCode} className="zip-code-input" type="number" placeholder="Zip Code..." id="zipCode" name="zipCode"/>
-        <button type='button' onClick={handleSubmit}>Find!</button>
+        <Link to='/markets'>
+          <button type='button' onClick={handleSubmit}>Find!</button>
+        </Link>
       </form>
     </section>
   )
