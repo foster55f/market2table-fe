@@ -3,17 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MarketPage.scss';
+import { addSelectedMarket } from '../../actions';
 
 export const MarketPage = () => {
   const selectedMarketId = useSelector(state => state.selectedMarket);
   const markets = useSelector(state => state.markets);
+  const dispatch = useDispatch();
 
   const marketInfo = markets.find(market => market.id === selectedMarketId);
   console.log(marketInfo);
 
   return (
     <section className='section-market-page-container'>
-      <Link to='/markets'>
+      <Link to='/markets' onClick={() => dispatch(addSelectedMarket(''))}>
         Back To Markets
       </Link>
       <h2>{marketInfo.marketname}</h2>

@@ -19,6 +19,7 @@ export const MapsContainer = ({ google }) => {
   const [activeMarker, setActiveMarker] = useState({});
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
   const markets = useSelector(state => state.markets);
+  const selectedMarketId = useSelector(state => state.selectedMarket);
 
   const onMarkerClick = (props, marker, e) => {
     setSelectedPlace(props);
@@ -34,12 +35,14 @@ export const MapsContainer = ({ google }) => {
   };
 
   const setMarkers = () => {
-    if (markets === undefined) {
+    console.log(selectedMarketId);
+    if (selectedMarketId.length === 7) {
+      const marketInfo = markets.find(market => market.id === selectedMarketId);
       return (<Marker
-          onClick={this.onMarkerClick}
-          name={market.marketname}
-          position={{ lat: market.latitude, lng: market.longitude }}
-          key={market.id}
+          onClick={onMarkerClick}
+          name={marketInfo.marketname}
+          position={{ lat: marketInfo.latitude, lng: marketInfo.longitude }}
+          key={marketInfo.id}
         />)
     } else {
       return markets.map(market => {
