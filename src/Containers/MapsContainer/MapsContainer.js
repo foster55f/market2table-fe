@@ -35,7 +35,6 @@ export const MapsContainer = ({ google }) => {
   };
 
   const setMarkers = () => {
-    console.log(selectedMarketId);
     if (selectedMarketId.length === 7) {
       const marketInfo = markets.find(market => market.id === selectedMarketId);
       return (<Marker
@@ -59,10 +58,11 @@ export const MapsContainer = ({ google }) => {
   }
 
   const setCenter = () => {
-    if (markets.length === 0) {
+    if (selectedMarketId.length === 7) {
+      const marketInfo = markets.find(market => market.id === selectedMarketId);
       return {
-        lat: '39.270018',
-        lng: '-97.970908'
+        lat: marketInfo.latitude,
+        lng: marketInfo.longitude
       }
     } else {
       return {
@@ -72,16 +72,24 @@ export const MapsContainer = ({ google }) => {
     }
   }
 
-  let toReturn;
+  const setZoom = () => {
+    if (selectedMarketId.length === 7) {
+      return 14
+    } else {
+      return 10
+    }
+  }
 
+  let toReturn;
   if (markets.length) {
     const center = setCenter();
     const marketPins = setMarkers();
+    const zoom = setZoom();
     toReturn = (
       <div id='mapBox' className='map-container'>
         <Map
           google={google}
-          zoom={10}
+          zoom={zoom}
           style={mapStyles}
           initialCenter={center}
         >

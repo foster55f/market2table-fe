@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './ZipCodeForm.scss';
 import { addZipCode, addMarkets } from '../../actions';
 
-export const ZipCodeForm = () => {
+export const ZipCodeForm = ({ path }) => {
 
   const [zipCode, setZipCode] = useState('');
   const dispatch = useDispatch();
@@ -52,8 +52,13 @@ export const ZipCodeForm = () => {
     }
   }
 
+  let opacity = 0;
+    if (path.includes('markets')) {
+      opacity = .9;
+    }
+
   return (
-    <section className='zip-code-form-container'>
+    <section className='zip-code-form-container' style={{backgroundImage: `linear-gradient(rgba(255, 255, 255, ${opacity}), rgba(255, 255, 255, ${opacity}))` }}>
       <form className='zip-code-form'>
         <label className="zip-code-input-label" htmlFor="zipCode">
               Enter zip code to find farmer's markets near you:

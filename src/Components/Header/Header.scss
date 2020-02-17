@@ -1,7 +1,7 @@
 .main-header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
   height: 15vh;
 }
@@ -9,4 +9,13 @@
 .header-title {
   margin: 0;
   font-size: 4em;
+}
+
+.zip-code-section {
+  width: 100px;
+  margin: 30px;
+}
+
+.vendor-login-button {
+  margin-right: 30px;
 }
