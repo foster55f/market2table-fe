@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.scss';
+import Header from '../Header/Header';
+import ZipCodeForm from '../../Containers/ZipCodeForm/ZipCodeForm';
 
 const App = () => {
   return (
     <main className="app-main">
-    <p>hi</p>
+      <Header />
+      <ZipCodeForm />
     </main>
   );
 }
