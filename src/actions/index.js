@@ -1,4 +1,9 @@
-export const addZipCode = zipCode=> ({
+export const addZipCode = zipCode => ({
   type: 'ADD_ZIP_CODE',
   zipCode
+});
+
+export const addMarkets = markets => ({
+  type: 'ADD_MARKETS',
+  markets
 });

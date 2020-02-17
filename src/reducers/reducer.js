@@ -1,6 +1,8 @@
 import { zipCode } from '../reducers/zipCode';
+import { markets } from '../reducers/markets';
 import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
-  zipCode
+  zipCode,
+  markets
 });

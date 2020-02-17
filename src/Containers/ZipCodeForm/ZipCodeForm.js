@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ZipCodeForm.scss';
-import { addZipCode } from '../../actions';
+import { addZipCode, addMarkets } from '../../actions';
 
 export const ZipCodeForm = () => {
 
@@ -44,8 +44,9 @@ export const ZipCodeForm = () => {
           });
           return Promise.all(marketPromises);
         })
-        .then(markets => console.log(markets))
-
+        .then(markets => {
+          dispatch(addMarkets(markets));
+        });
       dispatch(addZipCode(zipCode));
       setZipCode('');
     }
