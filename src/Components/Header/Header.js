@@ -7,8 +7,10 @@ import './Header.scss';
 export const Header = () => {
 
   return (
-    <header>
-      <h1>Market 2 Table</h1>
+    <header className='main-header'>
+      <button className='zip-code-button'>Zip Code: </button>
+      <h1 className='header-title'>Market 2 Table</h1>
+      <button className='vendor-login-button'>Vendor Login</button>
     </header>
   )
 }
