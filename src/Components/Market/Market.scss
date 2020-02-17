@@ -1,0 +1,13 @@
+.market-article {
+  width: 100%;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+
+.market-article-title {
+  text-align: center;
+}
+
+.market-article:hover {
+  background-color: lightgrey;
+}
