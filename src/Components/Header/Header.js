@@ -7,6 +7,8 @@ import { addZipCode } from '../../actions';
 
 export const Header = () => {
 
+
+
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);
 const dispatch = useDispatch();
