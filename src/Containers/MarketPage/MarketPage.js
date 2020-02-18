@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import './MarketPage.scss';
 import { addSelectedMarket } from '../../actions';
 
+
+
+
 export const MarketPage = () => {
   const selectedMarketId = useSelector(state => state.selectedMarket);
   const markets = useSelector(state => state.markets);
