@@ -10,7 +10,7 @@
 .zip-code-form {
   color: white;
   height: 250px;
-  width: 40%;
+  width: 45%;
   min-width: 400px;
   display: flex;
   flex-direction: column;
@@ -40,4 +40,27 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.error-message-container {
+  height: 10px;
+}
+
+.error-message {
+  color: red;
+  margin: 0;
+}
+
+.submit-zip-code-button {
+  font-size: 1.5em;
+  border-radius: 20px;
+  padding: 5px;
+  width: 20%;
+  min-width: 100px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.submit-zip-code-button:hover {
+  transform: scale(1.05);
 }
