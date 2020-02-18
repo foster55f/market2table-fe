@@ -11,8 +11,6 @@ const mapStyles = {
   height: '600px'
 };
 
-let market;
-
 export const MapsContainer = ({ google }) => {
 
   const [selectedPlace, setSelectedPlace] = useState({});
@@ -76,7 +74,7 @@ export const MapsContainer = ({ google }) => {
     if (selectedMarketId.length === 7) {
       return 14
     } else {
-      return 10
+      return 11
     }
   }
 
@@ -92,6 +90,7 @@ export const MapsContainer = ({ google }) => {
           zoom={zoom}
           style={mapStyles}
           initialCenter={center}
+          center={center}
         >
           {marketPins}
           <InfoWindow

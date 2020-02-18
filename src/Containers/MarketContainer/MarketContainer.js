@@ -11,6 +11,7 @@ export const MarketContainer = () => {
   const displayMarkets = markets.map(market => {
     return (
       <Market
+        key={market.id}
         id={market.id}
         name={market.marketname}
         address={market.address}

@@ -11,7 +11,6 @@ export const MarketPage = () => {
   const dispatch = useDispatch();
 
   const marketInfo = markets.find(market => market.id === selectedMarketId);
-  console.log(marketInfo);
 
   return (
     <section className='section-market-page-container'>
