@@ -1,0 +1,24 @@
+.market-article {
+  width: 100%;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.market-selected-link {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+.market-article-title {
+  text-align: center;
+  margin: 0;
+}
+
+.market-article:hover {
+  background-color: lightgrey;
+}
