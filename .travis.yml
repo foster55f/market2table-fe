@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: UA5pPswDy0d3jMBKEf5Obr/s1a4zpSVA5tNku/gt+tfd0d1KRDm8vkoHH3lUbuc1MjAE+AmoQBk4/C4cAisE6GSTgZc+oOJLB7zSSSHhrT7/W9lYxyAlC8Br1pN45vK0tjnk9CfntBgyAEIITvfvJWdGx9/VUQzhn64AB3bRhHi8rQLp9F0Lsv0ic/Wk5LCpGCbqYf09pcIDjhgbO2L5/e8S0x2CxClSXufqzesEflrvSj4hqKfhcZIt5eJ1/HEMNtpIdjtUb2ohyeq3NJh3IjnSYENpmhWvhyz1+L0bj+jKAt9Ch6lfQedCjnVMFnvdiDHO3jDzG1DMsRSS01IuoAoU+k00mnMtxrcvSKlbfhHnE1bvHbVzeiMMmDZZi3gXfgg5woTeSPrsHdv4RyhN7vkxk1hxYrKarto54a72/7+ZEOL8Rve5IQWhdvP5Bl0/LpGNiwoBOZrXNTKKW4qrfuwpGF6ia7kS6g4JNK7ZVtgVYpXFh4vRqNpqq6Ue+2PDb6ElR1++/xFsJjSQKIP8c/FmYOI+luvlEy6dxAEgadV7TumWGEhpDATH5z5t6+suLU7ppTSiEkLqS+91Xy0UJeeRBxFJHxcgbj0R7KDFqnw6I2OjcXUrEyTicmv4i1kS9TPJdAOmrCr3Xnh57iRuc20X6QpjWWK7gx7Q4DRigR0=
+ app: market2table
+  skip_cleanup: true
