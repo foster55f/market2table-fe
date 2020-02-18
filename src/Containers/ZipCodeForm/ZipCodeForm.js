@@ -57,13 +57,19 @@ export const ZipCodeForm = ({ path }) => {
       opacity = .9;
     }
 
+  const handleChange = (value) => {
+    if (zipCode.length <= 4) {
+      setZipCode(value)
+    }
+  }
+
   return (
     <section className='zip-code-form-container' style={{backgroundImage: `linear-gradient(rgba(255, 255, 255, ${opacity}), rgba(255, 255, 255, ${opacity}))` }}>
       <form className='zip-code-form'>
         <label className="zip-code-input-label" htmlFor="zipCode">
               Enter zip code to find farmer's markets near you:
         </label>
-        <input onChange={(e) => setZipCode(e.target.value)} value={zipCode} className="zip-code-input" type="number" placeholder="Zip Code..." id="zipCode" name="zipCode"/>
+        <input onChange={(e) => handleChange(e.target.value)} value={zipCode} className="zip-code-input" type="number" placeholder="Zip Code..." id="zipCode" name="zipCode" />
         <Link to='/markets'>
           <button type='button' onClick={handleSubmit}>Find!</button>
         </Link>
