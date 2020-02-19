@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import './Market.scss';
 import { addSelectedMarket } from '../../actions';
 
+
+
 export const Market = ({ id, name, address, products, schedule }) => {
   const dispatch = useDispatch();
 
