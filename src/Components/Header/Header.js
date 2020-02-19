@@ -4,15 +4,13 @@ import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Header.scss';
 import { addZipCode } from '../../actions';
+import { mockVendors } from '../../mockVendors.js';
 
 export const Header = () => {
-
-
 
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);
 const dispatch = useDispatch();
-
 
   return (
     <header className='main-header'>
