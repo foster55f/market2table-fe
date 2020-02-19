@@ -13,6 +13,10 @@ export const MarketPage = () => {
 
   const marketInfo = markets.find(market => market.id === selectedMarketId);
 
+  const handleChange = () => {
+    console.log('hiii')
+  }
+
   return (
     <section className='section-market-page-container'>
       <Link to='/markets' onClick={() => dispatch(addSelectedMarket(''))}>
@@ -27,9 +31,11 @@ export const MarketPage = () => {
       <p>{marketInfo.Schedule}</p>
       <h3>Google Maps: </h3>
       <a href={marketInfo.GoogleLink}>Click Here For Directions</a>
-    </section>
+      <button className='find-vendors-button'onClick={handleChange}>
+        Find Vendors
+      </button>
+    </section>    
   )
-
 }
 
 export default MarketPage;
