@@ -7,7 +7,7 @@ import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
 import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 const App = () => {
   const zipCode = useSelector(state => state.zipCode);
