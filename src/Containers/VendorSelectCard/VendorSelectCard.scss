@@ -31,10 +31,19 @@
   cursor: pointer;
 }
 
-.vendor-article-markets-button:hover {
+.vendor-article-markets-button:hover,
+.vendor-article-edit-button:hover,
+.vendor-article-markets-button:focus,
+.vendor-article-edit-button:focus {
   background-color: #C4D1B2;
   border: 2px solid #5E7838;
 }
+
+.vendor-article-markets-button:active,
+.vendor-article-edit-button:active {
+  transform: scale(.98);
+}
+
 
 .vendor-article-edit-button {
   width: 25%;
@@ -45,9 +54,4 @@
   outline: 0;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.vendor-article-edit-button:hover {
-  background-color: #C4D1B2;
-  border: 2px solid #5E7838;
 }

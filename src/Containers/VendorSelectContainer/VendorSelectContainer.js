@@ -28,9 +28,7 @@ export const VendorSelectContainer = () => {
           {vendorSelectCards}
         </section>
       </section>
-      <section>
-        <button className='create-vendor-button'>Create New Vendor</button>
-      </section>
+      <button className='create-vendor-button'>Create New Vendor</button>
     </div>
   )
 }
