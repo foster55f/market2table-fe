@@ -14,8 +14,8 @@ const App = () => {
 
   return (
     <main className="app-main">
-      <Route path='/' render={() => {
-        return <Header />
+      <Route path='/' render={({ location }) => {
+        return <Header path={location.pathname}/>
         }}
       />
       <Route exact path='/' render={({ location }) => {
@@ -41,7 +41,7 @@ const App = () => {
         )
         }}
       />
-      <Route exact path='/vendors' render={() => {
+      <Route exact path='/vendor/account' render={() => {
         return (
           <div className='market-map-container'>
             <VendorSelectContainer />
