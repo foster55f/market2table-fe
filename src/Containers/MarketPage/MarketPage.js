@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MarketPage.scss';
-import { addSelectedMarket } from '../../actions';
+import { addSelectedMarket, addVendors } from '../../actions';
 import { mockVendors } from '../../mockVendors.js';
 
 
@@ -18,6 +18,7 @@ export const MarketPage = ({ history }) => {
 
   const handleSubmit = () => {
     history.push(`${selectedMarketId}/vendors`)
+    dispatch(addVendors(mockVendors))
   }
 
   return (

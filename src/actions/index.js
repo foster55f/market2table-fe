@@ -13,4 +13,8 @@ export const addSelectedMarket = id => ({
   id
 })
 
+export const addVendors = vendors => ({
+  type: 'ADD_VENDORS',
+  vendors
+});
 
