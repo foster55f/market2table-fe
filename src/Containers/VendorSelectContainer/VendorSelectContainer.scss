@@ -1,5 +1,5 @@
 .vendor-select-container {
-  height: 85vh;
+  height: 87vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -99,4 +99,31 @@
   width: 25%;
   height: 250px;
   border-radius: 30px;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.create-vendor-button:hover,
+.create-vendor-button:focus {
+  transform: scale(1.08);
+  border: 7px solid #5E7838;
+}
+
+.create-vendor-button:active {
+  transform: scale(.99);
+}
+
+.vendor-button-p {
+  margin: 0;
+}
+
+.plus-icon {
+  margin-top: 20px;
+  height: 75px;
+  width: 75px;
 }

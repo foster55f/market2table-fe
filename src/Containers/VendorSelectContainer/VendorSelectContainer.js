@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import './VendorSelectContainer.scss';
 import VendorSelectCard from '../VendorSelectCard/VendorSelectCard';
 import { addVendors } from '../../actions';
+import images from '../../images/images';
 
 export const VendorSelectContainer = () => {
 
@@ -55,7 +56,7 @@ export const VendorSelectContainer = () => {
           {vendorSelectCards}
         </section>
       </section>
-      <button className='create-vendor-button'>Create New Vendor</button>
+      <button className='create-vendor-button'><p className='vendor-button-p'>Create New Vendor</p><img className='plus-icon' src={images.plus} alt='plus sign icon'/></button>
     </div>
   )
 }
