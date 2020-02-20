@@ -4,6 +4,7 @@ import './App.scss';
 import Header from '../Header/Header';
 import ZipCodeForm from '../../Containers/ZipCodeForm/ZipCodeForm';
 import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
+import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
 import { Route } from 'react-router-dom';
@@ -36,6 +37,14 @@ const App = () => {
           <div className='market-map-container'>
             <MarketPage />
             <MapsContainer />
+          </div>
+        )
+        }}
+      />
+        <Route exact path='/markets/:id/vendors' render={() => {
+        return (
+          <div className='market-map-container'>
+            <VendorsContainer />
           </div>
         )
         }}
