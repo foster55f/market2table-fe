@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .vendor-select-container {
   height: 87vh;
   width: 100%;
@@ -23,8 +25,8 @@
 .vendor-select-header {
   font-size: 2em;
   margin: 15px 0;
-  width: 30%;
-  border-bottom: 4px solid #5E7838;
+  width: 40%;
+  border-bottom: 4px solid $dark_green_border_color;
   text-align: center;
 }
 
@@ -39,7 +41,7 @@
   width: 30%;
   border-radius: 20px;
   border: 2px solid black;
-  background-color: #F0F0EF;
+  background-color: white;
   padding: 10px;
   outline: 0;
   font-size: 1em;
@@ -112,7 +114,7 @@
 .create-vendor-button:hover,
 .create-vendor-button:focus {
   transform: scale(1.08);
-  border: 7px solid #5E7838;
+  border: 7px solid $dark_green_border_color;
 }
 
 .create-vendor-button:active {

@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .vendor-select-article {
   width: 100%;
   display: flex;
@@ -8,7 +10,7 @@
 }
 
 .vendor-select-article:hover {
-  background-color: #DCE7E7;
+  background-color: $list_hover_color;
 }
 
 .vendor-article-header {

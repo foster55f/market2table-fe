@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .market-article {
   width: 100%;
   border-bottom: 2px solid black;
@@ -21,6 +23,6 @@
 }
 
 .market-article:hover {
-  background-color: #DCE7E7;
+  background-color: $list_hover_color;
   font-size: 1.05em;
 }
