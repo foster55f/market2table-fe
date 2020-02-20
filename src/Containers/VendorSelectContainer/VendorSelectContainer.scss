@@ -75,6 +75,15 @@
   transform: scale(.98);
 }
 
+.vendor-search-error-container {
+  height: 10px;
+}
+
+.vendor-search-error {
+  color: red;
+  margin: 0;
+}
+
 .vendor-cards-section {
   margin-top: 15px;
   display: flex;

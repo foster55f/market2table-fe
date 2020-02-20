@@ -42,7 +42,7 @@ export const VendorSelectContainer = () => {
       <section className='vendor-list-section'>
         <h2 className='vendor-select-header'>Vendors</h2>
         <form className='search-vendors-form'>
-          <input type='text' value={vendorInput} onChange={(e) => {setVendorInput(e.target.value)}} className='search-vendors-input' placeholder='Search Vendors...'/>
+          <input type='text' value={vendorInput} onChange={(e) => {setVendorInput(e.target.value); setSearchError(false)}} className='search-vendors-input' placeholder='Search Vendors...'/>
           <div className='search-vendors-button-container'>
             <button type='button' className='search-vendors-button' onClick={() => {searchVendors(vendorInput); setVendorInput('')}}>Search</button>
             <button type='button' className='search-vendors-button' onClick={() => {setVendors(allVendors); setVendorInput(''); setSearchError(false)}}>Clear</button>
