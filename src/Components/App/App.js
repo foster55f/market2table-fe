@@ -6,6 +6,7 @@ import ZipCodeForm from '../../Containers/ZipCodeForm/ZipCodeForm';
 import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
+import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -36,6 +37,14 @@ const App = () => {
           <div className='market-map-container'>
             <MarketPage />
             <MapsContainer />
+          </div>
+        )
+        }}
+      />
+      <Route exact path='/vendors' render={() => {
+        return (
+          <div className='market-map-container'>
+            <VendorSelectContainer />
           </div>
         )
         }}

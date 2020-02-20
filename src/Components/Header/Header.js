@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Header.scss';
-import { addZipCode } from '../../actions';
+import { addZipCode, addVendors } from '../../actions';
 import { mockVendors } from '../../mockVendors.js';
 
 export const Header = () => {
@@ -22,7 +22,9 @@ const dispatch = useDispatch();
         </>}
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
-      <button className='vendor-login-button'>Vendor Login</button>
+      <Link to='/vendors' className='link-to-vendors'>
+        <button className='vendor-login-button'>Vendor Login</button>
+      </Link>
     </header>
   )
 }
