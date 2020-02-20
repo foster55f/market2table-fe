@@ -15,10 +15,12 @@
 }
 
 .market-article-title {
-  text-align: center;
+  text-align: left;
   margin: 0;
+  width: 90%;
 }
 
 .market-article:hover {
-  background-color: lightgrey;
+  background-color: #DCE7E7;
+  font-size: 1.05em;
 }
