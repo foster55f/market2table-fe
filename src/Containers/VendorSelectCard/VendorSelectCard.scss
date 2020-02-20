@@ -1,0 +1,53 @@
+.vendor-select-article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #3B3D39;
+}
+
+.vendor-article-header {
+  margin-left: 25px;
+  min-width: 125px;
+}
+
+.vendor-article-button-container {
+  width: 35%;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+
+.vendor-article-markets-button {
+  width: 50%;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vendor-article-markets-button:hover {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}
+
+.vendor-article-edit-button {
+  width: 25%;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vendor-article-edit-button:hover {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}

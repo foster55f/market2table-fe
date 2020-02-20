@@ -3,8 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './VendorSelectContainer.scss';
+import VendorSelectCard from '../VendorSelectCard/VendorSelectCard';
 
 export const VendorSelectContainer = () => {
+  const allVendors = useSelector(state => state.vendors);
+  const vendorSelectCards = allVendors.map(vendor => {
+    return (
+      <VendorSelectCard name={vendor.name} />
+    )
+  });
 
   return (
     <div className='vendor-select-container'>
@@ -18,6 +25,7 @@ export const VendorSelectContainer = () => {
           </div>
         </form>
         <section className='vendor-cards-section'>
+          {vendorSelectCards}
         </section>
       </section>
       <section>

@@ -23,7 +23,7 @@ const dispatch = useDispatch();
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
       <Link to='/vendors' className='link-to-vendors'>
-        <button className='vendor-login-button'>Vendor Login</button>
+        <button className='vendor-login-button' onClick={() => dispatch(addVendors(mockVendors))}>Vendor Login</button>
       </Link>
     </header>
   )
