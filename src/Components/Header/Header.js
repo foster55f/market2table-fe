@@ -15,7 +15,7 @@ const dispatch = useDispatch();
   return (
     <header className='main-header'>
       <section className='zip-code-section'>
-        {zipCode &&
+        {zipCode && 
         <>
         <p>Zip Code: {zipCode}</p>
         {!selectedMarketId && <button className='zip-code-reset-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>}

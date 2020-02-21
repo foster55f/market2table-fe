@@ -7,7 +7,6 @@ import { images } from "../../images/images"
 
 
 export const VendorCard = ({ name, description, image }) => {
-    console.log(image)
 
 
   return (
