@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .market-article {
   width: 100%;
   border-bottom: 2px solid black;
@@ -15,10 +17,12 @@
 }
 
 .market-article-title {
-  text-align: center;
+  text-align: left;
   margin: 0;
+  width: 90%;
 }
 
 .market-article:hover {
-  background-color: lightgrey;
+  background-color: $list_hover_color;
+  font-size: 1.05em;
 }

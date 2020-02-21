@@ -1,0 +1,132 @@
+@import './src/variables';
+
+.vendor-select-container {
+  height: 87vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vendor-list-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  min-width: 425px;
+  background-color: white;
+  border: 3px solid #3B3D39;
+  height: 90%;
+  border-radius: 10px;
+  background-color: #F2F9F9;
+}
+
+.vendor-select-header {
+  font-size: 2em;
+  margin: 15px 0;
+  width: 40%;
+  border-bottom: 4px solid $dark_green_border_color;
+  text-align: center;
+}
+
+.search-vendors-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.search-vendors-input {
+  width: 30%;
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px;
+  outline: 0;
+  font-size: 1em;
+}
+
+.search-vendors-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 75px;
+  width: 30%;
+}
+
+.search-vendors-button {
+  width: 50%;
+  min-width: 65px;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search-vendors-button:hover,
+.search-vendors-button:focus {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}
+
+.search-vendors-button:active {
+  transform: scale(.98);
+}
+
+.vendor-search-error-container {
+  height: 10px;
+}
+
+.vendor-search-error {
+  color: red;
+  margin: 0;
+}
+
+.vendor-cards-section {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+  overflow: auto;
+  border-top: 3px solid #3B3D39;
+}
+
+.create-vendor-button {
+  width: 25%;
+  height: 250px;
+  border-radius: 75px;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: 0;
+}
+
+.create-vendor-button:hover,
+.create-vendor-button:focus {
+  transform: scale(1.08);
+  border: 7px solid $dark_green_border_color;
+}
+
+.create-vendor-button:active {
+  transform: scale(.99);
+}
+
+.vendor-button-p {
+  margin: 0;
+}
+
+.plus-icon {
+  margin-top: 20px;
+  height: 75px;
+  width: 75px;
+}

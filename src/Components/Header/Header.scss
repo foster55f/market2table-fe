@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .main-header {
   display: flex;
   align-items: center;
@@ -9,6 +11,7 @@
 .header-title {
   margin: 0;
   font-size: 4em;
+  text-decoration: underline;
 }
 
 .zip-code-section {
@@ -17,5 +20,29 @@
 }
 
 .vendor-login-button {
-  margin-right: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1em;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.vendor-login-button:hover,
+.vendor-login-button:focus {
+  border: 4px solid $dark_green_border_color;
+  transform: scale(1.1);
+}
+
+.vendor-login-button:active {
+  transform: scale(.99);
+}
+
+.link-to-vendors {
+  width: 10%;
+  min-width: 125px;
+  margin-right: 35px;
+  outline: 0;
+  text-decoration: none;
 }

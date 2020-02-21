@@ -11,4 +11,9 @@ export const addMarkets = markets => ({
 export const addSelectedMarket = id => ({
   type: 'ADD_SELECTED_MARKET',
   id
-})
+});
+
+export const addVendors = vendors => ({
+  type: 'ADD_VENDORS',
+  vendors
+});
