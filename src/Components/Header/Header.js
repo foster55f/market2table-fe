@@ -1,18 +1,23 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Header.scss';
-import { addZipCode } from '../../actions';
+import { addZipCode, addVendors } from '../../actions';
 import { mockVendors } from '../../mockVendors.js';
 
-export const Header = () => {
+export const Header = ({history}) => {
 
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);
 const vendors = useSelector(state => state.vendors);
   
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
+  const handleSubmit = () => {
+    history.push(`/markets/${selectedMarketId}`)
+    dispatch(addVendors([]))
+  }
 
   return (
     <header className='main-header'>
@@ -22,8 +27,8 @@ const dispatch = useDispatch();
         <p>Zip Code: {zipCode}</p>
         {!selectedMarketId && <button className='zip-code-reset-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>}
           </>}
-        {vendors &&
-          <button className='vendor-page-button'>Back to Market Detail</button>
+        {vendors.length > 0 &&
+          <button onClick={handleSubmit}className='vendor-page-button'>Back to Market Detail</button>
         }
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
@@ -32,4 +37,4 @@ const dispatch = useDispatch();
   )
 }
 
-export default Header
+export default withRouter(Header)
