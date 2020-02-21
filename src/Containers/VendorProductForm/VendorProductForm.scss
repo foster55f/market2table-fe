@@ -1,0 +1,73 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.vendor-product-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 175px;
+}
+
+.vendor-product-from-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-name-input {
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px;
+  outline: 0;
+  font-size: 1em;
+  width: 50%;
+}
+
+.product-price-input {
+  border-radius: 20px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px;
+  outline: 0;
+  font-size: 1em;
+  width: 20%;
+}
+
+.product-description-textarea {
+  resize: none;
+  font-size: 1em;
+  outline: 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 60%;
+}
+
+.submit-new-product-button {
+  width: 35%;
+  min-width: 130px;
+  padding: 5px;
+  font-size: 1em;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-new-product-button:hover,
+.submit-new-product-button:focus {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}
+
+.submit-new-product-button:active {
+  transform: scale(.98);
+}

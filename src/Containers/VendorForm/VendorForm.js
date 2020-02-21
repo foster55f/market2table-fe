@@ -8,6 +8,11 @@ import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
 
 export const VendorForm = () => {
+  const [vendorName, setVendorName] = useState('');
+  const [vendorDescription, setVendorDescription] = useState('');
+  const [vendorImage, setVendorImage] = useState('');
+  const [vendorProdocts, setVendorProducts] = useState([]);
+
 
   return (
     <section className='vendor-form-main-section'>
@@ -22,11 +27,13 @@ export const VendorForm = () => {
       <form className='vendor-form-info' id='vendor-form-info'>
         <div className='vendor-form-input-container'>
           <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
-          <input type='text' className='vendor-name-input' placeholder='Vendor Name...' id='vendor-name-input' />
+          <input value={vendorName} onChange={(event) => setVendorName(event.target.value)}
+            type='text' className='vendor-name-input' maxlength='35'
+            placeholder='Vendor Name...' id='vendor-name-input' />
         </div>
         <div className='vendor-form-input-container'>
-          <label for='vendor-description-textarea' className='vendor-description-label'>*Enter Vendor Description:</label>
-          <textarea
+          <label for='vendor-description-textarea' className='vendor-description-label'>* Enter Vendor Description:</label>
+          <textarea value={vendorDescription} onChange={(event) => setVendorDescription(event.target.value)}
             form='vendor-form-info' name='vendor-description-textarea'
             className='vendor-description-textarea' placeholder='Vender Description...'
             id='vendor-description-textarea' rows='6' columns='25' maxlength='150'>
