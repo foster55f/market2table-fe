@@ -28,7 +28,7 @@ const vendors = useSelector(state => state.vendors);
         {!selectedMarketId && <button className='zip-code-reset-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>}
           </>}
         {vendors.length > 0 &&
-          <button onClick={handleSubmit}className='vendor-page-button'>Back to Market Detail</button>
+          <button onClick={handleSubmit}className='vendor-back-button'>Back to Market Detail</button>
         }
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
