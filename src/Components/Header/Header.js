@@ -10,6 +10,8 @@ export const Header = () => {
 
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);
+const vendors = useSelector(state => state.vendors);
+  
 const dispatch = useDispatch();
 
   return (
@@ -19,7 +21,10 @@ const dispatch = useDispatch();
         <>
         <p>Zip Code: {zipCode}</p>
         {!selectedMarketId && <button className='zip-code-reset-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>}
-        </>}
+          </>}
+        {vendors &&
+          <button className='vendor-page-button'>Back to Market Detail</button>
+        }
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
       <button className='vendor-login-button'>Vendor Login</button>
