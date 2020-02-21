@@ -2,7 +2,7 @@ import backgroundImage from './veggies.jpg';
 import plus from './plus.png';
 
 
-const images = {
+export const images = {
   backgroundImage,
   plus
 }

@@ -6,7 +6,7 @@ import { images } from "../../images/images"
 
 
 
-export const VendorCard = ({ name, description, images }) => {
+export const VendorCard = ({ name, description, image }) => {
 
 
   return (
