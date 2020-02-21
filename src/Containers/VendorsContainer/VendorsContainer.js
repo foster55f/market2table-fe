@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './VendorsContainer.scss';
-import { Market } from '../../Components/Market/Market';
+import { VendorCard } from '../../Components/VendorCard/VendorCard';
+
 
 export const VendorsContainer = () => {
+  const vendors= useSelector(state => state.vendors);
     
   return (
-    <h1>you made it</h1>
+    <div className='vendor-container'>
+    {vendors.map(vendor => {
+      return (
+        <VendorCard
+            name={vendor.name}
+            description={vendor.description}
+            image={vendor.image}
+        />
+      )
+    })}
+  </div>
   )
 }
 

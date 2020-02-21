@@ -1,7 +1,7 @@
 import backgroundImage from './veggies.jpg';
 
 
-const images = {
+export const images = {
   backgroundImage
 }
 
