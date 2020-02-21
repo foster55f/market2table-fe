@@ -11,7 +11,7 @@ export const VendorForm = () => {
   const [vendorName, setVendorName] = useState('');
   const [vendorDescription, setVendorDescription] = useState('');
   const [vendorImage, setVendorImage] = useState('');
-  const [vendorProdocts, setVendorProducts] = useState([]);
+  const [vendorProducts, setVendorProducts] = useState([]);
 
 
   return (
@@ -42,7 +42,7 @@ export const VendorForm = () => {
         <div className='image-uploader-container'>
         </div>
       </form>
-      <VendorProductContainer />
+      <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>
       <button className='submit-vendor-info-button' type='button'>Create Vendor +</button>
     </section>
   )

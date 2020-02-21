@@ -1,15 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './VendorProductForm.scss';
 
-export const VendorProductForm = () => {
+export const VendorProductForm = ({ products, setProducts }) => {
 
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [hasError, setHasError] = useState(false);
+
+  const handleProductSubmit = () => {
+    const product = {
+      name: productName,
+      price: productPrice,
+      description: productDescription
+    }
+    setProducts([...products, product]);
+    setProductName('');
+    setProductPrice('');
+    setProductDescription('');
+  }
 
   return (
     <form className='vendor-product-form'>
@@ -22,7 +32,7 @@ export const VendorProductForm = () => {
         className='product-description-textarea' placeholder='Product Description...'
         rows='3' columns='25' maxlength='65'>
       </textarea>
-      <button type='button' className='submit-new-product-button'>Create Product</button>
+      <button onClick={handleProductSubmit} type='button' className='submit-new-product-button'>Create Product</button>
     </form>
   )
 }
