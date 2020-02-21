@@ -11,17 +11,29 @@ export const VendorForm = () => {
 
   return (
     <section className='vendor-form-main-section'>
-      <header>
-        <Link to='vendors/account' className='link-to-vendors'>
+      <header className='vendor-form-header'>
+        <Link to='/vendor/account' className='link-back-to-vendors'>
           <p>Back To Vendors</p>
         </Link>
         <h2 className='vendor-form-title'>Vendor Form</h2>
+        <div className='vendor-form-header-space'></div>
       </header>
-      <form>
-        <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
-        <input className='vendor-name-input' placeholder='Vendor Name...' id='vendor-name-input' />
-        <label for='vendor-description-input' className='vendor-description-label'>*Enter Vendor Description</label>
-        <input className='vendor-description-input' placeholder='Vender Description...' id='vendor-description-input' />
+      <div className='vendor-form-line'></div>
+      <form className='vendor-form-info' id='vendor-form-info'>
+        <div className='vendor-form-input-container'>
+          <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
+          <input type='text' className='vendor-name-input' placeholder='Vendor Name...' id='vendor-name-input' />
+        </div>
+        <div className='vendor-form-input-container'>
+          <label for='vendor-description-textarea' className='vendor-description-label'>*Enter Vendor Description:</label>
+          <textarea
+            form='vendor-form-info' name='vendor-description-textarea'
+            className='vendor-description-textarea' placeholder='Vender Description...'
+            id='vendor-description-textarea' rows='6' columns='25' maxlength='150'>
+          </textarea>
+        </div>
+        <div className='image-uploader-container'>
+        </div>
       </form>
       <VendorProductContainer />
       <button className='submit-vendor-info-button' type='button'>Create Vendor +</button>
