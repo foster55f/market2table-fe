@@ -6,13 +6,18 @@ import './VendorProductForm.scss';
 
 export const VendorProductForm = () => {
 
+  const [productName, setProductName] = useState('');
+  const [productPrice, setProductPrice] = useState('');
+  const [productDescription, setProductDescription] = useState('');
+  const [hasError, setHasError] = useState(false);
+
   return (
     <form className='vendor-product-form'>
       <section className='vendor-product-from-section'>
-        <input type='text' placeholder='Product Name...' className='product-name-input' maxlength='25'/>
-        <input type='number' placeholder='Price...' className='product-price-input'/>
+        <input value={productName} onChange={(event) => setProductName(event.target.value)} type='text' placeholder='Product Name...' className='product-name-input' maxlength='25'/>
+        <input value={productPrice} onChange={(event) => setProductPrice(event.target.value)}type='number' placeholder='Price...' className='product-price-input'/>
       </section>
-      <textarea
+      <textarea value={productDescription} onChange={(event) => setProductDescription(event.target.value)}
         form='vendor-form-info' name='vendor-description-textarea'
         className='product-description-textarea' placeholder='Product Description...'
         rows='3' columns='25' maxlength='65'>
