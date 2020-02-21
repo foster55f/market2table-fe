@@ -9,7 +9,7 @@ export const VendorProductContainer = ({ products, setProducts }) => {
   let productCards;
   if (products.length) {
     productCards = products.map(product => {
-      return (<VendorProductCard name={product.name} price={product.price} description={product.description}/>)
+      return (<VendorProductCard products={products} setProducts={setProducts} name={product.name} price={product.price} description={product.description} id={product.id}/>)
     });
   } else {
     productCards = (<p>You do not have any products on your account!</p>)

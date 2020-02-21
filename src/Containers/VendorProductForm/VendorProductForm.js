@@ -13,7 +13,8 @@ export const VendorProductForm = ({ products, setProducts }) => {
     const product = {
       name: productName,
       price: productPrice,
-      description: productDescription
+      description: productDescription,
+      id: Date.now()
     }
     setProducts([...products, product]);
     setProductName('');
@@ -24,7 +25,7 @@ export const VendorProductForm = ({ products, setProducts }) => {
   return (
     <form className='vendor-product-form'>
       <section className='vendor-product-from-section'>
-        <input value={productName} onChange={(event) => setProductName(event.target.value)} type='text' placeholder='Product Name...' className='product-name-input' maxlength='25'/>
+        <input value={productName} onChange={(event) => setProductName(event.target.value)} type='text' placeholder='Product Name...' className='product-name-input' maxlength='20'/>
         <input value={productPrice} onChange={(event) => setProductPrice(event.target.value)}type='number' placeholder='Price...' className='product-price-input'/>
       </section>
       <textarea value={productDescription} onChange={(event) => setProductDescription(event.target.value)}
