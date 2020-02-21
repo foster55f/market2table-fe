@@ -8,6 +8,7 @@ import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
 import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
+import VendorForm from '../../Containers/VendorForm/VendorForm';
 import { Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -51,10 +52,12 @@ const App = () => {
       }}
       />
       <Route exact path='/vendor/account' render={() => {
+        return ( <VendorSelectContainer /> )
+        }}
+      />
+      <Route exact path='/vendor/account/form' render={() => {
         return (
-          <div className='market-map-container'>
-            <VendorSelectContainer />
-          </div>
+            <VendorForm />
         )
         }}
       />
