@@ -7,15 +7,16 @@ import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
 import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
-import { Route } from 'react-router-dom';
+import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
+import { Route, Redirect } from 'react-router-dom';
 
 const App = () => {
   const zipCode = useSelector(state => state.zipCode);
 
   return (
     <main className="app-main">
-      <Route path='/' render={() => {
-        return <Header />
+      <Route path='/' render={({ location }) => {
+        return <Header path={location.pathname}/>
         }}
       />
       <Route exact path='/' render={({ location }) => {
@@ -41,10 +42,18 @@ const App = () => {
         )
         }}
       />
-        <Route exact path='/markets/:id/vendors' render={() => {
+      <Route exact path='/markets/:id/vendors' render={() => {
         return (
           <div className='market-map-container'>
             <VendorsContainer />
+          </div>
+        )
+      }}
+      />
+      <Route exact path='/vendor/account' render={() => {
+        return (
+          <div className='market-map-container'>
+            <VendorSelectContainer />
           </div>
         )
         }}

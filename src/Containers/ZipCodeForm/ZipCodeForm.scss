@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .zip-code-form-container {
   width: 100%;
   height: 85vh;
@@ -18,7 +20,7 @@
   justify-content: space-around;
   background-color: rgba(0, 0, 0, .7);
   border-radius: 20px;
-  border: 3px solid white;
+  border: 5px solid $dark_green_border_color;
 }
 
 .zip-code-input-label {
@@ -61,6 +63,7 @@ input::-webkit-inner-spin-button {
   outline: 0;
 }
 
-.submit-zip-code-button:hover {
+.submit-zip-code-button:hover,
+.submit-zip-code-button:focus {
   transform: scale(1.05);
 }
