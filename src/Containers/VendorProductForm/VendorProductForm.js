@@ -26,7 +26,7 @@ export const VendorProductForm = ({ products, setProducts }) => {
     <form className='vendor-product-form'>
       <section className='vendor-product-from-section'>
         <input value={productName} onChange={(event) => setProductName(event.target.value)} type='text' placeholder='Product Name...' className='product-name-input' maxlength='20'/>
-        <input value={productPrice} onChange={(event) => setProductPrice(event.target.value)}type='number' placeholder='Price...' className='product-price-input'/>
+        <input value={productPrice} onChange={(event) => setProductPrice(event.target.value)}type='text' placeholder='$/qty...' className='product-price-input' maxlength='10'/>
       </section>
       <textarea value={productDescription} onChange={(event) => setProductDescription(event.target.value)}
         form='vendor-form-info' name='vendor-description-textarea'
