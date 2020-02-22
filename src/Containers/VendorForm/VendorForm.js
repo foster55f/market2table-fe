@@ -13,6 +13,7 @@ export const VendorForm = () => {
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
 
+  
 
   return (
     <section className='vendor-form-main-section'>
