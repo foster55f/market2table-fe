@@ -63,7 +63,9 @@ export const VendorSelectContainer = () => {
           {vendorSelectCards}
         </section>
       </section>
-      <button className='create-vendor-button'><p className='vendor-button-p'>Create New Vendor</p><img className='plus-icon' src={images.plus} alt='plus sign icon'/></button>
+      <Link to='/vendor/account/form' className='link-create-vendor-form'>
+        <button className='create-vendor-button'><p className='vendor-button-p'>Create New Vendor</p><img className='plus-icon' src={images.plus} alt='plus sign icon'/></button>
+      </Link>
     </div>
   )
 }

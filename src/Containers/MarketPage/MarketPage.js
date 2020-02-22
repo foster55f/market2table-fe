@@ -23,9 +23,6 @@ export const MarketPage = ({ history }) => {
 
   return (
     <section className='section-market-page-container'>
-      <Link to='/markets' onClick={() => dispatch(addSelectedMarket(''))}>
-        Back To Markets
-      </Link>
       <h2>{marketInfo.marketname}</h2>
       <h3>Address: </h3>
       <p>{marketInfo.Address}</p>
@@ -38,7 +35,7 @@ export const MarketPage = ({ history }) => {
       <button className='find-vendors-button'onClick={handleSubmit}>
         Find Vendors
       </button>
-    </section>    
+    </section>
   )
 }
 

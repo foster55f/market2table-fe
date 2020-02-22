@@ -1,7 +1,7 @@
 @import './src/variables';
 
 .vendor-select-container {
-  height: 87vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -98,9 +98,15 @@
   border-top: 3px solid #3B3D39;
 }
 
-.create-vendor-button {
+.link-create-vendor-form {
   width: 25%;
   height: 250px;
+  text-decoration: none;
+}
+
+.create-vendor-button {
+  width: 100%;
+  height: 100%;
   border-radius: 75px;
   font-size: 3em;
   display: flex;

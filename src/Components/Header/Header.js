@@ -6,42 +6,68 @@ import './Header.scss';
 import { mockVendors } from '../../mockVendors.js';
 import { addZipCode, addVendors, addSelectedMarket, addMarkets } from '../../actions';
 
-
 export const Header = ({history, path}) => {
 
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);
 const vendors = useSelector(state => state.vendors);
-  
-  const dispatch = useDispatch();
-  
-  const handleSubmit = () => {
-    history.push(`/markets/${selectedMarketId}`)
-    dispatch(addVendors([]))
-  }
+const dispatch = useDispatch();
+
+const handleBackToMarketInfo = () => {
+  history.push(`/markets/${selectedMarketId}`);
+  dispatch(addVendors([]));
+}
+
+const handleBacktoMarkets = () => {
+  history.push('/markets');
+}
 
 let vendorHomeButton;
 if (path.includes('account')) {
-  vendorHomeButton = (<Link to='/' className='link-to-vendors'>
-    <button className='vendor-login-button' onClick={() => dispatch(addVendors([]))}>Home</button>
-  </Link>)
+  vendorHomeButton = (
+    <Link to='/' className='link-to-vendors'>
+      <button className='vendor-login-button' onClick={() => dispatch(addVendors([]))}>Home</button>
+    </Link>)
 } else {
-  vendorHomeButton = (<Link to='/vendor/account' className='link-to-vendors'>
-    <button className='vendor-login-button' onClick={() => {dispatch(addVendors(mockVendors)); dispatch(addZipCode('')); dispatch(addSelectedMarket({})); dispatch(addMarkets([]))}}>Vendor Login</button>
-  </Link>)
+  vendorHomeButton = (
+    <Link to='/vendor/account' className='link-to-vendors'>
+      <button className='vendor-login-button' onClick={() => {dispatch(addVendors(mockVendors)); dispatch(addZipCode('')); dispatch(addSelectedMarket('')); dispatch(addMarkets([]))}}>Vendor Login</button>
+    </Link>)
+}
+
+let zipCodeButton;
+if (path.includes('markets')) {
+  zipCodeButton = (
+    <button className='back-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>
+  )
+}
+
+if (path.includes('markets') && selectedMarketId) {
+  zipCodeButton = (
+  <button className='back-button' onClick={() => {dispatch(addSelectedMarket('')); handleBacktoMarkets()}}>Back To Markets</button>
+  )
+}
+
+if (path.includes('markets') && path.includes('vendors')) {
+  zipCodeButton = (
+    <button onClick={handleBackToMarketInfo} className='back-button'>Back to Market</button>
+  )
+}
+
+let zipCodeButtonContainer;
+if (path.includes('markets')) {
+  zipCodeButtonContainer = (
+    <>
+      <p className='zip-code-par'>Zip Code: {zipCode}</p>
+      {zipCodeButton}
+    </>
+  )
 }
 
   return (
     <header className='main-header'>
       <section className='zip-code-section'>
-        {zipCode && 
-        <>
-        <p>Zip Code: {zipCode}</p>
-        {!selectedMarketId && <button className='zip-code-reset-button' onClick={() => dispatch(addZipCode(''))}>Reset Zip Code</button>}
-          </>}
-        {vendors.length > 0 &&
-          <button onClick={handleSubmit}className='vendor-back-button'>Back to Market Detail</button>
-        }
+        {zipCodeButtonContainer}
       </section>
       <h1 className='header-title'>Market 2 Table</h1>
       {vendorHomeButton}
