@@ -1,17 +1,25 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MarketPage.scss';
-import { addSelectedMarket } from '../../actions';
+import { addSelectedMarket, addVendors } from '../../actions';
+import { mockVendors } from '../../mockVendors.js';
 
 
-export const MarketPage = () => {
+
+export const MarketPage = ({ history }) => {
   const selectedMarketId = useSelector(state => state.selectedMarket);
   const markets = useSelector(state => state.markets);
   const dispatch = useDispatch();
 
   const marketInfo = markets.find(market => market.id === selectedMarketId);
+
+  const handleSubmit = () => {
+    history.push(`${selectedMarketId}/vendors`)
+    dispatch(addVendors(mockVendors))
+  }
 
   return (
     <section className='section-market-page-container'>
@@ -27,9 +35,11 @@ export const MarketPage = () => {
       <p>{marketInfo.Schedule}</p>
       <h3>Google Maps: </h3>
       <a href={marketInfo.GoogleLink}>Click Here For Directions</a>
-    </section>
+      <button className='find-vendors-button'onClick={handleSubmit}>
+        Find Vendors
+      </button>
+    </section>    
   )
-
 }
 
-export default MarketPage;
+export default withRouter(MarketPage);
