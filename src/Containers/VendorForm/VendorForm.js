@@ -6,12 +6,22 @@ import './VendorForm.scss';
 import { addVendors } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
+import { createVendor } from '../../apiCalls';
+
 
 export const VendorForm = () => {
   const [vendorName, setVendorName] = useState('');
   const [vendorDescription, setVendorDescription] = useState('');
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
+
+const handleCreateVendor = () => {
+  createVendor(vendorName, vendorDescription, vendorImage)
+    .then(response => {
+    console.log(response)
+    })
+  .catch(error => console.log(error))
+}
 
 
 
