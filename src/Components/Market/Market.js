@@ -7,7 +7,7 @@ import { addSelectedMarket } from '../../actions';
 
 
 
-export const Market = ({ id, name, address, products, schedule }) => {
+export const Market = ({ id, name }) => {
   const dispatch = useDispatch();
 
   return (

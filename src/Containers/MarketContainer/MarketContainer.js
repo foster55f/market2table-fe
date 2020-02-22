@@ -13,10 +13,7 @@ export const MarketContainer = () => {
       <Market
         key={market.id}
         id={market.id}
-        name={market.marketname}
-        address={market.address}
-        products={market.Products}
-        schedule={market.schedule}
+        name={market.name}
       />
     )
   });

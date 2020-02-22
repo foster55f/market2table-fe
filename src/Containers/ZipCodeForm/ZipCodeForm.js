@@ -4,6 +4,8 @@ import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ZipCodeForm.scss';
 import { addZipCode, addMarkets } from '../../actions';
+import { getMarketsByZip } from '../../apiCalls';
+
 
 export const ZipCodeForm = ({ path }) => {
 
@@ -13,42 +15,12 @@ export const ZipCodeForm = ({ path }) => {
   const zipCode = useSelector(state => state.zipCode);
 
   const handleSubmit = () => {
-    if(zipCodeInput.length === 5) {
-      fetch(process.env.REACT_APP_BACKEND_URL + `/v1/data.svc/zipSearch?zip=${zipCodeInput}`)
-        .then(res => res.json())
-        .then(markets => {
-          let marketPromises = markets.results.map(market => {
-            return fetch(process.env.REACT_APP_BACKEND_URL + `/v1/data.svc/mktDetail?id=${market.id}`)
-              .then(res =>  res.json())
-              .then(marketInfo => {
-                let marketNameSplit = market.marketname.split(' ');
-                if (marketNameSplit[0].includes('.')) {
-                  marketNameSplit.shift();
-                  marketNameSplit = marketNameSplit.join(' ');
-                }
-                const split1 = marketInfo.marketdetails.GoogleLink.split('=').pop();
-                const split2 = split1.split('%');
-                const lat = split2[0];
-                const long = split2[2].slice(2);
-                return {
-                id: market.id,
-                favorite: false,
-                marketname: marketNameSplit,
-                Address: marketInfo.marketdetails.Address,
-                GoogleLink: marketInfo.marketdetails.GoogleLink,
-                Products: marketInfo.marketdetails.Products,
-                Schedule: marketInfo.marketdetails.Schedule,
-                latitude: lat,
-                longitude: long
-                }
-              })
-              .catch(err => console.log(err))
-          });
-          return Promise.all(marketPromises);
-        })
+    if (zipCodeInput.length === 5) {
+      getMarketsByZip(zipCodeInput)
         .then(markets => {
           dispatch(addMarkets(markets));
-        });
+        })
+      .catch(error => console.log(error))
       dispatch(addZipCode(zipCodeInput));
       setzipCodeInput('');
     } else {
