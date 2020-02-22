@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './VendorSelectContainer.scss';
 import VendorSelectCard from '../VendorSelectCard/VendorSelectCard';
-import { addVendors } from '../../actions';
+import { addVendors} from '../../actions';
 import images from '../../images/images';
+import { getAllVendors } from '../../apiCalls';
+
 
 export const VendorSelectContainer = () => {
 
@@ -16,7 +18,12 @@ export const VendorSelectContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setVendors(allVendors)
+    getAllVendors()
+    .then(vendors => {
+      dispatch(addVendors(vendors.data.vendors));
+      setVendors(vendors.data.vendors)
+    })
+    .catch(error => console.log(error))
   }, [])
 
   const vendorSelectCards = vendors.map(vendor => {

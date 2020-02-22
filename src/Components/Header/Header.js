@@ -6,6 +6,7 @@ import './Header.scss';
 import { mockVendors } from '../../mockVendors.js';
 import { addZipCode, addVendors, addSelectedMarket, addMarkets } from '../../actions';
 
+
 export const Header = ({history, path}) => {
 
 const zipCode = useSelector(state => state.zipCode);
@@ -31,7 +32,7 @@ if (path.includes('account')) {
 } else {
   vendorHomeButton = (
     <Link to='/vendor/account' className='link-to-vendors'>
-      <button className='vendor-login-button' onClick={() => {dispatch(addVendors(mockVendors)); dispatch(addZipCode('')); dispatch(addSelectedMarket('')); dispatch(addMarkets([]))}}>Vendor Login</button>
+      <button className='vendor-login-button' onClick={() => { dispatch(addVendors([])); dispatch(addZipCode('')); dispatch(addSelectedMarket('')); dispatch(addMarkets([]))}}>Vendor Login</button>
     </Link>)
 }
 
