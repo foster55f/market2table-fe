@@ -2,7 +2,7 @@
 
 .vendor-form-main-section {
   width: 90%;
-  height: 80vh;
+  height: 82vh;
   background-color: white;
   margin: auto;
   border-radius: 10px;
@@ -46,7 +46,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 35%;
+  width: 40%;
   min-width: 300px;
 }
 
@@ -79,4 +79,40 @@
 
 .image-uploader-container {
   height: 35%;
+}
+
+.submit-vendor-info-button {
+  width: 10%;
+  height: 150px;
+  margin: 0 20px;
+  border-radius: 25px;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+}
+
+.submit-vendor-info-button:hover,
+.submit-vendor-info-button:focus {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}
+
+.submit-vendor-info-button:active {
+  transform: scale(.98);
+}
+
+.plus-icon-form {
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+}
+
+.create-vendor-button-p {
+  margin: 0;
 }

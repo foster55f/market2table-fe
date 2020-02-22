@@ -43,7 +43,7 @@ export const VendorForm = () => {
         </div>
       </form>
       <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>
-      <button className='submit-vendor-info-button' type='button'>Create Vendor +</button>
+      <button className='submit-vendor-info-button' type='button'><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
     </section>
   )
 }
