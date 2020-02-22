@@ -20,24 +20,24 @@
 }
 
 .link-back-to-vendors {
-width: 30%;
+  width: 12%;
+  min-width: 130px;
+  margin-left: 5px;
+}
+
+.back-to-vendors-p {
+  margin: 0;
 }
 
 .vendor-form-title {
-  width: 30%;
+  width: 73%;
   font-size: 2.5em;
   margin: 0;
   text-align: center;
 }
 
 .vendor-form-header-space {
-  width: 30%;
-}
-
-.vendor-form-line {
-  width: 70%;
-  border-bottom: 4px solid $dark_green_border_color;
-  height: 1px;
+  width: 12%;
 }
 
 .vendor-form-info {

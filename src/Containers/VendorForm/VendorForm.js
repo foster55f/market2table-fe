@@ -13,18 +13,17 @@ export const VendorForm = () => {
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
 
-  
+
 
   return (
     <section className='vendor-form-main-section'>
       <header className='vendor-form-header'>
         <Link to='/vendor/account' className='link-back-to-vendors'>
-          <p>Back To Vendors</p>
+          <p className='back-to-vendors-p'>Back To Vendors</p>
         </Link>
         <h2 className='vendor-form-title'>Vendor Form</h2>
         <div className='vendor-form-header-space'></div>
       </header>
-      <div className='vendor-form-line'></div>
       <form className='vendor-form-info' id='vendor-form-info'>
         <div className='vendor-form-input-container'>
           <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
