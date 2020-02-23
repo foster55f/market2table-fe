@@ -1,22 +1,22 @@
-
 import React from 'react';
 import './VendorCard.scss';
 import { images } from "../../images/images"
 import { withRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addSelectedVendor } from '../../actions';
 
 
 
-
-
-
-export const VendorCard = ({ name, description, image, history }) => {
-const selectedMarketId = useSelector(state => state.selectedMarket);
+export const VendorCard = ({ id, name, description, image, history }) => {
+  const selectedMarketId = useSelector(state => state.selectedMarket);
+  const dispatch = useDispatch()
+  
 
   
 
   const handleVendorPage = () => {
-    history.push(`/markets/${selectedMarketId}/vendors/`)
+    history.push(`/markets/${selectedMarketId}/vendors/${id}`)
+    dispatch(addSelectedVendor(id))
   }
 
   return (
