@@ -11,15 +11,15 @@ describe('actions', () => {
     
         },
         {
-        id: 3,
-        name:'apple market',
-        description:'apples',
+            id: 3,
+            name:'apple market',
+            description:'apples',
   
         },
     ]
         const expectedAction = {
-        type: 'ADD_MARKETS',
-        markets: [
+            type: 'ADD_MARKETS',
+            markets: [
         {
             id: 2,
             name:'oranges',
@@ -35,7 +35,7 @@ describe('actions', () => {
         };
   
       // Execution
-      const result = actions.addMarkets(mockMarkets);
+        const result = actions.addMarkets(mockMarkets);
   
       // Expectation
       expect(result).toEqual(expectedAction);
@@ -52,7 +52,24 @@ describe('actions', () => {
         }
   
       // Execution
-      const result = actions.addZipCode(zipCode);
+        const result = actions.addZipCode(zipCode);
+  
+      // Expectation
+      expect(result).toEqual(expectedAction);
+    });
+});
+  
+describe('actions', () => {
+    it('should have a type of ADD_SELECTED_MARKET', () => {
+      // Setup
+        const selectedMarketId =   2
+        const expectedAction = {
+            type: 'ADD_SELECTED_MARKET',
+            id: 2
+        }
+  
+      // Execution
+        const result = actions.addSelectedMarket(selectedMarketId);
   
       // Expectation
       expect(result).toEqual(expectedAction);
