@@ -37,7 +37,7 @@ export const VendorForm = () => {
       handleImageUpload(acceptedFiles[0]);
     }
   }, []);
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
+  const {getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
 
   let image;
   if (vendorImage.length > 0) {
@@ -74,13 +74,15 @@ export const VendorForm = () => {
             <input {...getInputProps()} />
             {
               isDragActive ?
-                <section className='image-dropper-section'>
-                  <p className='image-dropper-text'>Drop the file here ...</p>
+                <section className='image-dropper-section' style={{backgroundColor: '#EBEEE6'}}>
+                  <p className='image-dropper-text'>Drop the file here</p>
                   <img src={images.addImage} className='plus-image-dropper'/>
+                  <p className='image-dropper-text'>.jpg, .jpeg, .png only</p>
                 </section> :
                 <section className='image-dropper-section'>
                   <p className='image-dropper-text'>Drag & drop file here, or click to select file</p>
                   <img src={images.addImage} className='plus-image-dropper'/>
+                  <p className='image-dropper-text'>.jpg - .jpeg - .png only</p>
                 </section>
             }
           </div>

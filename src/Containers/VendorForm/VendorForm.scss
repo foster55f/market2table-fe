@@ -96,7 +96,7 @@
 }
 
 .image-uploader-container {
-  height: 35%;
+  height: 40%;
   width: 90%;
   display: flex;
   align-items: center;
@@ -115,23 +115,30 @@
   justify-content: center;
 }
 
+.image-dropper:hover {
+  border: 2px solid $dark_green_border_color;
+  background-color: $list_hover_color;
+}
+
 .image-dropper-text {
   width: 90%;
-  height: 50%;
-  margin: 5px 0;
+  height: 25%;
+  margin: 0;
   text-align: center;
 }
 
 .plus-image-dropper {
-  margin-top: 10px;
   height: 50px;
   width: 50px;
 }
 
 .image-dropper-section {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
 }
 
@@ -141,7 +148,7 @@
 
 .farmer-image {
   height: 150px;
-  width: 150px;
+  width: auto;
 }
 
 .submit-vendor-info-button {
