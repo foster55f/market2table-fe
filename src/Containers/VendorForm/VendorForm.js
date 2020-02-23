@@ -53,6 +53,12 @@ export const VendorForm = () => {
     )
   }
 
+  const handleSubmitForm = () => {
+    createVendor(vendorName, vendorDescription, vendorImage)
+    .then(vendor => console.log(vendor))
+    .catch(error => console.log(error))
+  }
+
   return (
     <section className='vendor-form-main-section'>
       <header className='vendor-form-header'>
@@ -101,7 +107,7 @@ export const VendorForm = () => {
         </div>
       </form>
       <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>
-      <button className='submit-vendor-info-button' type='button'><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
+      <button className='submit-vendor-info-button' type='button' onClick={handleSubmitForm}><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
     </section>
   )
 }
