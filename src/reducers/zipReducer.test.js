@@ -1,4 +1,3 @@
-import { vendors } from '../reducers/vendors';
 import { zipCode } from './zipCode';
 
 describe('zipCode', () => {
