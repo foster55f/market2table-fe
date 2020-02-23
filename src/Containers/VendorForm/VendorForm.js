@@ -33,9 +33,11 @@ export const VendorForm = () => {
   }
 
   const onDrop = useCallback(acceptedFiles => {
-    handleImageUpload(acceptedFiles[0]);
+    if (acceptedFiles.length) {
+      handleImageUpload(acceptedFiles[0]);
+    }
   }, []);
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
 
   let image;
   if (vendorImage.length > 0) {
@@ -72,8 +74,14 @@ export const VendorForm = () => {
             <input {...getInputProps()} />
             {
               isDragActive ?
-                <p className='image-dropper-text'>Drop the files here ...</p><img src={images.plus} /> :
-                <p className='image-dropper-text'>Drag 'n' drop some files here, or click to select files</p>
+                <section className='image-dropper-section'>
+                  <p className='image-dropper-text'>Drop the file here ...</p>
+                  <img src={images.addImage} className='plus-image-dropper'/>
+                </section> :
+                <section className='image-dropper-section'>
+                  <p className='image-dropper-text'>Drag & drop file here, or click to select file</p>
+                  <img src={images.addImage} className='plus-image-dropper'/>
+                </section>
             }
           </div>
           <div className='farmer-image-container'>
