@@ -31,7 +31,17 @@ export const getAllVendors = () => {
 }
 
 export const createVendor = (name, description, image) => {
-  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql?query=mutation{addVendor(name:"${name}",description: "${description}",image_link: "${image}"){id name description image_link products {id name description price}}}`)
+  const mutation = {"query":`mutation{addVendor(name: "${name}", description: "${description}", image_link: "${image}"){id}}`}
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
     .then(response => {
         if (!response.ok) {
             throw Error('Error creating vendors');

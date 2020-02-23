@@ -69,7 +69,7 @@ export const VendorForm = () => {
   const handleSubmitForm = () => {
     if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
-      .then(vendor => console.log(vendor))
+      .then(vendor => console.log(vendor.data.vendor))
       .catch(error => console.log(error));
       setVendorName('');
       setVendorDescription('');
