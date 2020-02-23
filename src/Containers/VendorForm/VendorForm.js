@@ -62,12 +62,12 @@ export const VendorForm = () => {
     )
   } else {
     image = (
-      <p>*View uploaded image here</p>
+      <p>View uploaded image here</p>
     )
   }
 
   const handleSubmitForm = () => {
-    if (vendorName.length > 0 && vendorDescription.length > 0 && vendorImage.length > 0) {
+    if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
       .then(vendor => console.log(vendor))
       .catch(error => console.log(error));

@@ -136,3 +136,25 @@
   height: 75px;
   width: 75px;
 }
+
+@media screen and (max-width: 1050px) {
+  .vendor-select-container {
+    flex-direction: column;
+    overflow: auto;
+    justify-content: flex-start;
+    margin-top: 20px;
+    border-top: 3px solid black;
+    height: 80vh;
+  }
+
+  .link-create-vendor-form {
+    width: 35%;
+    margin: 20px;
+    min-width: 300px;
+  }
+
+  .vendor-list-section {
+    width: 75%;
+    min-width: 450px;
+  }
+}
