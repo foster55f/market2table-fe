@@ -18,6 +18,16 @@ export const VendorForm = () => {
   const [hasError, setHasError] = useState(false);
   const CLOUDINARY_UPLOAD_PRESET = 'Farmer_Images';
   const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dlgdlli2u/image/upload';
+  const vendor = useSelector(state => state.selectedVendor);
+
+
+  useEffect(() => {
+    if (vendor.name) {
+      setVendorName(vendor.name);
+      setVendorDescription(vendor.description);
+      setVendorImage(vendor.image_link);
+    }
+  }, []);
 
   const handleImageUpload = (file) => {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
