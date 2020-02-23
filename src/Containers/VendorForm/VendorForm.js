@@ -41,7 +41,16 @@ export const VendorForm = () => {
 
   let image;
   if (vendorImage.length > 0) {
-    image = (<img src={vendorImage} alt='photo of farm' className='farmer-image' />)
+    image = (
+      <section className='uploaded-image-container'>
+        <img src={vendorImage} alt='photo of farm' className='farmer-image' />
+        <button type='button' className='delete-uploaded-image' onClick={() => setVendorImage('')}>X</button>
+      </section>
+    )
+  } else {
+    image = (
+      <p>View uploaded image here</p>
+    )
   }
 
   return (

@@ -151,6 +151,29 @@
   width: auto;
 }
 
+.uploaded-image-container {
+  position: relative;
+}
+
+.delete-uploaded-image {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  padding: 0;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.delete-uploaded-image:hover {
+  border: 1px solid red;
+  color: red;
+}
+
 .submit-vendor-info-button {
   width: 10%;
   height: 150px;
