@@ -74,4 +74,59 @@ describe('actions', () => {
       // Expectation
       expect(result).toEqual(expectedAction);
     });
+});
+  
+describe('actions', () => {
+    it('should have a type of ADD_VENDORS', () => {
+        // Setup
+        const mockVendors = [
+            {
+                id: 1,
+                name: 'Honey Farm',
+                description: 'Making the best honey',
+                image: 'https://imgur.com/a/rkU6TOd',
+                products: [{
+                    id: 1,
+                    name: 'apples',
+                    description: 'red',
+                    price: 1.99
+                },
+                {
+                    id: 2,
+                    name: 'oranges',
+                    description: 'orange',
+                    price: 2.99
+                }]
+          
+            },
+            {
+                id: 2,
+                name: 'Cheese Creamery',
+                description: 'The best curddled cheese around',
+                image: 'https://imgur.com/a/rkU6TOd',
+                products: [{
+                    id: 1,
+                    name: 'apples',
+                    description: 'red',
+                    price: 1.99
+                },
+                {
+                    id: 2,
+                    name: 'oranges',
+                    description: 'orange',
+                    price: 2.99
+                }]
+            },
+        ]
+        const expectedAction = {
+            type: 'ADD_VENDORS',
+            vendors: mockVendors
+        }
+  
+      // Execution
+        const result = actions.addVendors(mockVendors);
+  
+      // Expectation
+      expect(result).toEqual(expectedAction);
+    });
   });
