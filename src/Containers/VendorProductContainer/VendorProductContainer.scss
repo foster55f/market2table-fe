@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .vendor-product-form-section {
   width: 45%;
   min-width: 325px;
@@ -6,23 +8,28 @@
   align-items: center;
   justify-content: space-around;
   height: 85%;
-  border: 3px solid black;
+  border: 4px solid $dark_green_border_color;
   border-radius: 20px;
+  background-color: $list_hover_color;
 }
 
 .vendor-product-form-title {
   width: 100%;
   text-align: center;
   margin: 10px;
+  text-decoration: underline;
 }
 
 .product-cards-container {
   height: 60%;
   overflow: auto;
   margin-top: 10px;
-  border-top: 2px solid black;
+  border-top: 2px solid $dark_green_border_color;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

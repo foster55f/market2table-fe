@@ -6,8 +6,6 @@ import './VendorForm.scss';
 import { addVendors } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
-import { createVendor } from '../../apiCalls';
-
 
 export const VendorForm = () => {
   const [vendorName, setVendorName] = useState('');
@@ -15,20 +13,13 @@ export const VendorForm = () => {
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
 
-const handleCreateVendor = () => {
-  createVendor(vendorName, vendorDescription, vendorImage)
-    .then(response => {
-    console.log(response)
-    })
-  .catch(error => console.log(error))
-}
-
 
 
   return (
     <section className='vendor-form-main-section'>
       <header className='vendor-form-header'>
         <Link to='/vendor/account' className='link-back-to-vendors'>
+          <img src={images.undo} className='undo-image' alt='icon of reverse array' />
           <p className='back-to-vendors-p'>Back To Vendors</p>
         </Link>
         <h2 className='vendor-form-title'>Vendor Form</h2>
