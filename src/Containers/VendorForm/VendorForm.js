@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useDropzone } from 'react-dropzone'
+import request from 'superagent';
 import './VendorForm.scss';
 import { addVendors } from '../../actions';
 import images from '../../images/images';
@@ -13,6 +15,32 @@ export const VendorForm = () => {
   const [vendorDescription, setVendorDescription] = useState('');
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
+  const CLOUDINARY_UPLOAD_PRESET = 'Farmer_Images';
+  const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dlgdlli2u/image/upload';
+
+  const handleImageUpload = (file) => {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+      if (response.body.secure_url !== '') {
+        setVendorImage(response.body.secure_url);
+      }
+    });
+  }
+
+  const onDrop = useCallback(acceptedFiles => {
+    handleImageUpload(acceptedFiles[0]);
+  }, []);
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
+
+  let image;
+  if (vendorImage.length > 0) {
+    image = (<img src={vendorImage} alt='photo of farm' className='farmer-image' />)
+  }
 
   return (
     <section className='vendor-form-main-section'>
@@ -40,6 +68,17 @@ export const VendorForm = () => {
           </textarea>
         </div>
         <div className='image-uploader-container'>
+          <div {...getRootProps()} className='image-dropper'>
+            <input {...getInputProps()} />
+            {
+              isDragActive ?
+                <p className='image-dropper-text'>Drop the files here ...</p><img src={images.plus} /> :
+                <p className='image-dropper-text'>Drag 'n' drop some files here, or click to select files</p>
+            }
+          </div>
+          <div className='farmer-image-container'>
+            {image}
+          </div>
         </div>
       </form>
       <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>

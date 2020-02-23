@@ -97,6 +97,42 @@
 
 .image-uploader-container {
   height: 35%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-dropper {
+  width: 45%;
+  height: 75%;
+  border: 2px dashed black;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-dropper-text {
+  width: 90%;
+  height: 100%;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.plus-image-dropper {
+
+}
+
+.farmer-image-container {
+  width: 45%;
+}
+
+.farmer-image {
+  height: 150px;
+  width: 150px;
 }
 
 .submit-vendor-info-button {
