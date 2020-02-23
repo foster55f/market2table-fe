@@ -6,7 +6,6 @@ import './ZipCodeForm.scss';
 import { addZipCode, addMarkets } from '../../actions';
 import { getMarketsByZip } from '../../apiCalls';
 
-
 export const ZipCodeForm = ({ path }) => {
 
   const [zipCodeInput, setzipCodeInput] = useState('');

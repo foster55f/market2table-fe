@@ -1,8 +1,8 @@
 @import './src/variables';
 
 .vendor-form-main-section {
-  width: 90%;
-  height: 82vh;
+  width: 95%;
+  height: 83vh;
   background-color: white;
   margin: auto;
   border-radius: 10px;
@@ -10,10 +10,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 
 .vendor-form-header {
   width: 100%;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -21,12 +24,28 @@
 
 .link-back-to-vendors {
   width: 12%;
-  min-width: 130px;
+  min-width: 150px;
   margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+}
+
+.link-back-to-vendors:hover {
+  .undo-image {
+    transform: scale(1.1);
+  }
 }
 
 .back-to-vendors-p {
   margin: 0;
+}
+
+.undo-image {
+  height: 20px;
+  width: 20px;
 }
 
 .vendor-form-title {
@@ -34,6 +53,7 @@
   font-size: 2.5em;
   margin: 0;
   text-align: center;
+  text-decoration: underline;
 }
 
 .vendor-form-header-space {
@@ -47,7 +67,7 @@
   align-items: center;
   justify-content: space-around;
   width: 40%;
-  min-width: 300px;
+  min-width: 400px;
 }
 
 .vendor-form-input-container {
@@ -60,8 +80,8 @@
   width: 75%;
   margin-top: 10px;
   border-radius: 20px;
-  border: 2px solid black;
-  background-color: white;
+  border: 3px solid $dark_red_border_color;
+  background-color: $light_red_fill_color;
   padding: 10px;
   outline: 0;
   font-size: 1em;
@@ -72,19 +92,101 @@
   font-size: 1em;
   margin-top: 10px;
   outline: 0;
-  border: 2px solid black;
+  border: 3px solid $dark_red_border_color;
+  background-color: $light_red_fill_color;
   border-radius: 10px;
   padding: 10px;
 }
 
 .image-uploader-container {
-  height: 35%;
+  height: 40%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-dropper {
+  width: 45%;
+  height: 75%;
+  border: 2px dashed black;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-dropper:hover {
+  border: 2px solid $dark_green_border_color;
+  background-color: $list_hover_color;
+}
+
+.image-dropper-text {
+  width: 90%;
+  height: 25%;
+  margin: 0;
+  text-align: center;
+}
+
+.plus-image-dropper {
+  height: 50px;
+  width: 50px;
+}
+
+.image-dropper-section {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.farmer-image-container {
+  width: 45%;
+}
+
+.farmer-image {
+  height: 150px;
+  width: auto;
+}
+
+.uploaded-image-container {
+  position: relative;
+}
+
+.delete-uploaded-image {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  padding: 0;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.delete-uploaded-image:hover {
+  border: 1px solid red;
+  color: red;
+}
+
+.submit-vendor-info-button-section {
+  width: 10%;
+  min-width: 125px;
+  height: 200px;
+  margin: 20px 20px;
 }
 
 .submit-vendor-info-button {
-  width: 10%;
-  height: 150px;
-  margin: 0 20px;
+  width: 100%;
+  height: 75%;
   border-radius: 25px;
   font-size: 2em;
   display: flex;
@@ -107,6 +209,11 @@
   transform: scale(.98);
 }
 
+.vendor-form-error {
+  color: red;
+  text-align: center;
+}
+
 .plus-icon-form {
   height: 40px;
   width: 40px;
@@ -115,4 +222,26 @@
 
 .create-vendor-button-p {
   margin: 0;
+}
+
+@media screen and (max-width: 1250px) {
+  .vendor-form-info {
+    width: 45%;
+  }
+
+  .submit-vendor-info-button-section {
+    width: 25%;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .vendor-form-info {
+    width: 65%;
+  }
+
+  .submit-vendor-info-button-section {
+    width: 45%;
+    margin: 20px 0;
+  }
 }
