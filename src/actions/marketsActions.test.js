@@ -40,4 +40,21 @@ describe('actions', () => {
       // Expectation
       expect(result).toEqual(expectedAction);
     });
+});
+  
+describe('actions', () => {
+    it('should have a type of ADD_ZIP_CODE', () => {
+      // Setup
+        const zipCode = '80211'
+        const expectedAction = {
+            type: 'ADD_ZIP_CODE',
+            zipCode: '80211'
+        }
+  
+      // Execution
+      const result = actions.addZipCode(zipCode);
+  
+      // Expectation
+      expect(result).toEqual(expectedAction);
+    });
   });
