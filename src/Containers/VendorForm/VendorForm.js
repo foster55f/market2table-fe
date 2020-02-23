@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone'
 import request from 'superagent';
 import './VendorForm.scss';
-import { addVendors } from '../../actions';
+import { addVendors, addSelectedVendor } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
 import { createVendor } from '../../apiCalls';
@@ -19,6 +19,7 @@ export const VendorForm = () => {
   const CLOUDINARY_UPLOAD_PRESET = 'Farmer_Images';
   const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dlgdlli2u/image/upload';
   const vendor = useSelector(state => state.selectedVendor);
+  const dispatch = useDispatch();
 
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export const VendorForm = () => {
   return (
     <section className='vendor-form-main-section'>
       <header className='vendor-form-header'>
-        <Link to='/vendor/account' className='link-back-to-vendors'>
+        <Link to='/vendor/account' className='link-back-to-vendors' onClick={() => dispatch(addSelectedVendor({}))}>
           <img src={images.undo} className='undo-image' alt='icon of reverse array' />
           <p className='back-to-vendors-p'>Back To Vendors</p>
         </Link>
