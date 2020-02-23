@@ -129,4 +129,21 @@ describe('actions', () => {
       // Expectation
       expect(result).toEqual(expectedAction);
     });
+});
+  
+describe('actions', () => {
+    it('should have a type of ADD_SELECTED_VENDOR', () => {
+        // Setup
+        const selectedVendorId = 55
+        const expectedAction = {
+            type: 'ADD_SELECTED_VENDOR',
+            id: 55
+        }
+  
+      // Execution
+        const result = actions.addSelectedVendor(selectedVendorId);
+  
+      // Expectation
+      expect(result).toEqual(expectedAction);
+    });
   });
