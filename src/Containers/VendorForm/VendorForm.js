@@ -15,6 +15,7 @@ export const VendorForm = () => {
   const [vendorDescription, setVendorDescription] = useState('');
   const [vendorImage, setVendorImage] = useState('');
   const [vendorProducts, setVendorProducts] = useState([]);
+  const [hasError, setHasError] = useState(false);
   const CLOUDINARY_UPLOAD_PRESET = 'Farmer_Images';
   const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dlgdlli2u/image/upload';
 
@@ -35,6 +36,7 @@ export const VendorForm = () => {
   const onDrop = useCallback(acceptedFiles => {
     if (acceptedFiles.length) {
       handleImageUpload(acceptedFiles[0]);
+      setHasError(false);
     }
   }, []);
   const {getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
@@ -49,14 +51,21 @@ export const VendorForm = () => {
     )
   } else {
     image = (
-      <p>View uploaded image here</p>
+      <p>*View uploaded image here</p>
     )
   }
 
   const handleSubmitForm = () => {
-    createVendor(vendorName, vendorDescription, vendorImage)
-    .then(vendor => console.log(vendor))
-    .catch(error => console.log(error))
+    if (vendorName.length > 0 && vendorDescription.length > 0 && vendorImage.length > 0) {
+      createVendor(vendorName, vendorDescription, vendorImage)
+      .then(vendor => console.log(vendor))
+      .catch(error => console.log(error));
+      setVendorName('');
+      setVendorDescription('');
+      setVendorImage('');
+    } else {
+      setHasError(true);
+    }
   }
 
   return (
@@ -72,13 +81,13 @@ export const VendorForm = () => {
       <form className='vendor-form-info' id='vendor-form-info'>
         <div className='vendor-form-input-container'>
           <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
-          <input value={vendorName} onChange={(event) => setVendorName(event.target.value)}
+          <input value={vendorName} onChange={(event) => {setVendorName(event.target.value); setHasError(false);}}
             type='text' className='vendor-name-input' maxlength='35'
             placeholder='Vendor Name...' id='vendor-name-input' />
         </div>
         <div className='vendor-form-input-container'>
           <label for='vendor-description-textarea' className='vendor-description-label'>* Enter Vendor Description:</label>
-          <textarea value={vendorDescription} onChange={(event) => setVendorDescription(event.target.value)}
+          <textarea value={vendorDescription} onChange={(event) => {setVendorDescription(event.target.value); setHasError(false);}}
             form='vendor-form-info' name='vendor-description-textarea'
             className='vendor-description-textarea' placeholder='Vender Description...'
             id='vendor-description-textarea' rows='6' columns='25' maxlength='150'>
@@ -107,7 +116,10 @@ export const VendorForm = () => {
         </div>
       </form>
       <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>
-      <button className='submit-vendor-info-button' type='button' onClick={handleSubmitForm}><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
+      <section className='submit-vendor-info-button-section'>
+        <button className='submit-vendor-info-button' type='button' onClick={handleSubmitForm}><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
+        <p hidden={!hasError} className='vendor-form-error'>*Please include all required fields*</p>
+      </section>
     </section>
   )
 }
