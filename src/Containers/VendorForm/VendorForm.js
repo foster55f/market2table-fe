@@ -89,7 +89,7 @@ export const VendorForm = () => {
                   <p className='image-dropper-text'>.jpg, .jpeg, .png only</p>
                 </section> :
                 <section className='image-dropper-section'>
-                  <p className='image-dropper-text'>Drag & drop file here, or click to select file</p>
+                  <p className='image-dropper-text'>Drag & drop, or click to select file</p>
                   <img src={images.addImage} className='plus-image-dropper'/>
                   <p className='image-dropper-text'>.jpg - .jpeg - .png only</p>
                 </section>
