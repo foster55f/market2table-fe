@@ -13,8 +13,8 @@ export const VendorSelectCard = ({ name, vendor }) => {
     <article className='vendor-select-article'>
       <h2 className='vendor-article-header'>{name}</h2>
       <section className='vendor-article-button-container'>
-        <Link to='/vendor/market/form' className='link-market-vendor-link'>
-          <button className='vendor-article-markets-button'>Link to Markets</button>
+        <Link to='/vendor/account/link' className='link-market-vendor-link'>
+          <button className='vendor-article-markets-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Link to Markets</button>
         </Link>
         <Link to='/vendor/account/form' className='link-edit-vendor-form'>
           <button className='vendor-article-edit-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Edit</button>
