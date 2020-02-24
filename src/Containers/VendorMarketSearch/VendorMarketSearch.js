@@ -6,13 +6,12 @@ import MarketListCard from '../MarketListCard/MarketListCard';
 import './VendorMarketSearch.scss';
 import { getMarketsByZip } from '../../apiCalls';
 import { addZipCode, addMarkets } from '../../actions';
-// import images from '../../images/images';
 
 export const VendorMarketSearch = () => {
   const [hasError, setHasError] = useState(false);
   const [zipCodeInput, setZipCodeInput] = useState('');
   const zipCode = useSelector(state => state.zipCode);
-
+  const markets = useSelector(state => state.markets);
   const dispatch = useDispatch();
 
   const handleZipCodeSubmit = () => {
@@ -25,20 +24,28 @@ export const VendorMarketSearch = () => {
       zipCodeText = zipCodeInput;
       dispatch(addZipCode(zipCodeInput));
       setZipCodeInput('');
+    } else {
+      setHasError(true);
+      setZipCodeInput('');
     }
   }
+
   let zipCodeText = 'Please enter zip code';
   if (zipCode.length === 5) {
     zipCodeText = zipCode;
   }
 
+  const marketsToDisplay = markets.map(market => {
+    return (
+      <MarketListCard name={market.name} id={market.id} key={market.id} />
+    )
+  });
+
   return (
     <section className='vendor-market-search-section'>
       <h3 className='vendor-market-search-title'>Search For Markets</h3>
       <form className='vendor-market-search-form'>
-        <div className='vendor-market-search-label-container'>
-          <p className='vendor-market-search-par'>Zip Code: {zipCodeText}</p>
-        </div>
+        <p className='vendor-market-search-par'>Zip Code: {zipCodeText}</p>
         <div className='vendor-market-search-container'>
           <input value={zipCodeInput} onChange={(event) => setZipCodeInput(event.target.value)} className='vendor-market-input' type='text' type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
           <button onClick={handleZipCodeSubmit} className='vendor-market-search-button' type='button'>Find!</button>
@@ -47,7 +54,7 @@ export const VendorMarketSearch = () => {
           </div>
         </div>
       </form>
-      <section>
+      <section className='vendor-market-list-container'>
         <MarketListCard />
       </section>
     </section>

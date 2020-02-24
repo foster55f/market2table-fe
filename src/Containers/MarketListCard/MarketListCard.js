@@ -7,7 +7,7 @@ import './MarketListCard.scss';
 import images from '../../images/images';
 // import { getAllVendors } from '../../apiCalls';
 
-export const MarketListCard = () => {
+export const MarketListCard = ({ name, id }) => {
 
   return (
     <article>
