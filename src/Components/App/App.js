@@ -53,7 +53,7 @@ const App = () => {
         )
         }}
       />
-      <Route exact path='/vendor/account/link' render={() => {
+      <Route exact path='/vendor/account/link/:id' render={() => {
         return (
             <VendorLinkContainer />
         )

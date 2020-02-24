@@ -28,7 +28,7 @@ export const VendorSelectContainer = () => {
 let vendorSelectCards;
 if (vendors.length) {
   vendorSelectCards = vendors.map(vendor => {
-    return (<VendorSelectCard vendor={vendor} name={vendor.name} key={vendor.name}/>)
+    return (<VendorSelectCard id={vendor.id} vendor={vendor} name={vendor.name} key={vendor.id}/>)
   });
 }
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './VendorSelectCard.scss';
 import { addSelectedVendor } from '../../actions';
 
-export const VendorSelectCard = ({ name, vendor }) => {
+export const VendorSelectCard = ({ id, name, vendor }) => {
 
   const dispatch = useDispatch();
 
@@ -13,7 +13,7 @@ export const VendorSelectCard = ({ name, vendor }) => {
     <article className='vendor-select-article'>
       <h2 className='vendor-article-header'>{name}</h2>
       <section className='vendor-article-button-container'>
-        <Link to='/vendor/account/link' className='link-market-vendor-link'>
+        <Link to={`/vendor/account/link/${id}`} className='link-market-vendor-link'>
           <button className='vendor-article-markets-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Link to Markets</button>
         </Link>
         <Link to='/vendor/account/form' className='link-edit-vendor-form'>
