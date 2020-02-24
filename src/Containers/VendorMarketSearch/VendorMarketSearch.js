@@ -64,7 +64,7 @@ export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
           </div>
         </div>
       </form>
-      <section className='vendor-market-list-container'>
+      <section className='vendor-market-display-container'>
         {marketsToDisplay}
       </section>
     </section>
