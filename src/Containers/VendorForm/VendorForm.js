@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone'
 import request from 'superagent';
@@ -70,11 +70,12 @@ export const VendorForm = () => {
     if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
       .then(vendor => {
-        console.log(vendor.data.addVendor.id);
         if (vendorProducts.length) {
           vendorProducts.forEach(product => {
             createProduct(product.name, product.description, product.price, vendor.data.addVendor.id)
-              .then(data => console.log(data))
+              .then(data => {
+                return (<Redirect to='/vendor/account'/>)
+              })
               .catch(error => console.log(error))
           });
         }

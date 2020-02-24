@@ -4,11 +4,11 @@ import './App.scss';
 import Header from '../Header/Header';
 import ZipCodeForm from '../../Containers/ZipCodeForm/ZipCodeForm';
 import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
-import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
 import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
 import VendorForm from '../../Containers/VendorForm/VendorForm';
+import VendorLinkContainer from '../VendorLinkContainer/VendorLinkContainer';
 import { Route, Redirect } from 'react-router-dom';
 
 const App = () => {
@@ -43,14 +43,6 @@ const App = () => {
         )
         }}
       />
-      <Route exact path='/markets/:id/vendors' render={() => {
-        return (
-          <div className='market-map-container'>
-            <VendorsContainer />
-          </div>
-        )
-      }}
-      />
       <Route exact path='/vendor/account' render={() => {
         return ( <VendorSelectContainer /> )
         }}
@@ -58,6 +50,12 @@ const App = () => {
       <Route exact path='/vendor/account/form' render={() => {
         return (
             <VendorForm />
+        )
+        }}
+      />
+      <Route exact path='/vendor/market/form' render={() => {
+        return (
+            <VendorLinkContainer />
         )
         }}
       />
