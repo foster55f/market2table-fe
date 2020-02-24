@@ -12,6 +12,7 @@ export const VendorMarketSearch = () => {
   const [zipCodeInput, setZipCodeInput] = useState('');
   const zipCode = useSelector(state => state.zipCode);
   const markets = useSelector(state => state.markets);
+  const selectedVendor = useSelector(state => state.selectedVendor)
   const dispatch = useDispatch();
 
   const handleZipCodeSubmit = () => {
@@ -40,7 +41,7 @@ export const VendorMarketSearch = () => {
   if (markets.length) {
     marketsToDisplay = markets.map(market => {
       return (
-        <MarketListCard name={market.name} id={market.id} key={market.id} />
+        <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} />
       )
     });
   }

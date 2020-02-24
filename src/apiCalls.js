@@ -31,7 +31,8 @@ export const getAllVendors = () => {
 }
 
 export const createVendor = (name, description, image) => {
-  const mutation = {"query":`mutation{addVendor(name: "${name}", description: "${description}", image_link: "${image}"){id}}`}
+  const mutation = {"query" : `
+  mutation{addVendor( name: "${name}", description: "${description}", image_link: "${image}"){id}}`}
   const options = {
     method: 'POST',
     body: JSON.stringify(mutation),
@@ -66,6 +67,26 @@ export const createProduct = (name, description, price, vendorId) => {
     .then(response => {
         if (!response.ok) {
             throw Error('Error creating product');
+        }
+        return response.json();
+    });
+}
+
+export const createMarketVendorLink = (marketId, vendorId) => {
+  const mutation = {"query":`mutation{addMarketVendor(market_id: ${marketId}, vendor_id: ${vendorId}){id}}`}
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
+    .then(response => {
+        if (!response.ok) {
+            throw Error('Error linking vendor and market');
         }
         return response.json();
     });
