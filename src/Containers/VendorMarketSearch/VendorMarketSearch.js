@@ -38,8 +38,13 @@ export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
 
 
   let marketsToDisplay = (<p>Please select a zip code to display markets</p>);
+
   if (markets.length) {
-    marketsToDisplay = markets.map(market => {
+    const filteredMarkets = markets.filter(market => {
+      const filter = marketsLinked.filter(marketLinked => market.name === marketLinked.name);
+      return !filter.length;
+    });
+    marketsToDisplay = filteredMarkets.map(market => {
       return (
         <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} setMarketsLinked={setMarketsLinked} marketsLinked={marketsLinked} />
       )
