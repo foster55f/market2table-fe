@@ -10,7 +10,9 @@ import images from '../../images/images';
 export const MarketListCard = ({ name, id }) => {
 
   return (
-    <article>
+    <article className='market-list-card-article'>
+      <h3 className='market-list-card-header'>{name}</h3>
+      <button className='market-list-card-add-button'>Add</button>
     </article>
   )
 }

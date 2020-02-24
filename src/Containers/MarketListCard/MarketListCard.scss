@@ -1,0 +1,32 @@
+.market-list-card-article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
+.market-list-card-header {
+  width: 75%;
+  text-align: left;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.market-list-card-add-button {
+  width: 10%;
+  font-size: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.market-list-card-add-button:hover {
+  background-color: lightgrey;
+}
+
+.market-list-card-add-button:active {
+  transform: scale(.95);
+}

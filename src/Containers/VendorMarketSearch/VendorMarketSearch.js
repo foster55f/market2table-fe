@@ -35,11 +35,15 @@ export const VendorMarketSearch = () => {
     zipCodeText = zipCode;
   }
 
-  const marketsToDisplay = markets.map(market => {
-    return (
-      <MarketListCard name={market.name} id={market.id} key={market.id} />
-    )
-  });
+
+  let marketsToDisplay = (<p>Please select a zip code to display markets</p>);
+  if (markets.length) {
+    marketsToDisplay = markets.map(market => {
+      return (
+        <MarketListCard name={market.name} id={market.id} key={market.id} />
+      )
+    });
+  }
 
   return (
     <section className='vendor-market-search-section'>
@@ -55,7 +59,7 @@ export const VendorMarketSearch = () => {
         </div>
       </form>
       <section className='vendor-market-list-container'>
-        <MarketListCard />
+        {marketsToDisplay}
       </section>
     </section>
   )
