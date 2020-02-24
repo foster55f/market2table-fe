@@ -8,7 +8,7 @@ import './VendorForm.scss';
 import { addVendors, addSelectedVendor } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
-import { createVendor } from '../../apiCalls';
+import { createVendor, createProduct } from '../../apiCalls';
 
 export const VendorForm = () => {
   const [vendorName, setVendorName] = useState('');
@@ -69,7 +69,17 @@ export const VendorForm = () => {
   const handleSubmitForm = () => {
     if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
-      .then(vendor => console.log(vendor.data.vendor))
+      .then(vendor => {
+        console.log(vendor.data.addVendor.id);
+        if (vendorProducts.length) {
+          vendorProducts.forEach(product => {
+            createProduct(product.name, product.description, product.price, vendor.data.addVendor.id)
+              .then(data => console.log(data))
+              .catch(error => console.log(error))
+          });
+        }
+
+      })
       .catch(error => console.log(error));
       setVendorName('');
       setVendorDescription('');

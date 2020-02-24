@@ -49,3 +49,24 @@ export const createVendor = (name, description, image) => {
         return response.json();
     });
 }
+
+export const createProduct = (name, description, price, vendorId) => {
+  const mutation = {"query":`mutation{addProduct(name: "${name}", description: "${description}", price: ${price}, vendor_id: ${vendorId}){id}}`}
+
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
+    .then(response => {
+        if (!response.ok) {
+            throw Error('Error creating product');
+        }
+        return response.json();
+    });
+}
