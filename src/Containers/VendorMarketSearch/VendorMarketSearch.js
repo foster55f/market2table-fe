@@ -51,7 +51,7 @@ export const VendorMarketSearch = () => {
       <form className='vendor-market-search-form'>
         <p className='vendor-market-search-par'>Zip Code: {zipCodeText}</p>
         <div className='vendor-market-search-container'>
-          <input value={zipCodeInput} onChange={(event) => setZipCodeInput(event.target.value)} className='vendor-market-input' type='text' type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
+          <input value={zipCodeInput} onChange={(event) => {setZipCodeInput(event.target.value); setHasError(false)}} className='vendor-market-input' type='text' type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
           <button onClick={handleZipCodeSubmit} className='vendor-market-search-button' type='button'>Find!</button>
           <div className='error-message-search-container'>
             <p hidden={!hasError} className='error-message'>Error: Please enter a 5 digit zip code</p>
