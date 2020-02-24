@@ -134,14 +134,17 @@ describe('actions', () => {
 describe('actions', () => {
     it('should have a type of ADD_SELECTED_VENDOR', () => {
         // Setup
-        const selectedVendorId = 55
+      const selectedVendor = {
+        name: 'farmer',
+        description:'selling'
+        } 
         const expectedAction = {
             type: 'ADD_SELECTED_VENDOR',
-            id: 55
+            vendor: selectedVendor
         }
   
       // Execution
-        const result = actions.addSelectedVendor(selectedVendorId);
+        const result = actions.addSelectedVendor(selectedVendor);
   
       // Expectation
       expect(result).toEqual(expectedAction);
