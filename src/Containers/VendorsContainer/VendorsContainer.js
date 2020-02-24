@@ -21,9 +21,9 @@ export const VendorsContainer = ({history}) => {
   });
     
   return (
-    <div className='vendor-container'>
+    <main className='vendor-container'>
       {displayVendors}
-    </div>
+    </main>
   )
 }
 

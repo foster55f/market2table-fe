@@ -24,7 +24,7 @@ export const VendorCard = ({ id, name, description, image, history }) => {
 
   return (
     <article onClick={handleVendorPage}className='vendor-card'>
-        <h2 className='vendor-name'>{name}</h2>
+      <h2 className='vendor-name'>{name}</h2>
       <h2 className='vendor-description'>{description}</h2>
       <img className='vendor-img'src={image}></img>
     </article>

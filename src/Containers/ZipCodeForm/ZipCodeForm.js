@@ -42,6 +42,13 @@ export const ZipCodeForm = ({ path }) => {
     setHasError(false);
   }
 
+  const zipInputHandler = event => {
+    if (event.key === "Enter") {
+      event.preventDefault()
+      handleSubmit()
+      }
+    }
+
   if (zipCode > 0) {
     return (
       <Redirect to='/markets' />
@@ -53,7 +60,7 @@ export const ZipCodeForm = ({ path }) => {
         <label className="zip-code-input-label" htmlFor="zipCode">
           Enter a zip code to find farmer's markets near you:
         </label>
-        <input onChange={(e) => handleChange(e.target.value)} value={zipCodeInput} className="zip-code-input" type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
+        <input onChange={(e) => handleChange(e.target.value)} onKeyDown={event => zipInputHandler(event)} value={zipCodeInput} className="zip-code-input" type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
         <div className='error-message-container'>
           <p hidden={!hasError} className='error-message'>Error: Please enter a 5 digit zip code</p>
         </div>
