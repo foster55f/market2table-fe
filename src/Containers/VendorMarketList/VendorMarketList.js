@@ -24,7 +24,7 @@ export const VendorMarketList = ({ marketsLinked, setMarketsLinked }) => {
   let marketsLinkToDisplay = (<p>Please Link your Vendor account to markets</p>);
   if (marketsLinked.length) {
     marketsLinkToDisplay = marketsLinked.map(market => {
-      return (<MarketListCard name={market.name} key={market.id} marketsLinked={marketsLinked}/>)
+      return (<MarketListCard id={market.id} vendorId={vendor.id} name={market.name} key={market.id} marketsLinked={marketsLinked} setMarketsLinked={setMarketsLinked}/>)
     });
   }
 

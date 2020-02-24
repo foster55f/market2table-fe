@@ -46,7 +46,7 @@ export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
     });
     marketsToDisplay = filteredMarkets.map(market => {
       return (
-        <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} setMarketsLinked={setMarketsLinked} marketsLinked={marketsLinked} />
+        <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} setMarketsLinked={setMarketsLinked} marketsLinked={marketsLinked} vendorDescription={selectedVendor.description} />
       )
     });
   }

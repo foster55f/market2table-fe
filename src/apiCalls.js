@@ -20,6 +20,16 @@ export const getAllVendors = () => {
         });
 }
 
+export const getAllMarketVendors = () => {
+    return fetch(process.env.REACT_APP_BACKEND_URL + '/graphql?query=query{market_vendors{id market{id name}vendor{id name}}}')
+        .then(response => {
+            if (!response.ok) {
+                throw Error('Error fetching market vendor links');
+            }
+            return response.json();
+        });
+}
+
 export const getMarketsByVendor = (id) => {
     return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql?query=query{vendor(id: ${id}){markets{id name}}}`)
         .then(response => {
@@ -28,6 +38,27 @@ export const getMarketsByVendor = (id) => {
             }
             return response.json();
         });
+}
+
+export const deleteMarketVendorLink = (id) => {
+  const mutation = {"query" : `
+  mutation{deleteMarketVendor(id: ${id})}`}
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
+      .then(response => {
+          if (!response.ok) {
+              throw Error('Error deleting vendor market link');
+          }
+          return response.json();
+      });
 }
 
 export const createVendor = (name, description, image) => {

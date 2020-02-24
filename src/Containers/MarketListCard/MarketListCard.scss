@@ -45,11 +45,14 @@
 }
 
 .market-list-card-add-button:hover,
-.market-list-card-add-button:focus {
+.market-list-card-add-button:focus,
+.market-list-card-remove-button:hover,
+.market-list-card-remove-button:focus {
   background-color: #C4D1B2;
   border: 2px solid #5E7838;
 }
 
-.market-list-card-add-button:active {
+.market-list-card-add-button:active,
+.market-list-card-remove-button:active {
   transform: scale(.95);
 }

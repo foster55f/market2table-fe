@@ -3,11 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MarketListCard.scss';
-// import { addVendors } from '../../actions';
 import images from '../../images/images';
-import { createMarketVendorLink } from '../../apiCalls';
+import { createMarketVendorLink, deleteMarketVendorLink, getAllMarketVendors } from '../../apiCalls';
 
-export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLinked }) => {
+export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLinked, vendorDescription }) => {
 
   const handleAddSubmit = () => {
     const vendorIdInt = parseInt(vendorId);
@@ -20,8 +19,25 @@ export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLi
       .catch(error => console.log(error))
   }
 
-  let actionButton = (<button className='market-list-card-remove-button' type='button'>Remove</button>)
-  if (vendorId) {
+  const handleDeleteSubmit = () => {
+    const marketIdInt = parseInt(id);
+    getAllMarketVendors()
+    .then(data => {
+      const filteredLinks = data.data.market_vendors.filter(link => {
+        return (link.market.id === id && link.vendor.id === vendorId);
+      });
+      const deleteId = parseInt(filteredLinks[0].id);
+      deleteMarketVendorLink(deleteId)
+        .then(data => {
+          const filteredMarkets = marketsLinked.filter(market => market.id !== id);
+          setMarketsLinked(filteredMarkets);
+        })
+        .catch(error => console.log(error))
+    })
+  }
+
+  let actionButton = (<button className='market-list-card-remove-button' type='button' onClick={handleDeleteSubmit}>Remove</button>)
+  if (vendorDescription) {
     actionButton = (<button className='market-list-card-add-button' type='button' onClick={handleAddSubmit}>Add</button>)
   }
 
