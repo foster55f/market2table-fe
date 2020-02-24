@@ -26,7 +26,7 @@ let vendorHomeButton;
 if (path.includes('account')) {
   vendorHomeButton = (
     <Link to='/' className='link-to-vendors'>
-      <button className='vendor-login-button' onClick={() => dispatch(addVendors([]))}>Home</button>
+      <button className='vendor-login-button' onClick={() => {dispatch(addVendors([])); dispatch(addSelectedMarket('')); dispatch(addZipCode('')); dispatch(addMarkets([])); dispatch(addSelectedVendor({}))}}>Home</button>
     </Link>)
 } else {
   vendorHomeButton = (

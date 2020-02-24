@@ -1,0 +1,58 @@
+@import './src/variables';
+
+.market-list-card-article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  background-color: white;
+}
+
+.market-list-card-article:hover {
+  background-color: $list_hover_color;
+}
+
+.market-list-card-header {
+  width: 75%;
+  text-align: left;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.market-list-card-add-button {
+  width: 10%;
+  font-size: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+}
+
+.market-list-card-remove-button {
+  width: 12%;
+  min-width: 75px;
+  font-size: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: 0;
+  border: 2px solid #3B3D39;
+  background-color: #F0F0EF;
+}
+
+.market-list-card-add-button:hover,
+.market-list-card-add-button:focus,
+.market-list-card-remove-button:hover,
+.market-list-card-remove-button:focus {
+  background-color: #C4D1B2;
+  border: 2px solid #5E7838;
+}
+
+.market-list-card-add-button:active,
+.market-list-card-remove-button:active {
+  transform: scale(.95);
+}

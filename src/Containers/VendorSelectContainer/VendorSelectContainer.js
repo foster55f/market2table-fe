@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './VendorSelectContainer.scss';
 import VendorSelectCard from '../VendorSelectCard/VendorSelectCard';
-import { addVendors} from '../../actions';
+import { addVendors } from '../../actions';
 import images from '../../images/images';
 import { getAllVendors } from '../../apiCalls';
-
 
 export const VendorSelectContainer = () => {
 
@@ -19,16 +18,19 @@ export const VendorSelectContainer = () => {
 
   useEffect(() => {
     getAllVendors()
-    .then(vendors => {
-      dispatch(addVendors(vendors.data.vendors));
-      setVendors(vendors.data.vendors)
+    .then(allVendors => {
+      setVendors(allVendors.data.vendors);
+      dispatch(addVendors(allVendors.data.vendors))
     })
     .catch(error => console.log(error))
   }, [])
 
-  const vendorSelectCards = vendors.map(vendor => {
-    return (<VendorSelectCard name={vendor.name} key={vendor.name}/>)
+let vendorSelectCards;
+if (vendors.length) {
+  vendorSelectCards = vendors.map(vendor => {
+    return (<VendorSelectCard id={vendor.id} vendor={vendor} name={vendor.name} key={vendor.id}/>)
   });
+}
 
   const searchInputHandler = event => {
     if (event.key === "Enter") {

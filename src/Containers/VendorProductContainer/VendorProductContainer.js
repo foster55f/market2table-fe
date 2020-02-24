@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import './VendorProductContainer.scss';
 import VendorProductForm from '../VendorProductForm/VendorProductForm';
 import VendorProductCard from '../VendorProductCard/VendorProductCard';
 
 export const VendorProductContainer = ({ products, setProducts }) => {
+  const vendor = useSelector(state => state.selectedVendor);
+
+  if (vendor.products && !products.length) {
+    setProducts(vendor.products);
+  }
 
   let productCards;
   if (products.length) {

@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone'
 import request from 'superagent';
 import './VendorForm.scss';
-import { addVendors } from '../../actions';
+import { addVendors, addSelectedVendor } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
-import { createVendor } from '../../apiCalls';
+import { createVendor, createProduct } from '../../apiCalls';
 
 export const VendorForm = () => {
   const [vendorName, setVendorName] = useState('');
@@ -18,6 +18,17 @@ export const VendorForm = () => {
   const [hasError, setHasError] = useState(false);
   const CLOUDINARY_UPLOAD_PRESET = 'Farmer_Images';
   const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dlgdlli2u/image/upload';
+  const vendor = useSelector(state => state.selectedVendor);
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    if (vendor.name) {
+      setVendorName(vendor.name);
+      setVendorDescription(vendor.description);
+      setVendorImage(vendor.image_link);
+    }
+  }, []);
 
   const handleImageUpload = (file) => {
     let upload = request.post(CLOUDINARY_UPLOAD_URL)
@@ -39,6 +50,7 @@ export const VendorForm = () => {
       setHasError(false);
     }
   }, []);
+
   const {getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
 
   let image;
@@ -51,18 +63,30 @@ export const VendorForm = () => {
     )
   } else {
     image = (
-      <p>*View uploaded image here</p>
+      <p>View uploaded image here</p>
     )
   }
 
   const handleSubmitForm = () => {
-    if (vendorName.length > 0 && vendorDescription.length > 0 && vendorImage.length > 0) {
+    if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
-      .then(vendor => console.log(vendor))
+      .then(vendor => {
+        if (vendorProducts.length) {
+          vendorProducts.forEach(product => {
+            createProduct(product.name, product.description, product.price, vendor.data.addVendor.id)
+              .then(data => {
+                return (<Redirect to='/vendor/account'/>)
+              })
+              .catch(error => console.log(error))
+          });
+        }
+
+      })
       .catch(error => console.log(error));
       setVendorName('');
       setVendorDescription('');
       setVendorImage('');
+      setVendorProducts([]);
     } else {
       setHasError(true);
     }
@@ -71,7 +95,7 @@ export const VendorForm = () => {
   return (
     <section className='vendor-form-main-section'>
       <header className='vendor-form-header'>
-        <Link to='/vendor/account' className='link-back-to-vendors'>
+        <Link to='/vendor/account' className='link-back-to-vendors' onClick={() => dispatch(addSelectedVendor({}))}>
           <img src={images.undo} className='undo-image' alt='icon of reverse array' />
           <p className='back-to-vendors-p'>Back To Vendors</p>
         </Link>

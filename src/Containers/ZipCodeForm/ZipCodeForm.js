@@ -56,7 +56,7 @@ export const ZipCodeForm = ({ path }) => {
   return (
     <section className='zip-code-form-container' style={{backgroundImage: `linear-gradient(rgba(255, 255, 255, ${opacity}), rgba(255, 255, 255, ${opacity}))` }}>
       <form className='zip-code-form'>
-        <label className="zip-code-input-label" htmlFor="zipCode">
+        <label className='zip-code-input-label' htmlFor='zipCode'>
           Enter a zip code to find farmer's markets near you:
         </label>
         <input onChange={(e) => handleChange(e.target.value)} onKeyDown={event => zipInputHandler(event)} value={zipCodeInput} className="zip-code-input" type="number" placeholder="zip code..." id="zipCode" name="zipCode" />
