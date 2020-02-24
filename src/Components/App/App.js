@@ -7,6 +7,7 @@ import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
 import VendorPage from '../../Containers/VendorPage/VendorPage';
+import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer';
 import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
 import VendorForm from '../../Containers/VendorForm/VendorForm';
 import VendorLinkContainer from '../VendorLinkContainer/VendorLinkContainer';
@@ -43,6 +44,14 @@ const App = () => {
           </div>
         )
         }}
+      />
+      <Route exact path='/markets/:id/vendors' render={() => {
+        return (
+          <div className='market-map-container'>
+            <VendorsContainer />
+          </div>
+        )
+      }}
       />
       <Route exact path='/vendor/account' render={() => {
         return ( <VendorSelectContainer /> )
