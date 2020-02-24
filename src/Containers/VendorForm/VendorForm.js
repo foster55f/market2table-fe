@@ -84,6 +84,7 @@ export const VendorForm = () => {
       setVendorName('');
       setVendorDescription('');
       setVendorImage('');
+      setVendorProducts([]);
     } else {
       setHasError(true);
     }
