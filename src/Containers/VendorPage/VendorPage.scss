@@ -1,0 +1,28 @@
+.section-market-page-container{
+    margin: auto;
+    width: 40%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+/* justify-content: flex-start; */
+    overflow: auto;
+    border: 3px solid #3B3D39;
+    border-radius: 10px;
+    background-color: #F2F9F9;
+    border-right: 2px solid black;
+}
+
+.vendor-img-vendor-page{
+    height: 300px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.vendor-page-vendor-name{
+    text-align: center;
+}
+
+.product-article{
+    margin: auto;
+}

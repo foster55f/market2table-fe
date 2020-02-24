@@ -17,3 +17,8 @@ export const addVendors = vendors => ({
   type: 'ADD_VENDORS',
   vendors
 });
+
+export const addSelectedVendor = vendor => ({
+  type: 'ADD_SELECTED_VENDOR',
+  vendor
+});

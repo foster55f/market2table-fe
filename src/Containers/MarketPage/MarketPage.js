@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import './MarketPage.scss';
 import { addSelectedMarket, addVendors } from '../../actions';
 import { mockVendors } from '../../mockVendors.js';
+import { getVendorsByMarketId } from '../../apiCalls';
 
 
 
@@ -18,7 +19,11 @@ export const MarketPage = ({ history }) => {
 
   const handleSubmit = () => {
     history.push(`${selectedMarketId}/vendors`)
-    dispatch(addVendors(mockVendors))
+    getVendorsByMarketId(selectedMarketId)
+    .then(vendors => {
+      dispatch(addVendors(vendors.data.market.vendors));
+    })
+    .catch(error => console.log(error))
   }
 
   return (

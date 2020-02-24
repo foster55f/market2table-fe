@@ -7,6 +7,7 @@ import MarketContainer from '../../Containers/MarketContainer/MarketContainer';
 import VendorsContainer from '../../Containers/VendorsContainer/VendorsContainer';
 import MapsContainer from '../../Containers/MapsContainer/MapsContainer';
 import MarketPage from '../../Containers/MarketPage/MarketPage';
+import VendorPage from '../../Containers/VendorPage/VendorPage';
 import VendorSelectContainer from '../../Containers/VendorSelectContainer/VendorSelectContainer';
 import VendorForm from '../../Containers/VendorForm/VendorForm';
 import { Route, Redirect } from 'react-router-dom';
@@ -58,6 +59,12 @@ const App = () => {
       <Route exact path='/vendor/account/form' render={() => {
         return (
             <VendorForm />
+        )
+        }}
+      />
+         <Route exact path='/markets/:id/vendors/:id' render={() => {
+        return (
+            <VendorPage />
         )
         }}
       />
