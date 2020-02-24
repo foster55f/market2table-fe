@@ -1,7 +1,7 @@
-export const selectedVendor = (state = '', action) => {
+export const selectedVendor = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_SELECTED_VENDOR':
-      return action.id
+      return action.vendor
     default:
       return state
   }

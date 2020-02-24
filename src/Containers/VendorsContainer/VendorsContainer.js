@@ -14,7 +14,7 @@ export const VendorsContainer = ({history}) => {
       id={vendor.id}
       name={vendor.name}
       description={vendor.description}
-      image={vendor.image}
+      image={vendor.image_link}
       history={history}
       />
     )
