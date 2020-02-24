@@ -1,3 +1,5 @@
+@import './src/variables';
+
 .product-card-article {
   width: 95%;
   display: flex;
@@ -6,7 +8,9 @@
   border: 2px solid black;
   border-radius: 20px;
   height: 50px;
-  margin: 5px 0;
+  margin: 8px 0;
+  border: 2px solid $dark_green_border_color;
+  background-color: $list_hover_color;
 }
 
 .product-card-section {
@@ -17,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 2px solid black;
+  border-right: 2px solid $dark_green_border_color;
 }
 
 .product-card-p {
@@ -38,7 +42,7 @@
   cursor: pointer;
   border: 1px solid black;
   outline: 0;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 .delete-product-button:hover {
