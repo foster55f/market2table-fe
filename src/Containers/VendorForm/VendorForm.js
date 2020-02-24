@@ -50,6 +50,7 @@ export const VendorForm = () => {
       setHasError(false);
     }
   }, []);
+
   const {getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject} = useDropzone({accept: 'image/jpeg, image/png, image/jpg', disabled: vendorImage.length > 0, onDrop});
 
   let image;

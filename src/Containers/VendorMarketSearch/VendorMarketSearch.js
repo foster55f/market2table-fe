@@ -7,7 +7,7 @@ import './VendorMarketSearch.scss';
 import { getMarketsByZip } from '../../apiCalls';
 import { addZipCode, addMarkets } from '../../actions';
 
-export const VendorMarketSearch = () => {
+export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
   const [hasError, setHasError] = useState(false);
   const [zipCodeInput, setZipCodeInput] = useState('');
   const zipCode = useSelector(state => state.zipCode);
@@ -41,7 +41,7 @@ export const VendorMarketSearch = () => {
   if (markets.length) {
     marketsToDisplay = markets.map(market => {
       return (
-        <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} />
+        <MarketListCard vendorId={selectedVendor.id} name={market.name} id={market.id} key={market.id} setMarketsLinked={setMarketsLinked} marketsLinked={marketsLinked} />
       )
     });
   }

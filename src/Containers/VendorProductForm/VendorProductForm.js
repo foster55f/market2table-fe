@@ -16,6 +16,7 @@ export const VendorProductForm = ({ products, setProducts }) => {
       description: productDescription,
       id: Date.now()
     }
+    console.log(product)
     setProducts([...products, product]);
     setProductName('');
     setProductPrice('');

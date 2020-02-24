@@ -8,7 +8,7 @@ import VendorProductCard from '../VendorProductCard/VendorProductCard';
 export const VendorProductContainer = ({ products, setProducts }) => {
   const vendor = useSelector(state => state.selectedVendor);
 
-  if (vendor.products) {
+  if (vendor.products && !products.length) {
     setProducts(vendor.products);
   }
 
