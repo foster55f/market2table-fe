@@ -25,7 +25,7 @@ export const VendorPage = () => {
 
 
   return (
-    <section className='section-market-page-container'>
+    <section className='section-vendor-page-container'>
       <div>
         <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
         <h3>Description: </h3>

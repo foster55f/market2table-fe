@@ -47,9 +47,7 @@ const App = () => {
       />
       <Route exact path='/markets/:id/vendors' render={() => {
         return (
-          <div className='market-map-container'>
             <VendorsContainer />
-          </div>
         )
       }}
       />

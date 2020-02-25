@@ -22,3 +22,11 @@
   width: 50%;
   background-color: yellow
 }
+
+@media screen and (max-width: 1050px) {
+  .section-market-page-container {
+    width: 85%;
+    margin: auto;
+    height: 52%;
+  }
+}
