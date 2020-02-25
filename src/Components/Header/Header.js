@@ -6,7 +6,7 @@ import './Header.scss';
 import { addZipCode, addVendors, addSelectedMarket, addMarkets, addSelectedVendor } from '../../actions';
 
 
-export const Header = ({history, path}) => {
+export const Header = ({ history, path }) => {
 
 const zipCode = useSelector(state => state.zipCode);
 const selectedMarketId = useSelector(state => state.selectedMarket);

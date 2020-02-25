@@ -14,9 +14,6 @@ export const VendorCard = ({ id, name, description, image, history }) => {
 
   const dispatch = useDispatch()
   
-
-  
-
   const handleVendorPage = () => {
     history.push(`/markets/${selectedMarketId}/vendors/${id}`)
     dispatch(addSelectedVendor(vendorInfo))

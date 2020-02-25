@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match the snapshot with a path that includes account 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Header should match the snapshot with a path that includes markets 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Header should match the snapshot with a path that includes markets and vendors 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
