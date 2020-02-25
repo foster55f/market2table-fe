@@ -42,3 +42,9 @@ export const VendorPage = ({history}) => {
 }
 
 export default withRouter(VendorPage);
+
+VendorPage.propTypes = {
+  history: PropTypes.object,
+  selectedMarketId: PropTypes.string,
+  selectedVendor: PropTypes.object
+}

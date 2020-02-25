@@ -55,7 +55,7 @@ MarketListCard.propTypes = {
   vendorId: PropTypes.string,
   name:PropTypes.string,
   id:PropTypes.string,
-  marketsLinked:PropTypes.string,
+  marketsLinked:PropTypes.array,
   setMarketsLinked:PropTypes.func,
   vendorDescription:PropTypes.string,
 }
