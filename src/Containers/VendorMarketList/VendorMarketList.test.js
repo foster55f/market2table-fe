@@ -21,7 +21,7 @@ describe('VendorMarketList', () => {
   let mockSetMarketsLinked = jest.fn();
 
   it('should match the snapshot with marketsLinked', () => {
-    mockMarketsLinked = [{name: 'Golden Farmers Market', id:'456'}, {name: 'Arvada Farmers Market', id:'8372'}];;
+    mockMarketsLinked = [{name: 'Golden Farmers Market', id:'456'}, {name: 'Arvada Farmers Market', id:'8372'}];
     wrapper = shallow(<VendorMarketList
       addSelectedVendor={mockAddSelectedVendor}
       addZipCode={mockAddZipCode}
