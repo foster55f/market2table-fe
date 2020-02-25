@@ -16,8 +16,7 @@ export const MapsContainer = ({ google }) => {
   const [selectedPlace, setSelectedPlace] = useState({});
   const [activeMarker, setActiveMarker] = useState({});
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
-  const markets = useSelector(state => state.markets);
-  const selectedMarketId = useSelector(state => state.selectedMarket);
+  const { markets, selectedMarket } = useSelector(state => state);
 
   const onMarkerClick = (props, marker, e) => {
     setSelectedPlace(props);
@@ -33,8 +32,8 @@ export const MapsContainer = ({ google }) => {
   };
 
   const setMarkers = () => {
-    if (selectedMarketId.length === 7) {
-      const marketInfo = markets.find(market => market.id === selectedMarketId);
+    if (selectedMarket.length === 7) {
+      const marketInfo = markets.find(market => market.id === selectedMarket);
       return (<Marker
           onClick={onMarkerClick}
           name={marketInfo.marketname}
@@ -56,8 +55,8 @@ export const MapsContainer = ({ google }) => {
   }
 
   const setCenter = () => {
-    if (selectedMarketId.length === 7) {
-      const marketInfo = markets.find(market => market.id === selectedMarketId);
+    if (selectedMarket.length === 7) {
+      const marketInfo = markets.find(market => market.id === selectedMarket);
       return {
         lat: marketInfo.latitude,
         lng: marketInfo.longitude
@@ -71,7 +70,7 @@ export const MapsContainer = ({ google }) => {
   }
 
   const setZoom = () => {
-    if (selectedMarketId.length === 7) {
+    if (selectedMarket.length === 7) {
       return 14
     } else {
       return 11
@@ -107,10 +106,8 @@ export const MapsContainer = ({ google }) => {
   } else {
     toReturn = (<p>LOADING</p>);
   }
-
   return toReturn
 }
-
 
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_API_KEY

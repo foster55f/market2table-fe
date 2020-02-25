@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import VendorCard from './VendorCard';
+import { VendorCard } from './VendorCard';
 import { useSelector, useDispatch } from 'react-redux';
 
 const mockState = {

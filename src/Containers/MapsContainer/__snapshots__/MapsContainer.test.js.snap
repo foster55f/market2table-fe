@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapsContainer should match the snapshot 1`] = `
+<div
+  className="map-container"
+  id="mapBox"
+>
+  <Map
+    center={
+      Object {
+        "lat": undefined,
+        "lng": undefined,
+      }
+    }
+    centerAroundCurrentLocation={false}
+    containerStyle={Object {}}
+    initialCenter={
+      Object {
+        "lat": undefined,
+        "lng": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": "600px",
+        "width": "900px",
+      }
+    }
+    visible={true}
+    zoom={14}
+  >
+    <Marker
+      key="1923782"
+      name="Marker"
+      onClick={[Function]}
+      position={
+        Object {
+          "lat": undefined,
+          "lng": undefined,
+        }
+      }
+    />
+    <InfoWindow
+      marker={Object {}}
+      onClose={[Function]}
+      visible={false}
+    >
+      <div
+        className="info-window-container"
+      >
+        <h4 />
+      </div>
+    </InfoWindow>
+  </Map>
+</div>
+`;
