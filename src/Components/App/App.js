@@ -12,6 +12,8 @@ import VendorSelectContainer from '../../Containers/VendorSelectContainer/Vendor
 import VendorForm from '../../Containers/VendorForm/VendorForm';
 import VendorLinkContainer from '../VendorLinkContainer/VendorLinkContainer';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 
 const App = () => {
@@ -82,5 +84,8 @@ const App = () => {
 
 export default App;
 
+App.propTypes = {
+  zipCode: PropTypes.string,
+}
 
 //object, bool, string, func, number
