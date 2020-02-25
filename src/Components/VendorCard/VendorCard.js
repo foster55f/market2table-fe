@@ -8,14 +8,13 @@ import { addSelectedVendor } from '../../actions';
 
 
 export const VendorCard = ({ id, name, description, image, history }) => {
-  const selectedMarketId = useSelector(state => state.selectedMarket);
-  const vendors = useSelector(state => state.vendors);
+  const {selectedMarket, vendors} = useSelector(state => state);
   const vendorInfo = vendors.find(vendor => vendor.id === id);
 
   const dispatch = useDispatch()
-  
+
   const handleVendorPage = () => {
-    history.push(`/markets/${selectedMarketId}/vendors/${id}`)
+    history.push(`/markets/${selectedMarket}/vendors/${id}`)
     dispatch(addSelectedVendor(vendorInfo))
   }
 

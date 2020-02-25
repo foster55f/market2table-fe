@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarketContainer should match the snapshot with markets 1`] = `
+<section
+  className="section-market-container"
+>
+  <Market
+    id="1923782"
+    key="1923782"
+    name="Friendly Famrs"
+  />
+</section>
+`;

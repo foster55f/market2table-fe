@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 const mockState = {
   zipCode: '80401',
   selectedMarket: '1923782',
-  vendors: [{name: 'Friendly Famrs', id:'1231', image_link: 'image.png'}]
+  vendors: [{name: 'Friendly Famrs', id:'1923782', image_link: 'image.png'}]
 }
 
 jest.mock("react-redux", () => ({
