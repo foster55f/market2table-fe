@@ -45,7 +45,6 @@
 
 .vendor-market-input {
   font-size: 1.5em;
-  font-size: 1.5em;
   border-radius: 20px;
   outline: 0;
   border: 0;
@@ -93,4 +92,23 @@
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .vendor-market-search-section {
+    width: 85%;
+    margin: 20px 0;
+  }
+
+  .vendor-market-display-container {
+    height: 500px;
+  }
+
+  .vendor-market-input {
+    width: 40%;
+  }
+
+  .vendor-market-search-container {
+    height: 100px;
+  }
 }

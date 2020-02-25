@@ -1,5 +1,6 @@
 .section-market-container {
   width: 40%;
+  min-width: 250px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -8,4 +9,12 @@
   overflow: auto;
   background-color: white;
   border-right: 2px solid black;
+}
+
+@media screen and (max-width: 1050px) {
+  .section-market-container {
+    width: 85%;
+    margin: auto;
+    height: 52%;
+  }
 }
