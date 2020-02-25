@@ -1,4 +1,4 @@
-import { getMarketsByZip } from './apiCalls';
+import { getMarketsByZip, getAllVendors } from './apiCalls';
 
 
 
@@ -49,6 +49,46 @@ describe('getMarketsByZip', () => {
         ok: false
       });
     });
-    expect(getMarketsByZip()).rejects.toEqual(Error('Error fetching projects'))
+    expect(getMarketsByZip()).rejects.toEqual(Error('Error fetching markets'))
   })
 })
+
+describe('getAllVendors', () => {
+    let mockResponse = [{
+        name: "Highland Farmers",
+        description: "1500 Boulder Street, Denver, Colorado, 80211"
+    },
+    {
+        name: "Farmers",
+        address: "1500 hello Street, Denver, Colorado, 80211"
+    }
+    ]
+
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
+      });
+    });
+  });
+
+    it('should be passed the correct url', () => {
+        getAllVendors()
+        expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + '/graphql?query=query{vendors{id name description image_link products{id name description price}}}');
+        })
+
+        it('should return an array of farmers markets', () => {
+            expect(getAllVendors()).resolves.toEqual(mockResponse);
+        })
+
+        it('should return an error for response that is not ok', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+                return Promise.resolve({
+                    ok: false
+                });
+            });
+            expect(getAllVendors()).rejects.toEqual(Error('Error fetching vendors'))
+        })
+    })
