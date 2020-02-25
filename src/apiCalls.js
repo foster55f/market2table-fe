@@ -1,4 +1,3 @@
-import images from "./images/images";
 
 export const getMarketsByZip = (zipCode) => {
     return fetch(process.env.REACT_APP_BACKEND_URL + `/markets?zip=${zipCode}`)
