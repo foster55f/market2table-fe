@@ -1,28 +1,20 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import './VendorPage.scss';
 import { addSelectedMarket, addVendors } from '../../actions';
-import { mockVendors } from '../../mockVendors.js';
-import { images } from "../../images/images"
-
-
-
+import { images } from "../../images/images";
 
 export const VendorPage = () => {
-  const selectedVendor = useSelector(state => state.selectedVendor);
+  const { selectedVendor, vendors } = useSelector(state => state);
   const products = selectedVendor.products.map(product => {
     return (
-      <article className='product-article'>
+      <article className='product-article' key={product.id}>
         <p>{product.name}: ${product.price}</p>
         <p>{product.description}</p>
       </article>
     )
   })
-  const vendors = useSelector(state => state.vendors);
-  // const vendorInfo = vendors.find(vendor => vendor.id === selectedVendorId);
-
 
   return (
     <section className='section-market-page-container'>

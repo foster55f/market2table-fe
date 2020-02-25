@@ -7,8 +7,6 @@ import './MarketPage.scss';
 import { addSelectedMarket, addVendors } from '../../actions';
 import { getVendorsByMarketId } from '../../apiCalls';
 
-
-
 export const MarketPage = ({ history }) => {
   const {selectedMarket, markets} = useSelector(state => state);
   const dispatch = useDispatch();
