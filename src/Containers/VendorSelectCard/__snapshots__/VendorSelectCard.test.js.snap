@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorSelectCard should match the VendorSelectCard snapshot 1`] = `
+<article
+  className="vendor-select-article"
+>
+  <h2
+    className="vendor-article-header"
+  >
+    foster
+  </h2>
+  <section
+    className="vendor-article-button-container"
+  >
+    <Link
+      className="link-market-vendor-link"
+      to="/vendor/account/link/2"
+    >
+      <button
+        className="vendor-article-markets-button"
+        onClick={[Function]}
+      >
+        Link to Markets
+      </button>
+    </Link>
+    <Link
+      className="link-edit-vendor-form"
+      to="/vendor/account/form"
+    >
+      <button
+        className="vendor-article-edit-button"
+        onClick={[Function]}
+      >
+        Edit
+      </button>
+    </Link>
+  </section>
+</article>
+`;
