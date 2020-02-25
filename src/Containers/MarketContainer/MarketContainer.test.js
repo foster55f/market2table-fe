@@ -21,5 +21,4 @@ describe('MarketContainer', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
-
 });
