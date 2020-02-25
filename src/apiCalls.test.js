@@ -1,4 +1,4 @@
-import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor } from './apiCalls';
+import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor, createProduct } from './apiCalls';
 
 
 
@@ -336,4 +336,52 @@ describe('getMarketsByVendor', () => {
                 expect(createVendor()).rejects.toEqual(Error('Error creating vendor'))
             })
     })
+
+describe('createProduct', () => {
+        let vendorId=1
+        let mockProduct = {
+            name: "apples",
+            description: "red",
+            price:1.99
+        }
+
+        const mutation = {"query":`mutation{addProduct(name: "${mockProduct.name}", description: "${mockProduct.description}", price: ${mockProduct.price}, vendor_id: ${vendorId}){id}}`}
+
+        let options =  {
+            method: 'POST',
+            body: JSON.stringify(mutation),
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            }
+        }
+    
+      beforeEach(() => {
+        window.fetch = jest.fn().mockImplementation(() => {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockResponse)
+          });
+        });
+      });
+    
+        it('should be passed the correct url', () => {
+            createProduct(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
+        })
+    
+        it('should create a product', () => {
+            expect(createProduct()).resolves.toEqual(mockProduct);
+        })
+    
+        it('should return an error for response that is not ok', () => {
+                window.fetch = jest.fn().mockImplementation(() => {
+                    return Promise.resolve({
+                        ok: false
+                    });
+                });
+            expect(createVendor()).rejects.toEqual(Error('Error creating product'))
+        })
+    })
+    
+
     
