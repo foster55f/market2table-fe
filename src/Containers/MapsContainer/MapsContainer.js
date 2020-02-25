@@ -6,7 +6,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 import { InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  width: '900px',
+  width: '100%',
   height: '600px'
 };
 

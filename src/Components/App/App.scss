@@ -12,4 +12,27 @@
   justify-content: space-between;
   width: 100%;
   height: 85vh;
+  overflow: auto;
+}
+
+.market-map-container > div {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+  .market-map-container {
+    flex-direction: column-reverse;
+  }
+
+  .market-map-container > div {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .market-map-container {
+    height: 81vh;
+  }
 }
