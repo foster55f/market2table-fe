@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ZipCodeForm should match the ZipCodeForm snapshot 1`] = `
+<section
+  className="zip-code-form-container"
+  style={
+    Object {
+      "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9))",
+    }
+  }
+>
+  <form
+    className="zip-code-form"
+  >
+    <label
+      className="zip-code-input-label"
+      htmlFor="zipCode"
+    >
+      Enter a zip code to find farmer's markets near you:
+    </label>
+    <input
+      className="zip-code-input"
+      id="zipCode"
+      name="zipCode"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="zip code..."
+      type="number"
+      value=""
+    />
+    <div
+      className="error-message-container"
+    >
+      <p
+        className="error-message"
+        hidden={true}
+      >
+        Error: Please enter a 5 digit zip code
+      </p>
+    </div>
+    <button
+      className="submit-zip-code-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Find!
+    </button>
+  </form>
+</section>
+`;
+
+exports[`ZipCodeForm should match the ZipCodeForm snapshot 2`] = `
+<section
+  className="zip-code-form-container"
+  style={
+    Object {
+      "backgroundImage": "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))",
+    }
+  }
+>
+  <form
+    className="zip-code-form"
+  >
+    <label
+      className="zip-code-input-label"
+      htmlFor="zipCode"
+    >
+      Enter a zip code to find farmer's markets near you:
+    </label>
+    <input
+      className="zip-code-input"
+      id="zipCode"
+      name="zipCode"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="zip code..."
+      type="number"
+      value=""
+    />
+    <div
+      className="error-message-container"
+    >
+      <p
+        className="error-message"
+        hidden={true}
+      >
+        Error: Please enter a 5 digit zip code
+      </p>
+    </div>
+    <button
+      className="submit-zip-code-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Find!
+    </button>
+  </form>
+</section>
+`;
