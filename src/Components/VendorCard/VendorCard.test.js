@@ -14,7 +14,7 @@ jest.mock("react-redux", () => ({
   useDispatch: () => jest.fn()
 }));
 
-describe('Header', () => {
+describe('VendorCard', () => {
 
   let wrapper;
   let mockAddSelectedVendor = jest.fn();
