@@ -13,6 +13,7 @@ import VendorForm from '../../Containers/VendorForm/VendorForm';
 import VendorLinkContainer from '../VendorLinkContainer/VendorLinkContainer';
 import { Route, Redirect } from 'react-router-dom';
 
+
 const App = () => {
   const zipCode = useSelector(state => state.zipCode);
 
@@ -80,3 +81,6 @@ const App = () => {
 }
 
 export default App;
+
+
+//object, bool, string, func, number
