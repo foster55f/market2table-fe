@@ -115,3 +115,13 @@ export const MapsContainer = ({ google }) => {
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_API_KEY
 })(MapsContainer);
+
+MapsContainer.propTypes = {
+  markets: PropTypes.array,
+  selectedMarketId: PropTypes.string,
+  setSelectedPlace: PropTypes.func,
+  setActiveMarker: PropTypes.func,
+  selectedPlace: PropTypes.string,
+  showingInfoWindow: PropTypes.bool,
+  setShowingInfoWindow:PropTypes.func
+}
