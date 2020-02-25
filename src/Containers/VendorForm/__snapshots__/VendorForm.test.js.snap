@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorForm should match the snapshot 1`] = `
+<section
+  className="vendor-form-main-section"
+>
+  <header
+    className="vendor-form-header"
+  >
+    <Link
+      className="link-back-to-vendors"
+      onClick={[Function]}
+      to="/vendor/account"
+    >
+      <img
+        alt="icon of reverse array"
+        className="undo-image"
+        src="undo.png"
+      />
+      <p
+        className="back-to-vendors-p"
+      >
+        Back To Vendors
+      </p>
+    </Link>
+    <h2
+      className="vendor-form-title"
+    >
+      Vendor Form
+    </h2>
+    <div
+      className="vendor-form-header-space"
+    />
+  </header>
+  <form
+    className="vendor-form-info"
+    id="vendor-form-info"
+  >
+    <div
+      className="vendor-form-input-container"
+    >
+      <label
+        className="vendor-name-label"
+        for="vendor-name-input"
+      >
+        * Enter Vendor Name:
+      </label>
+      <input
+        className="vendor-name-input"
+        id="vendor-name-input"
+        maxlength="35"
+        onChange={[Function]}
+        placeholder="Vendor Name..."
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="vendor-form-input-container"
+    >
+      <label
+        className="vendor-description-label"
+        for="vendor-description-textarea"
+      >
+        * Enter Vendor Description:
+      </label>
+      <textarea
+        className="vendor-description-textarea"
+        columns="25"
+        form="vendor-form-info"
+        id="vendor-description-textarea"
+        maxlength="150"
+        name="vendor-description-textarea"
+        onChange={[Function]}
+        placeholder="Vender Description..."
+        rows="6"
+        value=""
+      />
+    </div>
+    <div
+      className="image-uploader-container"
+    >
+      <div
+        className="image-dropper"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragEnter={[Function]}
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+      >
+        <input
+          accept="image/jpeg, image/png, image/jpg"
+          autoComplete="off"
+          multiple={true}
+          onChange={[Function]}
+          onClick={[Function]}
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+          tabIndex={-1}
+          type="file"
+        />
+        <section
+          className="image-dropper-section"
+        >
+          <p
+            className="image-dropper-text"
+          >
+            Drag & drop, or click to select file
+          </p>
+          <img
+            className="plus-image-dropper"
+            src="addImage.png"
+          />
+          <p
+            className="image-dropper-text"
+          >
+            .jpg - .jpeg - .png only
+          </p>
+        </section>
+      </div>
+      <div
+        className="farmer-image-container"
+      >
+        <p>
+          View uploaded image here
+        </p>
+      </div>
+    </div>
+  </form>
+  <VendorProductContainer
+    products={Array []}
+    setProducts={[Function]}
+  />
+  <section
+    className="submit-vendor-info-button-section"
+  >
+    <button
+      className="submit-vendor-info-button"
+      onClick={[Function]}
+      type="button"
+    >
+      <p
+        className="create-vendor-button-p"
+      >
+        Submit Vendor
+      </p>
+      <img
+        alt="plus sign icon"
+        className="plus-icon-form"
+        src="plus.png"
+      />
+    </button>
+    <p
+      className="vendor-form-error"
+      hidden={true}
+    >
+      *Please include all required fields*
+    </p>
+  </section>
+</section>
+`;
