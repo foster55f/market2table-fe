@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorMarketList should match the snapshot with marketsLinked 1`] = `
+<section
+  className="vendor-market-list-section"
+>
+  <header
+    className="vendor-market-list-header"
+  >
+    <Link
+      className="link-back-to-vendors"
+      onClick={[Function]}
+      to="/vendor/account"
+    >
+      <img
+        alt="icon of reverse array"
+        className="undo-image"
+        src="undo.png"
+      />
+      <p
+        className="back-to-vendors-p"
+      >
+        Back To Vendors
+      </p>
+    </Link>
+    <h3
+      className="vendor-market-list-name"
+    />
+    <h4
+      className="vendor-market-list-title"
+    >
+      Markets
+    </h4>
+  </header>
+  <section
+    className="vendor-market-list-container"
+  >
+    <MarketListCard
+      id="456"
+      key="456"
+      marketsLinked={
+        Array [
+          Object {
+            "id": "456",
+            "name": "Golden Farmers Market",
+          },
+          Object {
+            "id": "8372",
+            "name": "Arvada Farmers Market",
+          },
+        ]
+      }
+      name="Golden Farmers Market"
+      setMarketsLinked={[MockFunction]}
+    />
+    <MarketListCard
+      id="8372"
+      key="8372"
+      marketsLinked={
+        Array [
+          Object {
+            "id": "456",
+            "name": "Golden Farmers Market",
+          },
+          Object {
+            "id": "8372",
+            "name": "Arvada Farmers Market",
+          },
+        ]
+      }
+      name="Arvada Farmers Market"
+      setMarketsLinked={[MockFunction]}
+    />
+  </section>
+</section>
+`;
+
+exports[`VendorMarketList should match the snapshot without marketsLinked 1`] = `
+<section
+  className="vendor-market-list-section"
+>
+  <header
+    className="vendor-market-list-header"
+  >
+    <Link
+      className="link-back-to-vendors"
+      onClick={[Function]}
+      to="/vendor/account"
+    >
+      <img
+        alt="icon of reverse array"
+        className="undo-image"
+        src="undo.png"
+      />
+      <p
+        className="back-to-vendors-p"
+      >
+        Back To Vendors
+      </p>
+    </Link>
+    <h3
+      className="vendor-market-list-name"
+    />
+    <h4
+      className="vendor-market-list-title"
+    >
+      Markets
+    </h4>
+  </header>
+  <section
+    className="vendor-market-list-container"
+  >
+    <p>
+      Please Link your Vendor account to markets
+    </p>
+  </section>
+</section>
+`;
