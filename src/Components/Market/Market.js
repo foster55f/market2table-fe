@@ -11,7 +11,7 @@ export const Market = ({ id, name }) => {
   const dispatch = useDispatch();
 
   return (
-    <Link to={`/markets/${id}`}className='market-selected-link'>
+    <Link to={`/markets/${id}`} className='market-selected-link'>
       <article onClick={() => dispatch(addSelectedMarket(id))} className='market-article'>
         <h1 className='market-article-title'>{name}</h1>
       </article>
