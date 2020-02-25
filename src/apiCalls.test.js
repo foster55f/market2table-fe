@@ -1,4 +1,4 @@
-import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor, createProduct } from './apiCalls';
+import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor, createProduct, createMarketVendorLink } from './apiCalls';
 
 
 
@@ -381,7 +381,50 @@ describe('createProduct', () => {
                 });
             expect(createVendor()).rejects.toEqual(Error('Error creating product'))
         })
+})
+    
+describe('createMarketVendorLink', () => {
+    let mockVendorLink = {
+        marketId: 1,
+        vendorId:2
+    }
+    const mutation =  {"query":`mutation{addMarketVendor(market_id: ${mockVendorLink.marketId}, vendor_id: ${mockVendorLink.vendorId}){id}}`}
+
+    let options =  {
+        method: 'POST',
+        body: JSON.stringify(mutation),
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+    }
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
+      });
+    });
+  });
+
+    it('should be passed the correct url', () => {
+        createMarketVendorLink(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
     })
+
+    it('should create market vendor link', () => {
+        expect(createMarketVendorLink()).resolves.toEqual(mockVendorLink);
+    })
+
+    it('should return an error for response that is not ok', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+                return Promise.resolve({
+                    ok: false
+                });
+            });
+        expect(createMarketVendorLink()).rejects.toEqual(Error('Error creating link'))
+    })
+})
     
 
     
