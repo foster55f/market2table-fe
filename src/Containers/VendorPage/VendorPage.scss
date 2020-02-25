@@ -25,3 +25,17 @@
 .product-article{
     margin: auto;
 }
+
+.vendor-page-button{
+    width: 29%;
+    margin-top: 5px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 2px;
+    font-size: 12px;
+}
+
+.vendor-page-button:hover,
+.vendor-page-button:focus {
+  transform: scale(1.05);
+}

@@ -149,3 +149,17 @@ export const VendorForm = () => {
 }
 
 export default VendorForm;
+
+VendorForm.propTypes = {
+  setVendorName: PropTypes.func,
+  setVendorDescription: PropTypes.func,
+  setVendorImage: PropTypes.func,
+  setVendorProducts: PropTypes.func,
+  setHasError: PropTypes.func,
+  vendor: PropTypes.object,
+  vendorName: PropTypes.string,
+  vendorDescription: PropTypes.string,
+  vendorImage: PropTypes.string,
+  vendorProducts: PropTypes.array,
+  hasError:PropTypes.bool
+}

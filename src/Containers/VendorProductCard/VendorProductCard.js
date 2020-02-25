@@ -22,3 +22,13 @@ export const VendorProductCard = ({ products, setProducts, name, price, descript
 }
 
 export default VendorProductCard;
+
+VendorProductCard.propTypes = {
+  history: PropTypes.object,
+  products: PropTypes.array,
+  setProducts:PropTypes.func,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  description: PropTypes.string,
+  id: PropTypes.string
+}

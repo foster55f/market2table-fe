@@ -18,6 +18,7 @@ export const MarketPage = ({ history }) => {
   const marketInfo = markets.find(market => market.id === selectedMarketId);
 
   const handleSubmit = () => {
+    console.log(history)
     history.push(`${selectedMarketId}/vendors`)
     getVendorsByMarketId(selectedMarketId)
     .then(vendors => {
@@ -43,3 +44,9 @@ export const MarketPage = ({ history }) => {
 }
 
 export default withRouter(MarketPage);
+
+MarketPage.propTypes = {
+  history: PropTypes.object,
+  selectedMarketId: PropTypes.string,
+  markets: PropTypes.array
+}

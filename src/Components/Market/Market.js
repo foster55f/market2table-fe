@@ -20,3 +20,8 @@ export const Market = ({ id, name }) => {
 }
 
 export default Market;
+
+Market.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string
+}

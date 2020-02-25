@@ -50,3 +50,12 @@ export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLi
 }
 
 export default MarketListCard;
+
+MarketListCard.propTypes = {
+  vendorId: PropTypes.string,
+  name:PropTypes.string,
+  id:PropTypes.string,
+  marketsLinked:PropTypes.array,
+  setMarketsLinked:PropTypes.func,
+  vendorDescription:PropTypes.string,
+}

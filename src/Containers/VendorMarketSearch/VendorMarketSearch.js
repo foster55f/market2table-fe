@@ -72,3 +72,16 @@ export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
 }
 
 export default VendorMarketSearch;
+
+VendorMarketSearch.propTypes = {
+  marketsLinked: PropTypes.array,
+  setMarketsLinked: PropTypes.func,
+  setHasError: PropTypes.func,
+  hasError: PropTypes.bool,
+  zipCodeInput: PropTypes.string,
+  setZipCodeInput: PropTypes.func,
+  vendor: PropTypes.object,
+  zipCode: PropTypes.string,
+  markets: PropTypes.array,
+  selectedVendor: PropTypes.object
+}
