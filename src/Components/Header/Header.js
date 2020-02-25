@@ -76,3 +76,9 @@ if (path.includes('markets')) {
 }
 
 export default withRouter(Header)
+
+Header.propTypes = {
+  history: PropTypes.object,
+  zipCode: PropTypes.string,
+  selectedMarketId: PropTypes.string
+}
