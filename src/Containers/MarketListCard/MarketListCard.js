@@ -29,6 +29,7 @@ export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLi
       const deleteId = parseInt(filteredLinks[0].id);
       deleteMarketVendorLink(deleteId)
         .then(data => {
+          console.log(data);
           const filteredMarkets = marketsLinked.filter(market => market.id !== id);
           setMarketsLinked(filteredMarkets);
         })

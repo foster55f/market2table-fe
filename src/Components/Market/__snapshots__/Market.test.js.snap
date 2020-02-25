@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Market should invoke addSelectedMarket with an id on click 1`] = `
+<Link
+  className="market-selected-link"
+  to="/markets/321"
+>
+  <article
+    className="market-article"
+    onClick={[Function]}
+  >
+    <h1
+      className="market-article-title"
+    >
+      Frog Leap Farm
+    </h1>
+  </article>
+</Link>
+`;
+
+exports[`Market should match the snapshot with the id and name passed in 1`] = `
+<Link
+  className="market-selected-link"
+  to="/markets/321"
+>
+  <article
+    className="market-article"
+    onClick={[Function]}
+  >
+    <h1
+      className="market-article-title"
+    >
+      Frog Leap Farm
+    </h1>
+  </article>
+</Link>
+`;
