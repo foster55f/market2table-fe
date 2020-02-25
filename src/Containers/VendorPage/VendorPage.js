@@ -10,8 +10,9 @@ import { images } from "../../images/images"
 
 
 
-export const VendorPage = () => {
+export const VendorPage = ({history}) => {
   const selectedVendor = useSelector(state => state.selectedVendor);
+  const selectedMarketId = useSelector(state => state.selectedMarket);
   const products = selectedVendor.products.map(product => {
     return (
       <article className='product-article'>
@@ -20,12 +21,14 @@ export const VendorPage = () => {
       </article>
     )
   })
-  const vendors = useSelector(state => state.vendors);
-  // const vendorInfo = vendors.find(vendor => vendor.id === selectedVendorId);
 
+  const handleBackToMarket = () => {
+    history.push(`/markets/${selectedMarketId}/vendors/`)
+  }
 
   return (
     <section className='section-market-page-container'>
+      <button className='vendor-page-button'onClick={handleBackToMarket}>Back to Market Page</button>
       <div>
         <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
         <h3>Description: </h3>
@@ -38,4 +41,4 @@ export const VendorPage = () => {
   )
 }
 
-export default VendorPage;
+export default withRouter(VendorPage);
