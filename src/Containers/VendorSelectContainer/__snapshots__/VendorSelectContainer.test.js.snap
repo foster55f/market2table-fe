@@ -20,6 +20,7 @@ exports[`VendorSelectContainer should match the VendorSelectContainer snapshot 1
         onChange={[Function]}
         onKeyDown={[Function]}
         placeholder="Search Vendors..."
+        role="input"
         type="text"
         value=""
       />
@@ -34,7 +35,7 @@ exports[`VendorSelectContainer should match the VendorSelectContainer snapshot 1
           Search
         </button>
         <button
-          className="search-vendors-button"
+          className="search-vendors-button search-clear-button"
           onClick={[Function]}
           type="button"
         >
