@@ -48,4 +48,9 @@ describe('VendorMarketSearch', () => {
     expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
   });
 
+  it("Should invoke onChange and update state if value is less than 6 on zip code input", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+  });
+
 });
