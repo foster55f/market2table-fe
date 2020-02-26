@@ -68,4 +68,15 @@ describe('VendorMarketSearch', () => {
     expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
   });
 
+  it("should have a default value of false for hasError", () => {
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
+  });
+
+  it("Should onClick invoke handleZipCodeSubmit and reset zip code input to '' if input.length is 5", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+    wrapper.find('.vendor-market-search-button').simulate('click');
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
 });
