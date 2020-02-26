@@ -36,4 +36,8 @@ describe('VendorCard', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  it("Should onClick invoke history.push and push to path", () => {
+    wrapper.find('.vendor-card').simulate('click');
+    expect(mockHistory.push).toHaveBeenCalledWith("/markets/1923782/vendors/1231")
+  });
 });
