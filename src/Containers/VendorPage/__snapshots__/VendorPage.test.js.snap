@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorPage should match the snapshot 1`] = `
+<section
+  className="section-market-page-container"
+>
+  <button
+    className="vendor-page-button"
+    onClick={[Function]}
+  >
+    Back to Market Page
+  </button>
+  <div>
+    <h2
+      className="vendor-page-vendor-name"
+    >
+      Rolling in the dough
+    </h2>
+    <h3>
+      Description: 
+    </h3>
+    <p>
+      just a little bakery rolling in some dough
+    </p>
+    <img
+      className="vendor-img-vendor-page"
+      src="rollthatdough.png"
+    />
+    <h3>
+      Products: 
+    </h3>
+    <article
+      className="product-article"
+      key="2342"
+    >
+      <p>
+        plain ol dough
+        : $
+        5
+      </p>
+      <p>
+        some good white bread
+      </p>
+    </article>
+  </div>
+</section>
+`;

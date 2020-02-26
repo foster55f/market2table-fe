@@ -10,9 +10,7 @@ import { addZipCode, addMarkets } from '../../actions';
 export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
   const [hasError, setHasError] = useState(false);
   const [zipCodeInput, setZipCodeInput] = useState('');
-  const zipCode = useSelector(state => state.zipCode);
-  const markets = useSelector(state => state.markets);
-  const selectedVendor = useSelector(state => state.selectedVendor)
+  const {zipCode, markets, selectedVendor} = useSelector(state => state);
   const dispatch = useDispatch();
 
   const handleZipCodeSubmit = () => {

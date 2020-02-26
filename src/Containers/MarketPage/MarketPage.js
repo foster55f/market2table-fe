@@ -5,22 +5,17 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './MarketPage.scss';
 import { addSelectedMarket, addVendors } from '../../actions';
-import { mockVendors } from '../../mockVendors.js';
 import { getVendorsByMarketId } from '../../apiCalls';
 
-
-
 export const MarketPage = ({ history }) => {
-  const selectedMarketId = useSelector(state => state.selectedMarket);
-  const markets = useSelector(state => state.markets);
+  const {selectedMarket, markets} = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const marketInfo = markets.find(market => market.id === selectedMarketId);
+  const marketInfo = markets.find(market => market.id === selectedMarket);
 
   const handleSubmit = () => {
-    console.log(history)
-    history.push(`${selectedMarketId}/vendors`)
-    getVendorsByMarketId(selectedMarketId)
+    history.push(`${selectedMarket}/vendors`)
+    getVendorsByMarketId(selectedMarket)
     .then(vendors => {
       dispatch(addVendors(vendors.data.market.vendors));
     })

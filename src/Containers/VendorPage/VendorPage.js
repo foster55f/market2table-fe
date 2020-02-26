@@ -1,21 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import './VendorPage.scss';
 import { addSelectedMarket, addVendors } from '../../actions';
-import { mockVendors } from '../../mockVendors.js';
-import { images } from "../../images/images"
+import { images } from "../../images/images";
 
-
-
-
-export const VendorPage = ({history}) => {
-  const selectedVendor = useSelector(state => state.selectedVendor);
-  const selectedMarketId = useSelector(state => state.selectedMarket);
+export const VendorPage = ({ history }) => {
+  const { selectedVendor, selectedMarket } = useSelector(state => state);
   const products = selectedVendor.products.map(product => {
     return (
-      <article className='product-article'>
+      <article className='product-article' key={product.id}>
         <p>{product.name}: ${product.price}</p>
         <p>{product.description}</p>
       </article>
@@ -23,7 +18,7 @@ export const VendorPage = ({history}) => {
   })
 
   const handleBackToMarket = () => {
-    history.push(`/markets/${selectedMarketId}/vendors/`)
+      history.push(`/markets/${selectedMarket}/vendors/`)
   }
 
   return (

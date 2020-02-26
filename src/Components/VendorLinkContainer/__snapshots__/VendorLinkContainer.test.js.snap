@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorLinkContainer should match the snapshot 1`] = `
+<section
+  className="vendor-link-section"
+>
+  <VendorMarketList
+    marketsLinked={Array []}
+    setMarketsLinked={[Function]}
+  />
+  <VendorMarketSearch
+    marketsLinked={Array []}
+    setMarketsLinked={[Function]}
+  />
+</section>
+`;

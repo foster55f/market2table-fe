@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorMarketSearch should match the snapshot 1`] = `
+<section
+  className="vendor-market-search-section"
+>
+  <h3
+    className="vendor-market-search-title"
+  >
+    Search For Markets
+  </h3>
+  <form
+    className="vendor-market-search-form"
+  >
+    <p
+      className="vendor-market-search-par"
+    >
+      Zip Code: 
+      80401
+    </p>
+    <div
+      className="vendor-market-search-container"
+    >
+      <input
+        className="vendor-market-input"
+        id="zipCode"
+        name="zipCode"
+        onChange={[Function]}
+        placeholder="zip code..."
+        type="number"
+        value=""
+      />
+      <button
+        className="vendor-market-search-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Find!
+      </button>
+      <div
+        className="error-message-search-container"
+      >
+        <p
+          className="error-message"
+          hidden={true}
+        >
+          Error: Please enter a 5 digit zip code
+        </p>
+      </div>
+    </div>
+  </form>
+  <section
+    className="vendor-market-display-container"
+  />
+</section>
+`;
+
+exports[`VendorMarketSearch should match the snapshot with no match 1`] = `
+<section
+  className="vendor-market-search-section"
+>
+  <h3
+    className="vendor-market-search-title"
+  >
+    Search For Markets
+  </h3>
+  <form
+    className="vendor-market-search-form"
+  >
+    <p
+      className="vendor-market-search-par"
+    >
+      Zip Code: 
+      80401
+    </p>
+    <div
+      className="vendor-market-search-container"
+    >
+      <input
+        className="vendor-market-input"
+        id="zipCode"
+        name="zipCode"
+        onChange={[Function]}
+        placeholder="zip code..."
+        type="number"
+        value=""
+      />
+      <button
+        className="vendor-market-search-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Find!
+      </button>
+      <div
+        className="error-message-search-container"
+      >
+        <p
+          className="error-message"
+          hidden={true}
+        >
+          Error: Please enter a 5 digit zip code
+        </p>
+      </div>
+    </div>
+  </form>
+  <section
+    className="vendor-market-display-container"
+  >
+    <MarketListCard
+      id="1923782"
+      key="1923782"
+      marketsLinked={Array []}
+      name="Friendly Famrs"
+      setMarketsLinked={[MockFunction]}
+      vendorDescription="just a little bakery rolling in some dough"
+    />
+  </section>
+</section>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarketListCard should match the snapshot with a vendor description 1`] = `
+<article
+  className="market-list-card-article"
+>
+  <h3
+    className="market-list-card-header"
+  >
+    Golden Farmers Market
+  </h3>
+  <button
+    className="market-list-card-add-button"
+    onClick={[Function]}
+    type="button"
+  >
+    Add
+  </button>
+</article>
+`;
+
+exports[`MarketListCard should match the snapshot without a vendor description 1`] = `
+<article
+  className="market-list-card-article"
+>
+  <h3
+    className="market-list-card-header"
+  >
+    Golden Farmers Market
+  </h3>
+  <button
+    className="market-list-card-remove-button"
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
+</article>
+`;
