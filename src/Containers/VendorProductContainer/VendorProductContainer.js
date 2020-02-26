@@ -6,10 +6,10 @@ import VendorProductForm from '../VendorProductForm/VendorProductForm';
 import VendorProductCard from '../VendorProductCard/VendorProductCard';
 
 export const VendorProductContainer = ({ products, setProducts }) => {
-  const vendor = useSelector(state => state.selectedVendor);
+  const { selectedVendor } = useSelector(state => state);
 
-  if (vendor.products && !products.length) {
-    setProducts(vendor.products);
+  if (selectedVendor.products && !products.length) {
+    setProducts(selectedVendor.products);
   }
 
   let productCards;

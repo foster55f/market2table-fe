@@ -11,7 +11,7 @@ jest.mock("react-redux", () => ({
 describe('Market', () => {
   let dispatch = useDispatch();
   let mockAddSelectedMarket = jest.fn();
-  let mockId = 321;
+  let mockId = '321';
   let mockName = 'Frog Leap Farm';
   let wrapper;
 

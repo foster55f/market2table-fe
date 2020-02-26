@@ -34,7 +34,6 @@ export const VendorMarketSearch = ({ marketsLinked, setMarketsLinked }) => {
     zipCodeText = zipCode;
   }
 
-
   let marketsToDisplay = (<p>Please select a zip code to display markets</p>);
 
   if (markets.length) {

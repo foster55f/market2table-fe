@@ -31,7 +31,7 @@ export const MarketPage = ({ history }) => {
       <p>{marketInfo.schedule}</p>
       <h3>Google Maps: </h3>
       <a href={marketInfo.google_link}>Click Here For Directions</a>
-      <button className='find-vendors-button'onClick={handleSubmit}>
+      <button className='find-vendors-button' onClick={ handleSubmit }>
         Find Vendors
       </button>
     </section>
