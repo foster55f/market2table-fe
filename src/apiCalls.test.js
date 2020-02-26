@@ -1,4 +1,4 @@
-import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor, createProduct, createMarketVendorLink } from './apiCalls';
+import { getMarketsByZip, getAllVendors, getAllMarketVendors, getMarketsByVendor, deleteMarketVendorLink, getVendorsByMarketId, createVendor, createProduct, createMarketVendorLink, updateVendorInfo, deleteAllVendorProducts } from './apiCalls';
 
 
 
@@ -92,7 +92,7 @@ describe('getAllVendors', () => {
             expect(getAllVendors()).rejects.toEqual(Error('Error fetching vendors'))
         })
 })
-    
+
 describe('getAllMarketVendors', () => {
     let mockResponse = [{
         name: "Highland Farmers",
@@ -132,7 +132,7 @@ describe('getAllMarketVendors', () => {
             expect(getAllMarketVendors()).rejects.toEqual(Error('Error fetching vendors'))
         })
 })
-    
+
 describe('getMarketsByVendor', () => {
     let mockId = 1
     let mockResponse = [{
@@ -174,7 +174,7 @@ describe('getMarketsByVendor', () => {
             expect(getMarketsByVendor()).rejects.toEqual(Error('Error fetching markets'))
         })
 })
-    
+
     describe('deleteMarketVendorLink', () => {
         let mockId = 1
         let mockResponse = [{
@@ -201,8 +201,8 @@ describe('getMarketsByVendor', () => {
               "Accept": "application/json"
             }
           }
-    
-    
+
+
       beforeEach(() => {
         window.fetch = jest.fn().mockImplementation(() => {
           return Promise.resolve({
@@ -211,16 +211,16 @@ describe('getMarketsByVendor', () => {
           });
         });
       });
-    
+
         it.skip('should be passed the correct url', () => {
             deleteMarketVendorLink(mockId)
             expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + `/graphql`, mockOptions);
             })
-    
+
         it('should delete vendor markets', () => {
             expect(deleteMarketVendorLink()).resolves.toEqual(mockResponse);
             })
-    
+
         it('should return an error for response that is not ok', () => {
                 window.fetch = jest.fn().mockImplementation(() => {
                     return Promise.resolve({
@@ -230,7 +230,7 @@ describe('getMarketsByVendor', () => {
                 expect(deleteMarketVendorLink()).rejects.toEqual(Error('Error deleting'))
             })
         })
-    
+
     describe('getVendorsByMarketId', () => {
         let mockId = 1
         let mockResponse = [{
@@ -242,8 +242,8 @@ describe('getMarketsByVendor', () => {
             address: "1500 hello Street, Denver, Colorado, 80211"
         }
         ]
-    
-    
+
+
       beforeEach(() => {
         window.fetch = jest.fn().mockImplementation(() => {
           return Promise.resolve({
@@ -252,7 +252,7 @@ describe('getMarketsByVendor', () => {
           });
         });
       });
-    
+
         it.skip('should be passed the correct url', () => {
             getVendorsByMarketId(mockId)
             expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + `/graphql?query=query {
@@ -272,11 +272,11 @@ describe('getMarketsByVendor', () => {
                 }
               }`);
             })
-    
+
             it('should return an array of farmers markets', () => {
                 expect(getVendorsByMarketId()).resolves.toEqual(mockResponse);
             })
-    
+
             it('should return an error for response that is not ok', () => {
                 window.fetch = jest.fn().mockImplementation(() => {
                     return Promise.resolve({
@@ -308,7 +308,7 @@ describe('getMarketsByVendor', () => {
               "Accept": "application/json"
             }
         }
-    
+
       beforeEach(() => {
         window.fetch = jest.fn().mockImplementation(() => {
           return Promise.resolve({
@@ -317,16 +317,16 @@ describe('getMarketsByVendor', () => {
           });
         });
       });
-    
+
         it.skip('should be passed the correct url', () => {
             createVendor(mockVendor.name, mockVendor.description, mockVendor.image)
             expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
             })
-    
+
             it('should create a vendor', () => {
                 expect(createVendor()).resolves.toEqual(mockVendor);
             })
-    
+
             it('should return an error for response that is not ok', () => {
                 window.fetch = jest.fn().mockImplementation(() => {
                     return Promise.resolve({
@@ -355,7 +355,7 @@ describe('createProduct', () => {
               "Accept": "application/json"
             }
         }
-    
+
       beforeEach(() => {
         window.fetch = jest.fn().mockImplementation(() => {
           return Promise.resolve({
@@ -364,15 +364,15 @@ describe('createProduct', () => {
           });
         });
       });
-    
+
         it('should be passed the correct url', () => {
             createProduct(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
         })
-    
+
         it('should create a product', () => {
             expect(createProduct()).resolves.toEqual(mockProduct);
         })
-    
+
         it('should return an error for response that is not ok', () => {
                 window.fetch = jest.fn().mockImplementation(() => {
                     return Promise.resolve({
@@ -382,7 +382,7 @@ describe('createProduct', () => {
             expect(createVendor()).rejects.toEqual(Error('Error creating product'))
         })
 })
-    
+
 describe('createMarketVendorLink', () => {
     let mockVendorLink = {
         marketId: 1,
@@ -425,6 +425,88 @@ describe('createMarketVendorLink', () => {
         expect(createMarketVendorLink()).rejects.toEqual(Error('Error creating link'))
     })
 })
-    
 
-    
+describe('updateVendorInfo', () => {
+  let vendorId = 10;
+  let mockVendor = {
+      name: "Farm Farm",
+      description: "Just a Farm",
+      image: "https://farm.png"
+  }
+  const mutation = {"query":`mutation{updateVendor(id: ${vendorId}, name: "${mockVendor.name}", description: "${mockVendor.description}", image_link: "${mockVendor.image}"){id}}`}
+
+  let options =  {
+      method: 'POST',
+      body: JSON.stringify(mutation),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+  }
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({data: {vendor: {id: 10}}})
+      });
+    });
+  });
+
+    it('should be passed the correct url', () => {
+        updateVendorInfo(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
+    })
+
+    it('should update vendor info', () => {
+        expect(updateVendorInfo()).resolves.toEqual({data: {vendor: {id: 10}}});
+    })
+
+    it('should return an error for response that is not ok', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+                return Promise.resolve({
+                    ok: false
+                });
+            });
+        expect(updateVendorInfo()).rejects.toEqual(Error('Error updating vendor'))
+    })
+})
+
+describe('deleteAllVendorProducts', () => {
+  let vendorId = 10;
+  const mutation = {"query" : `mutation {deleteAllVendorProducts(id: ${vendorId})}`}
+
+  let options =  {
+      method: 'POST',
+      body: JSON.stringify(mutation),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+  }
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve('Successful delete')
+      });
+    });
+  });
+
+    it('should be passed the correct url', () => {
+        deleteAllVendorProducts(process.env.REACT_APP_BACKEND_URL + `/graphql`, options);
+    })
+
+    it('should update vendor info', () => {
+        expect(deleteAllVendorProducts()).resolves.toEqual('Successful delete');
+    })
+
+    it('should return an error for response that is not ok', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+                return Promise.resolve({
+                    ok: false
+                });
+            });
+        expect(deleteAllVendorProducts()).rejects.toEqual(Error('Error deleting products'))
+    })
+})

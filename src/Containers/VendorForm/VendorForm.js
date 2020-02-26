@@ -121,9 +121,9 @@ export const VendorForm = ({ history }) => {
   }
   let submitButton;
   if (vendor.name) {
-    submitButton = <button className='submit-vendor-info-button' type='button' onClick={handleUpdateForm}><p className='create-vendor-button-p'>Update Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
+    submitButton = <button className='submit-vendor-info-button' id='update-vendor' type='button' onClick={handleUpdateForm}><p className='create-vendor-button-p'>Update Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
   } else {
-    submitButton = <button className='submit-vendor-info-button' type='button' onClick={handleCreateForm}><p className='create-vendor-button-p'>Create Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
+    submitButton = <button className='submit-vendor-info-button' id='creat-vendor' type='button' onClick={handleCreateForm}><p className='create-vendor-button-p'>Create Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
   }
 
   return (

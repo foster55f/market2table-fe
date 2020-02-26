@@ -177,11 +177,11 @@ export const deleteAllVendorProducts = (vendorId) => {
       "Accept": "application/json"
     }
   }
-  
+
   return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
       .then(response => {
           if (!response.ok) {
-              throw Error('Error deleting vendor market link');
+              throw Error('Error deleting products');
           }
           return response.json();
       });
