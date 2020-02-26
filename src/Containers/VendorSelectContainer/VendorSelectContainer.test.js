@@ -13,7 +13,7 @@ jest.mock("react-redux", () => ({
 
 describe('VendorSelectContainer', () => {
     let mockAddVendors = jest.fn()
-    it('should match the ZipCodeForm snapshot', () => {
+    it('should match the VendorSelectContainer snapshot', () => {
         let wrapper = shallow(<VendorSelectContainer
             vendors={mockState.vendors}
             addVendors={mockAddVendors}

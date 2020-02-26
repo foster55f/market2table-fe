@@ -16,7 +16,7 @@ describe('VendorsContainer', () => {
         path:'/markets'
     };
     
-    it('should match the VendorSelectCard snapshot', () => {
+    it('should match the VendorsContainer snapshot', () => {
         let wrapper = shallow(<VendorsContainer
             vendors={mockState.vendors}
             history={mockHistory}
