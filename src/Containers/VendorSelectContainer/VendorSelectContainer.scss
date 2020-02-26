@@ -107,10 +107,10 @@
 }
 
 .create-vendor-button {
-  width: 100%;
-  height: 100%;
+  width: 55%;
+  height: 55%;
   border-radius: 75px;
-  font-size: 3em;
+  font-size: .8em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,8 +135,8 @@
 
 .plus-icon {
   margin-top: 20px;
-  height: 75px;
-  width: 75px;
+  height: 45px;
+  width: 45px;
 }
 
 @media screen and (max-width: 1050px) {

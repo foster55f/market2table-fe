@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Market2Table
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Looking for the closest farmers markets as a user?  Looking to register for a nearby farmer's market as a vendor?  Look no further than Market2Table.  This app allows you to search by zip code for the closest farmers markets and see vendors within in each market.  
 
-### `npm start`
+### Tech Stack on Front End
+* React Hooks
+* Redux
+* Jest/Enzyme
+* Node.js 
+* Sass
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tech Stack on Back End
+* Node/Express
+* GraphQl
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use this app, [visit our backend repo](https://github.com/CoopTang/market2table-be) to clone it down.  Then, install dependencies and run `npm start` to run the server locally.
 
-### `npm run build`
+Then, to access the frontend, simply clone down and run `npm install` to access the necessary packages.  For the best viewing experience, run `npm run start` and copy and paste your local server into the browser.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## User Interface and User Experience
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![2020-02-26 14 12 22](https://user-images.githubusercontent.com/50148342/75388467-4d1e5080-58a2-11ea-8f77-97b1394ebd7b.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![2020-02-26 14 15 39](https://user-images.githubusercontent.com/50148342/75388714-aedeba80-58a2-11ea-831c-f23fbf6fcdad.gif)
 
-### `npm run eject`
+![2020-02-26 14 16 56](https://user-images.githubusercontent.com/50148342/75388921-f7967380-58a2-11ea-8ee9-08b8960daec9.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![2020-02-26 14 17 15](https://user-images.githubusercontent.com/50148342/75388986-109f2480-58a3-11ea-8e6d-c3ec85c3a759.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![2020-02-26 14 17 49](https://user-images.githubusercontent.com/50148342/75389033-1d237d00-58a3-11ea-8679-89a8e448acd9.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Iterations 
+* Use map location for Google maps
+* Search for products by vendor
+* Enable ability for users to order products from a specific vendor for pick up
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Requirements 
+This was a group project over the course of two weeks by [John Adams](https://github.com/adamsjr8576), [Foster Taylor](https://github.com/foster55f), [Michael Cooper](https://github.com/CoopTang) and [Jessie Le-Ho](https://github.com/Jessiewithani) at Turing School of Software and Design.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[GitHub project board can be found here](https://github.com/CoopTang/market2table-be/projects/1).

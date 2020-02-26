@@ -2,13 +2,13 @@
 
 exports[`VendorPage should match the snapshot 1`] = `
 <section
-  className="section-market-page-container"
+  className="section-vendor-page-container"
 >
   <button
     className="vendor-page-button"
     onClick={[Function]}
   >
-    Back to Market Page
+    Back to Vendors Page
   </button>
   <div>
     <h2
