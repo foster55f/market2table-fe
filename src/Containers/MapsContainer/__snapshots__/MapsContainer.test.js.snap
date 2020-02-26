@@ -23,7 +23,7 @@ exports[`MapsContainer should match the snapshot 1`] = `
     style={
       Object {
         "height": "600px",
-        "width": "900px",
+        "width": "100%",
       }
     }
     visible={true}
