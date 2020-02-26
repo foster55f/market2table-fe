@@ -4,12 +4,16 @@
 
 Looking for the closest farmers markets as a user?  Looking to register for a nearby farmer's market as a vendor?  Look no further than Market2Table.  This app allows you to search by zip code for the closest farmers markets and see vendors within in each market.  
 
-### Tech Stack
+### Tech Stack on Front End
 * React Hooks
 * Redux
 * Jest/Enzyme
 * Node.js 
 * Sass
+
+### Tech Stack on Back End
+* Node/Express
+* GraphQl
 
 
 ### Installation
@@ -38,6 +42,6 @@ Then, to access the frontend, simply clone down and run `npm install` to access 
 
 
 ## Project Requirements 
-This was a group project over the course of two weeks by [John Adams](https://github.com/adamsjr8576) and [Foster Taylor](https://github.com/foster55f) at Turing School of Software and Design.  
+This was a group project over the course of two weeks by [John Adams](https://github.com/adamsjr8576), [Foster Taylor](https://github.com/foster55f), [Michael Cooper](https://github.com/CoopTang) and [Jessie Le-Ho](https://github.com/Jessiewithani) at Turing School of Software and Design.  
 
 [GitHub project board can be found here](https://github.com/CoopTang/market2table-be/projects/1).
