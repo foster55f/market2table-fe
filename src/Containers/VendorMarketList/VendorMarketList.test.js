@@ -45,4 +45,5 @@ describe('VendorMarketList', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
 });

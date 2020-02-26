@@ -72,14 +72,14 @@ describe('VendorForm', () => {
     expect(wrapper.find('.vendor-description-textarea').prop('value')).toEqual('');
   });
 
-  it("it should invoke handle submit form on click and if nothing in inputs setHasError to true", () => {
+  it("it should invoke handle submit form on click and if nothing in inputs setHasError to true and reset on input change", () => {
     wrapper.find('.submit-vendor-info-button').simulate('click');
     expect(wrapper.find('.vendor-form-error').prop('hidden')).toEqual(false);
     wrapper.find('.vendor-name-input').simulate('change', {target: {value: 'Rolling Hills Farms'}});
     expect(wrapper.find('.vendor-form-error').prop('hidden')).toEqual(true);
   });
 
-  it("it should invoke handle submit form on click and if nothing in inputs setHasError to true", () => {
+  it("it should invoke handle submit form on click and if nothing in inputs setHasError to true and reset on input change", () => {
     wrapper.find('.submit-vendor-info-button').simulate('click');
     expect(wrapper.find('.vendor-form-error').prop('hidden')).toEqual(false);
     wrapper.find('.vendor-description-textarea').simulate('change', {target: {value: 'Just a farm among some rolling hills'}});

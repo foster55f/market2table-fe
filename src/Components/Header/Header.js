@@ -8,13 +8,11 @@ import { addZipCode, addVendors, addSelectedMarket, addMarkets, addSelectedVendo
 
 export const Header = ({ history, path }) => {
 
-const zipCode = useSelector(state => state.zipCode);
-const selectedMarketId = useSelector(state => state.selectedMarket);
-const vendors = useSelector(state => state.vendors);
+const { zipCode, selectedMarket, vendors } = useSelector(state => state);
 const dispatch = useDispatch();
 
 const handleBackToMarketInfo = () => {
-  history.push(`/markets/${selectedMarketId}`);
+  history.push(`/markets/${selectedMarket}`);
   dispatch(addVendors([]));
 }
 
@@ -42,15 +40,15 @@ if (path.includes('markets')) {
   )
 }
 
-if (path.includes('markets') && selectedMarketId) {
+if (path.includes('markets') && selectedMarket) {
   zipCodeButton = (
-  <button className='back-button' onClick={() => {dispatch(addSelectedMarket('')); handleBacktoMarkets()}}>Back To Markets</button>
+  <button className='back-button' id='back-to-markets-button' onClick={() => {dispatch(addSelectedMarket('')); handleBacktoMarkets()}}>Back To Markets</button>
   )
 }
 
 if (path.includes('markets') && path.includes('vendors')) {
   zipCodeButton = (
-    <button onClick={handleBackToMarketInfo} className='back-button'>Back to Market</button>
+    <button onClick={handleBackToMarketInfo} className='back-button' id='back-to-market-button'>Back to Market</button>
   )
 }
 
@@ -80,5 +78,5 @@ export default withRouter(Header)
 Header.propTypes = {
   history: PropTypes.object,
   zipCode: PropTypes.string,
-  selectedMarketId: PropTypes.string
+  selectedMarket: PropTypes.string
 }

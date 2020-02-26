@@ -37,10 +37,11 @@ exports[`Header should match the snapshot with a path that includes markets 1`] 
       className="zip-code-par"
     >
       Zip Code: 
-      <Component />
+      80401
     </p>
     <button
       className="back-button"
+      id="back-to-markets-button"
       onClick={[Function]}
     >
       Back To Markets
@@ -76,10 +77,11 @@ exports[`Header should match the snapshot with a path that includes markets and 
       className="zip-code-par"
     >
       Zip Code: 
-      <Component />
+      80401
     </p>
     <button
       className="back-button"
+      id="back-to-market-button"
       onClick={[Function]}
     >
       Back to Market

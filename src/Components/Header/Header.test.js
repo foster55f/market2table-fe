@@ -40,6 +40,21 @@ describe('Header', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should invoke history.push on back to markets button', () => {
+    mockPath = '/markets/234124'
+    wrapper = shallow(<Header
+      addZipCode={mockAddZipCode}
+      addVendors={mockAddVendors}
+      addSelectedMarket={mockAddSelectedMarket}
+      addMarkets={mockAddMarkets}
+      addSelectedVendor={mockAddSelectedVendor}
+      history={mockHistory}
+      path={mockPath}
+       />);
+    wrapper.find('#back-to-markets-button').simulate('click');
+    expect(mockHistory.push).toHaveBeenCalledWith('/markets');
+  });
+
   it('should match the snapshot with a path that includes account', () => {
     mockPath = '/account/234124'
     wrapper = shallow(<Header
@@ -68,5 +83,21 @@ describe('Header', () => {
        />);
 
     expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should invoke history.path on button click', () => {
+    mockPath = '/markets/234124/vendors'
+    wrapper = shallow(<Header
+      addZipCode={mockAddZipCode}
+      addVendors={mockAddVendors}
+      addSelectedMarket={mockAddSelectedMarket}
+      addMarkets={mockAddMarkets}
+      addSelectedVendor={mockAddSelectedVendor}
+      history={mockHistory}
+      path={mockPath}
+       />);
+
+    wrapper.find('#back-to-market-button').simulate('click');
+    expect(mockHistory.push).toHaveBeenCalledWith('/markets/1923782');
   });
 });
