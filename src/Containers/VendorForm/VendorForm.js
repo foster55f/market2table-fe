@@ -21,7 +21,6 @@ export const VendorForm = () => {
   const vendor = useSelector(state => state.selectedVendor);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     if (vendor.name) {
       setVendorName(vendor.name);
