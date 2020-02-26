@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone'
@@ -8,9 +9,9 @@ import './VendorForm.scss';
 import { addVendors, addSelectedVendor } from '../../actions';
 import images from '../../images/images';
 import VendorProductContainer from '../VendorProductContainer/VendorProductContainer';
-import { createVendor, createProduct } from '../../apiCalls';
+import { createVendor, createProduct, deleteAllVendorProducts, updateVendorInfo } from '../../apiCalls';
 
-export const VendorForm = () => {
+export const VendorForm = ({ history }) => {
   const [vendorName, setVendorName] = useState('');
   const [vendorDescription, setVendorDescription] = useState('');
   const [vendorImage, setVendorImage] = useState('');
@@ -66,7 +67,7 @@ export const VendorForm = () => {
     )
   }
 
-  const handleSubmitForm = () => {
+  const handleCreateForm = () => {
     if (vendorName.length > 0 && vendorDescription.length > 0) {
       createVendor(vendorName, vendorDescription, vendorImage)
       .then(vendor => {
@@ -74,12 +75,11 @@ export const VendorForm = () => {
           vendorProducts.forEach(product => {
             createProduct(product.name, product.description, product.price, vendor.data.addVendor.id)
               .then(data => {
-                return (<Redirect to='/vendor/account'/>)
+                history.push(`/vendor/account`);
               })
               .catch(error => console.log(error))
           });
         }
-
       })
       .catch(error => console.log(error));
       setVendorName('');
@@ -89,6 +89,41 @@ export const VendorForm = () => {
     } else {
       setHasError(true);
     }
+  }
+
+  const handleUpdateForm = () => {
+    if (vendorName.length > 0 && vendorDescription.length > 0) {
+      const vendorIdInt = parseInt(vendor.id);
+      updateVendorInfo(vendorIdInt, vendorName, vendorDescription, vendorImage)
+      .then(vendor => {
+        deleteAllVendorProducts(vendorIdInt)
+        .then(data => {
+          if (vendorProducts.length) {
+            vendorProducts.forEach(product => {
+              createProduct(product.name, product.description, product.price, vendorIdInt)
+              .then(data => {
+                history.push(`/vendor/account`);
+              })
+              .catch(error => console.log(error))
+            });
+          }
+        })
+        .catch(error => console.log(error))
+      })
+      .catch(error => console.log(error));
+      setVendorName('');
+      setVendorDescription('');
+      setVendorImage('');
+      setVendorProducts([]);
+    } else {
+      setHasError(true);
+    }
+  }
+  let submitButton;
+  if (vendor.name) {
+    submitButton = <button className='submit-vendor-info-button' id='update-vendor' type='button' onClick={handleUpdateForm}><p className='create-vendor-button-p'>Update Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
+  } else {
+    submitButton = <button className='submit-vendor-info-button' id='creat-vendor' type='button' onClick={handleCreateForm}><p className='create-vendor-button-p'>Create Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>;
   }
 
   return (
@@ -140,14 +175,14 @@ export const VendorForm = () => {
       </form>
       <VendorProductContainer products={vendorProducts} setProducts={setVendorProducts}/>
       <section className='submit-vendor-info-button-section'>
-        <button className='submit-vendor-info-button' type='button' onClick={handleSubmitForm}><p className='create-vendor-button-p'>Submit Vendor</p><img className='plus-icon-form' src={images.plus} alt='plus sign icon'/></button>
+        {submitButton}
         <p hidden={!hasError} className='vendor-form-error'>*Please include all required fields*</p>
       </section>
     </section>
   )
 }
 
-export default VendorForm;
+export default withRouter(VendorForm);
 
 VendorForm.propTypes = {
   setVendorName: PropTypes.func,
