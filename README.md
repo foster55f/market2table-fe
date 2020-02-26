@@ -4,8 +4,13 @@
 
 Looking for the closest farmers markets as a user?  Looking to register for a nearby farmer's market as a vendor?  Look no further than Market2Table.  This app allows you to search by zip code for the closest farmers markets and see vendors within in each market.  
 
+Deployed at Heroku:
+[visit our Heroku Site](https://market2table.herokuapp.com/)
+
 ### Tech Stack on Front End
+* React.js
 * React Hooks
+* React Testing
 * Redux
 * Jest/Enzyme
 * Node.js 
