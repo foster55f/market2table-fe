@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './VendorLinkContainer.scss';
 import VendorMarketList from '../../Containers/VendorMarketList/VendorMarketList';
 import VendorMarketSearch from '../../Containers/VendorMarketSearch/VendorMarketSearch';
+import PropTypes from 'prop-types';
+
 
 export const VendorLinkContainer = () => {
 
@@ -16,3 +18,8 @@ export const VendorLinkContainer = () => {
 }
 
 export default VendorLinkContainer;
+
+VendorLinkContainer.propTypes = {
+  marketsLinked: PropTypes.array,
+  setMarketsLinked: PropTypes.func
+}

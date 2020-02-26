@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorSelectContainer should match the VendorSelectContainer snapshot 1`] = `
+<div
+  className="vendor-select-container"
+>
+  <section
+    className="vendor-list-section"
+  >
+    <h2
+      className="vendor-select-header"
+    >
+      Vendors
+    </h2>
+    <form
+      className="search-vendors-form"
+    >
+      <input
+        className="search-vendors-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="Search Vendors..."
+        type="text"
+        value=""
+      />
+      <div
+        className="search-vendors-button-container"
+      >
+        <button
+          className="search-vendors-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Search
+        </button>
+        <button
+          className="search-vendors-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+    <div
+      className="vendor-search-error-container"
+    >
+      <p
+        className="vendor-search-error"
+        hidden={true}
+      >
+        No matches for vendor name: 
+      </p>
+    </div>
+    <section
+      className="vendor-cards-section"
+    />
+  </section>
+  <Link
+    className="link-create-vendor-form"
+    to="/vendor/account/form"
+  >
+    <button
+      className="create-vendor-button"
+    >
+      <p
+        className="vendor-button-p"
+      >
+        Create New Vendor
+      </p>
+      <img
+        alt="plus sign icon"
+        className="plus-icon"
+        src="plus.png"
+      />
+    </button>
+  </Link>
+</div>
+`;

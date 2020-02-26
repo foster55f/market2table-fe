@@ -33,11 +33,13 @@
   background-color: white;
   border-radius: 10px;
   width: 75%;
+  min-width: 125px;
   text-align: center;
 }
 
 .back-button {
   width: 80%;
+  min-width: 145px;
   padding: 5px;
   font-size: 1em;
   border-radius: 10px;
@@ -50,7 +52,7 @@
 .back-button:hover,
 .back-button:focus {
   background-color: $list_hover_color;
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 .vendor-login-button {
@@ -65,7 +67,7 @@
 
 .vendor-login-button:hover,
 .vendor-login-button:focus {
-  border: 4px solid $dark_green_border_color;
+  border: 3px solid $dark_green_border_color;
   transform: scale(1.05);
 }
 
@@ -83,4 +85,41 @@
 
 .vendor-back-button{
   border-radius: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .main-header {
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "buttons vendorLogin";
+    grid-template-rows: auto;
+    grid-template-columns: 65% 35%;
+    height: 19vh;
+    justify-items: center;
+  }
+
+  .zip-code-section {
+    flex-direction: row;
+    width: 100%;
+    grid-area: buttons;
+  }
+
+  .header-title {
+    width: 100%;
+    font-size: 3em;
+    grid-area: title;
+  }
+
+  .vendor-login-button {
+    grid-area: vendorLogin;
+  }
+
+  .zip-code-par {
+    width: 35%;
+  }
+
+  .back-button {
+    width: 35%;
+  }
 }

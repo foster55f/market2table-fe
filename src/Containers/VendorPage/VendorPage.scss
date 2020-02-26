@@ -1,11 +1,10 @@
-.section-market-page-container{
+.section-vendor-page-container{
     margin: auto;
-    width: 40%;
+    width: 75%;
     height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
-/* justify-content: flex-start; */
     overflow: auto;
     border: 3px solid #3B3D39;
     border-radius: 10px;
@@ -25,4 +24,18 @@
 
 .product-article{
     margin: auto;
+}
+
+.vendor-page-button{
+    width: 29%;
+    margin-top: 5px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 2px;
+    font-size: 12px;
+}
+
+.vendor-page-button:hover,
+.vendor-page-button:focus {
+  transform: scale(1.05);
 }

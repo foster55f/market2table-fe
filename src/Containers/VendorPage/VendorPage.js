@@ -19,7 +19,7 @@ export const VendorPage = ({ history }) => {
 
   const handleBackToMarket = () => {
       history.push(`/markets/${selectedMarket}/vendors/`)
-    }
+  }
 
   return (
     <section className='section-market-page-container'>

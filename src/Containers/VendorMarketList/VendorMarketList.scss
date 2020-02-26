@@ -49,3 +49,14 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+  .vendor-market-list-section {
+    width: 85%;
+    margin-top: 35px;
+  }
+
+  .vendor-market-list-header {
+    height: 200px;
+  }
+}
