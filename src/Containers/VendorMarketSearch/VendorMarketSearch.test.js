@@ -53,4 +53,11 @@ describe('VendorMarketSearch', () => {
     expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
   });
 
+  it("Should onKeyDown invoke handleZipCodeSubmit and reset zip code input to '' if input.length is 5", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+    wrapper.find('.vendor-market-search-button').simulate('click', {key: 'Enter', preventDefault: jest.fn()});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
 });
