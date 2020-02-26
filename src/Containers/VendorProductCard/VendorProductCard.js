@@ -28,7 +28,7 @@ VendorProductCard.propTypes = {
   products: PropTypes.array,
   setProducts:PropTypes.func,
   name: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
   description: PropTypes.string,
   id: PropTypes.string
 }
