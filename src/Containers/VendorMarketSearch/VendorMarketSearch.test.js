@@ -44,4 +44,8 @@ describe('VendorMarketSearch', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  it("Should have a default state on zipCode input of ''", () => {
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
 });
