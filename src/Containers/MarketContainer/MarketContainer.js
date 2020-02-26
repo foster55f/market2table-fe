@@ -6,7 +6,6 @@ import './MarketContainer.scss';
 import { Market } from '../../Components/Market/Market';
 
 export const MarketContainer = () => {
-
   const { markets } = useSelector(state => state);
   const displayMarkets = markets.map(market => {
     return (

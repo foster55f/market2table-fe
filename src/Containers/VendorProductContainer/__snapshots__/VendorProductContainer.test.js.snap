@@ -58,7 +58,28 @@ exports[`VendorProductContainer should match the snapshot without products 1`] =
   </h2>
   <VendorProductForm
     products={Array []}
-    setProducts={[MockFunction]}
+    setProducts={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            Array [
+              Object {
+                "description": "some good white bread",
+                "id": "2342",
+                "name": "plain ol dough",
+                "price": "5",
+              },
+            ],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
   />
   <section
     className="product-cards-container"

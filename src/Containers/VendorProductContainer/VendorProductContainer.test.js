@@ -40,4 +40,14 @@ describe('VendorProductContainer', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should invoke setProducts if selectedVendor has product and there are products in state', () => {
+    mockProducts = [{name: 'plain ol dough', price: '5', description: 'some good white bread', id: '2342'}];
+    wrapper = shallow(<VendorProductContainer
+      products={mockProducts}
+      setProducts={mocksetProducts}
+    />);
+
+    expect(mocksetProducts).toHaveBeenCalledWith(mockState.selectedVendor.products);
+  });
 });
