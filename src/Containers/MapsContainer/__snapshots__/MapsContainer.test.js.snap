@@ -49,6 +49,7 @@ exports[`MapsContainer should match the snapshot 1`] = `
         className="info-window-container"
       >
         <h4 />
+        <h4 />
       </div>
     </InfoWindow>
   </Map>
