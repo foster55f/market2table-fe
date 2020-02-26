@@ -146,3 +146,43 @@ export const getVendorsByMarketId = (marketId) => {
             return response.json();
         });
 }
+
+export const updateVendorInfo = (vendorId, name, description, image) => {
+  const mutation = {"query":`mutation{updateVendor(id: ${vendorId}, name: "${name}", description: "${description}", image_link: "${image}"){id}}`}
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
+    .then(response => {
+        if (!response.ok) {
+            throw Error('Error updating vendor');
+        }
+        return response.json();
+    });
+}
+
+export const deleteAllVendorProducts = (vendorId) => {
+  const mutation = {"query" : `mutation {deleteAllVendorProducts(id: ${vendorId})}`}
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(mutation),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+  
+  return fetch(process.env.REACT_APP_BACKEND_URL + `/graphql`, options)
+      .then(response => {
+          if (!response.ok) {
+              throw Error('Error deleting vendor market link');
+          }
+          return response.json();
+      });
+}
