@@ -24,11 +24,11 @@ export const MarketPage = ({ history }) => {
 
   return (
     <section className='section-market-page-container'>
-      <h2>{marketInfo.name}</h2>
+      <h2 className='market-name'>{marketInfo.name}</h2>
       <h3>Address: </h3>
       <p>{marketInfo.address}</p>
       <h3>Schedule: </h3>
-      <p>{marketInfo.schedule}</p>
+      <p className='market-schedule'>{marketInfo.schedule}</p>
       <h3>Google Maps: </h3>
       <a href={marketInfo.google_link}>Click Here For Directions</a>
       <button className='find-vendors-button' onClick={ handleSubmit }>
