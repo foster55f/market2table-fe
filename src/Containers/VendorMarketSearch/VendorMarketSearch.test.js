@@ -79,4 +79,12 @@ describe('VendorMarketSearch', () => {
     expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
   });
 
+  it("should have a value of true for hasError when not length of 5 and then set to false on input change", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80'}});
+    wrapper.find('.vendor-market-search-button').simulate('click');
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(true);
+  });
+
 });
