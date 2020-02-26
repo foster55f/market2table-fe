@@ -4,7 +4,9 @@ exports[`MarketPage should match the snapshot 1`] = `
 <section
   className="section-market-page-container"
 >
-  <h2>
+  <h2
+    className="market-name"
+  >
     Friendly Famrs
   </h2>
   <h3>
@@ -16,7 +18,9 @@ exports[`MarketPage should match the snapshot 1`] = `
   <h3>
     Schedule: 
   </h3>
-  <p>
+  <p
+    className="market-schedule"
+  >
     M-F ALL DAY
   </p>
   <h3>
