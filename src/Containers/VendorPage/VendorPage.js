@@ -23,7 +23,7 @@ export const VendorPage = ({ history }) => {
 
   return (
     <section className='section-market-page-container'>
-      <button className='vendor-page-button'onClick={handleBackToMarket}>Back to Market Page</button>
+      <button className='vendor-page-button' onClick={handleBackToMarket}>Back to Market Page</button>
       <div>
         <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
         <h3>Description: </h3>
