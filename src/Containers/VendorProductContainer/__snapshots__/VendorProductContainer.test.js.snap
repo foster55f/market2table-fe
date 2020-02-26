@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorProductContainer should match the snapshot with products 1`] = `
+<section
+  className="vendor-product-form-section"
+>
+  <h2
+    className="vendor-product-form-title"
+  >
+    Add Vendor Product
+  </h2>
+  <VendorProductForm
+    products={
+      Array [
+        Object {
+          "description": "some good white bread",
+          "id": "2342",
+          "name": "plain ol dough",
+          "price": "5",
+        },
+      ]
+    }
+    setProducts={[MockFunction]}
+  />
+  <section
+    className="product-cards-container"
+  >
+    <VendorProductCard
+      description="some good white bread"
+      id="2342"
+      key="2342"
+      name="plain ol dough"
+      price="5"
+      products={
+        Array [
+          Object {
+            "description": "some good white bread",
+            "id": "2342",
+            "name": "plain ol dough",
+            "price": "5",
+          },
+        ]
+      }
+      setProducts={[MockFunction]}
+    />
+  </section>
+</section>
+`;
+
+exports[`VendorProductContainer should match the snapshot without products 1`] = `
+<section
+  className="vendor-product-form-section"
+>
+  <h2
+    className="vendor-product-form-title"
+  >
+    Add Vendor Product
+  </h2>
+  <VendorProductForm
+    products={Array []}
+    setProducts={[MockFunction]}
+  />
+  <section
+    className="product-cards-container"
+  >
+    <p>
+      You do not have any products on your account!
+    </p>
+  </section>
+</section>
+`;
