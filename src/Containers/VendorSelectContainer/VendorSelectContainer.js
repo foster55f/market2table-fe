@@ -61,7 +61,7 @@ if (vendors.length) {
         <form className='search-vendors-form'>
           <input role='input' type='text' value={vendorInput} onKeyDown={event => searchInputHandler(event)} onChange={(event) => {setVendorInput(event.target.value); setSearchError(false)}} className='search-vendors-input' placeholder='Search Vendors...'/>
           <div className='search-vendors-button-container'>
-            <button type='button' className='search-vendors-button' onClick={() => {searchVendors(vendorInput)}}>Search</button>
+            <button type='button' className='search-vendors-button search-vendors-submit-button' onClick={() => {searchVendors(vendorInput)}}>Search</button>
             <button type='button' className='search-vendors-button search-clear-button' onClick={() => {setVendors(allVendors); setVendorInput(''); setSearchError(false)}}>Clear</button>
           </div>
         </form>
