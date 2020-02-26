@@ -14,6 +14,7 @@ export const MarketListCard = ({ vendorId, name, id, marketsLinked, setMarketsLi
     createMarketVendorLink(marketIdInt, vendorIdInt)
       .then(data => {
         const marketLinked = {id, name};
+        console.log('here')
         setMarketsLinked([...marketsLinked, marketLinked])
       })
       .catch(error => console.log(error))
