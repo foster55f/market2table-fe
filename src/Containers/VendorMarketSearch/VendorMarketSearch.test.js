@@ -44,4 +44,47 @@ describe('VendorMarketSearch', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  it("Should have a default state on zipCode input of ''", () => {
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
+  it("Should invoke onChange and update state if value is less than 6 on zip code input", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+  });
+
+  it("Should onClick invoke handleZipCodeSubmit and reset zip code input to '' if input.length is 5", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+    wrapper.find('.vendor-market-search-button').simulate('click', {preventDefault: jest.fn()});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
+  it("Should onClick invoke handleZipCodeSubmit and reset zip code input to '' if input.length is 5", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80');
+    wrapper.find('.vendor-market-search-button').simulate('click', {preventDefault: jest.fn()});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
+  });
+
+  it("should have a default value of false for hasError", () => {
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
+  });
+
+  it("Should onClick invoke handleZipCodeSubmit and reset zip code input to '' if input.length is 5", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('80401');
+    wrapper.find('.vendor-market-search-button').simulate('click');
+    expect(wrapper.find('.vendor-market-input').prop('value')).toEqual('');
+  });
+
+  it("should have a value of true for hasError when not length of 5 and then set to false on input change", () => {
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80'}});
+    wrapper.find('.vendor-market-search-button').simulate('click');
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(false);
+    wrapper.find('.vendor-market-input').simulate('change', {target: {value: '80401'}});
+    expect(wrapper.find('.error-message').prop('hidden')).toEqual(true);
+  });
+
 });
