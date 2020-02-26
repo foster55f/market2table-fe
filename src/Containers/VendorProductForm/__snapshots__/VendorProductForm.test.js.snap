@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VendorProductForm should match the VendorProductForm snapshot 1`] = `
+<form
+  className="vendor-product-form"
+>
+  <section
+    className="vendor-product-from-section"
+  >
+    <input
+      className="product-name-input"
+      maxlength="20"
+      onChange={[Function]}
+      placeholder="Product Name..."
+      type="text"
+      value=""
+    />
+    <input
+      className="product-price-input"
+      maxlength="10"
+      onChange={[Function]}
+      placeholder="$/qty..."
+      type="text"
+      value=""
+    />
+  </section>
+  <textarea
+    className="product-description-textarea"
+    columns="25"
+    form="vendor-form-info"
+    maxlength="65"
+    name="vendor-description-textarea"
+    onChange={[Function]}
+    placeholder="Product Description..."
+    rows="3"
+    value=""
+  />
+  <button
+    className="submit-new-product-button"
+    onClick={[Function]}
+    type="button"
+  >
+    Create Product
+  </button>
+</form>
+`;
