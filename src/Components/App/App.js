@@ -12,6 +12,9 @@ import VendorSelectContainer from '../../Containers/VendorSelectContainer/Vendor
 import VendorForm from '../../Containers/VendorForm/VendorForm';
 import VendorLinkContainer from '../VendorLinkContainer/VendorLinkContainer';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+
 
 const App = () => {
   const zipCode = useSelector(state => state.zipCode);
@@ -47,9 +50,7 @@ const App = () => {
       />
       <Route exact path='/markets/:id/vendors' render={() => {
         return (
-          <div className='market-map-container'>
             <VendorsContainer />
-          </div>
         )
       }}
       />
@@ -80,3 +81,9 @@ const App = () => {
 }
 
 export default App;
+
+App.propTypes = {
+  zipCode: PropTypes.string,
+}
+
+//object, bool, string, func, number

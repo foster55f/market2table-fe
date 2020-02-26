@@ -9,6 +9,12 @@
   border: 3px solid black;
   border-radius: 10px;
   background-color: azure;
+  cursor: pointer;
+}
+
+.vendor-card:hover,
+.vendor-card:focus {
+  transform: scale(1.05);
 }
 .vendor-img {
     height: 300px;

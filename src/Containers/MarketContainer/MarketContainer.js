@@ -31,3 +31,7 @@ export const MarketContainer = () => {
 }
 
 export default MarketContainer;
+
+MarketContainer.propTypes = {
+  markets: PropTypes.array,
+}

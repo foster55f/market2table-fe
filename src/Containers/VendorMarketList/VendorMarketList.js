@@ -46,3 +46,9 @@ export const VendorMarketList = ({ marketsLinked, setMarketsLinked }) => {
 }
 
 export default VendorMarketList;
+
+VendorMarketList.propTypes = {
+  marketsLinked: PropTypes.array,
+  setMarketsLinked: PropTypes.func,
+  vendor: PropTypes.object
+}

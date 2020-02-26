@@ -4,6 +4,8 @@ import { images } from "../../images/images"
 import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addSelectedVendor } from '../../actions';
+import PropTypes from 'prop-types';
+
 
 
 
@@ -19,7 +21,7 @@ export const VendorCard = ({ id, name, description, image, history }) => {
   }
 
   return (
-    <article onClick={handleVendorPage}className='vendor-card'>
+    <article onClick={handleVendorPage} className='vendor-card'>
       <h2 className='vendor-name'>{name}</h2>
       <h2 className='vendor-description'>{description}</h2>
       <img className='vendor-img'src={image}></img>
@@ -28,3 +30,11 @@ export const VendorCard = ({ id, name, description, image, history }) => {
 }
 
 export default withRouter(VendorCard);
+
+VendorCard.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  history: PropTypes.object
+}

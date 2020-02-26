@@ -39,3 +39,9 @@ export const MarketPage = ({ history }) => {
 }
 
 export default withRouter(MarketPage);
+
+MarketPage.propTypes = {
+  history: PropTypes.object,
+  selectedMarketId: PropTypes.string,
+  markets: PropTypes.array
+}
