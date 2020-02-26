@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VendorsContainer should match the VendorSelectCard snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
 exports[`VendorsContainer should match the VendorsContainer snapshot 1`] = `
 <ContextConsumer>
   <Component />
