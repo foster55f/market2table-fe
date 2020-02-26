@@ -24,16 +24,4 @@ describe('VendorSelectCard', () => {
         expect(wrapper).toMatchSnapshot();
     })
 
-    it('should invoke dispatch on article markets button', () => {
-        let wrapper = shallow(<VendorSelectCard
-            id={mockId}
-            name={mockName}
-            vendor={mockVendor}
-            addSelectedVendor={mockAddSelectedVendor}
-          />);
-
-      wrapper.find('.vendor-article-markets-button').simulate('click');
-      expect(mockAddSelectedVendor).toHaveBeenCalled();
-    })
-
 });

@@ -1,7 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VendorsContainer should match the VendorsContainer snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<main
+  className="vendor-container"
+>
+  <VendorCard
+    description="selling"
+    history={
+      Object {
+        "path": "/markets",
+      }
+    }
+    id="2342"
+    key="2342"
+    name="vendorA"
+  />
+  <VendorCard
+    description="sellin"
+    history={
+      Object {
+        "path": "/markets",
+      }
+    }
+    id="123"
+    key="123"
+    name="vendorB"
+  />
+</main>
 `;
