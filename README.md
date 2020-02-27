@@ -29,15 +29,9 @@ Then, to access the frontend, simply clone down and run `npm install` to access 
 
 ## User Interface and User Experience
 
-![2020-02-26 14 12 22](https://user-images.githubusercontent.com/50148342/75388467-4d1e5080-58a2-11ea-8f77-97b1394ebd7b.gif)
+![VendorUX](https://user-images.githubusercontent.com/50148342/75470231-99729a80-594d-11ea-8f26-53f142692346.gif)
 
-![2020-02-26 14 15 39](https://user-images.githubusercontent.com/50148342/75388714-aedeba80-58a2-11ea-831c-f23fbf6fcdad.gif)
-
-![2020-02-26 14 16 56](https://user-images.githubusercontent.com/50148342/75388921-f7967380-58a2-11ea-8ee9-08b8960daec9.gif)
-
-![2020-02-26 14 17 15](https://user-images.githubusercontent.com/50148342/75388986-109f2480-58a3-11ea-8e6d-c3ec85c3a759.gif)
-
-![2020-02-26 14 17 49](https://user-images.githubusercontent.com/50148342/75389033-1d237d00-58a3-11ea-8679-89a8e448acd9.gif)
+![UserUX](https://user-images.githubusercontent.com/50148342/75470967-b9568e00-594e-11ea-9c45-218326ebca1b.gif)
 
 ## Future Iterations 
 * Use map location for Google maps
