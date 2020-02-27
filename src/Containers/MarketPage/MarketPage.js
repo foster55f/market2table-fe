@@ -30,7 +30,7 @@ export const MarketPage = ({ history }) => {
       <h3>Schedule: </h3>
       <p className='market-schedule'>{marketInfo.schedule}</p>
       <h3>Google Maps: </h3>
-      <a href={marketInfo.google_link}>Click Here For Directions</a>
+      <a className='direction-link' href={marketInfo.google_link}>Click Here For Directions</a>
       <button className='find-vendors-button' onClick={ handleSubmit }>
         Find Vendors
       </button>

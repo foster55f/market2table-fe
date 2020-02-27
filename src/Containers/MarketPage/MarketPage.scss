@@ -6,13 +6,17 @@
   align-items: center;
   justify-content: flex-start;
   overflow: auto;
-  background-color: white;
+  background-color: rgba(0,0,0,0.4);
+  color: cornsilk;
   border-right: 2px solid black;
   margin: auto;
+  // margin-top: 30px;
+  padding-top: 40px;
 }
 
 .market-name{
   text-align: center;
+  letter-spacing: 0.8px;
 }
 
 .market-schedule{
@@ -22,19 +26,38 @@
 .find-vendors-button{
   font-size: 1.5em;
   border-radius: 20px;
+  border: 2px solid khaki;
+  color: cornsilk;
+  letter-spacing: 1px;
   padding: 5px;
   min-width: 100px;
   cursor: pointer;
   text-align: center;
-  margin-top: 30px;
+  // margin-top: 30px;
   outline: 0;
   width: 50%;
-  background-color:cadetblue;
+  background-color:transparent;
   cursor: pointer;
+  margin-top: 50px;
 }
 .find-vendors-button:hover,
 .find-vendors-button:focus {
   transform: scale(1.05);
+}
+
+h3 {
+  letter-spacing: 1px;
+}
+
+.direction-link {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a:link {
+  color: cornsilk;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 1050px) {

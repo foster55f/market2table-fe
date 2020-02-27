@@ -27,17 +27,23 @@
   font-size: 1.5em;
   letter-spacing: 1px;
   margin: 0 25px;
+  color: cornsilk;
 }
 
 .zip-code-input {
   font-size: 1.5em;
-  border-radius: 20px;
+  // border-radius: 20px;
   outline: 0;
-  border: 0;
+  border: none;
   letter-spacing: 1px;
   padding: 7px;
   text-align: center;
   appearance: none;
+  background-color: transparent;
+  border-bottom: 2px solid khaki;
+  caret-color: khaki;
+  color: cornsilk;
+  letter-spacing: 1px;
 }
 
 input::-webkit-outer-spin-button,
@@ -64,6 +70,9 @@ input::-webkit-inner-spin-button {
   min-width: 100px;
   cursor: pointer;
   outline: 0;
+  color: cornsilk;
+  background-color: transparent;
+  border: 2px solid khaki;
 }
 
 .submit-zip-code-button:hover,
