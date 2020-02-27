@@ -23,14 +23,17 @@ export const VendorPage = ({ history }) => {
 
   return (
     <section className='section-vendor-page-container'>
-      <button className='vendor-page-button' onClick={handleBackToMarket}>Back to Vendors Page</button>
-      <div>
-        <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
-        <h3>Description: </h3>
-          <p>{selectedVendor.description}</p>
-        <img className='vendor-img-vendor-page' src={selectedVendor.image_link}></img>
-          <h3>Products: </h3>
-            {products}
+      <div className='vendor-info-page-button-div'>
+        <button className='vendor-page-button' onClick={handleBackToMarket}>Back to Vendors</button>
+      </div>
+      <div className='vendor-info-page-div'>
+      <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
+      <p>{selectedVendor.description}</p>
+      <img className='vendor-img-vendor-page' src={selectedVendor.image_link}></img>
+      </div>
+      <div className='vendor-info-page-products-div'>
+        <h3>Products: </h3>
+          {products}
       </div>
     </section>
   )
