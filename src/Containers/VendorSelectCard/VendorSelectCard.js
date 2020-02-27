@@ -17,7 +17,7 @@ export const VendorSelectCard = ({ id, name, vendor }) => {
           <button className='vendor-article-markets-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Link to Markets</button>
         </Link>
         <Link to='/vendor/account/form' className='link-edit-vendor-form'>
-          <button className='vendor-article-edit-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Edit</button>
+          <button id ='edit' className='vendor-article-edit-button' onClick={() => dispatch(addSelectedVendor(vendor))}>Edit</button>
         </Link>
       </section>
     </article>

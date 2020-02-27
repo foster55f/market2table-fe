@@ -15,19 +15,21 @@
   justify-content: space-around;
   width: 60%;
   min-width: 350px;
-  background-color: white;
-  border: 3px solid #3B3D39;
+  // background-color: white;
+  border: 2px solid khaki;
   height: 90%;
   border-radius: 10px;
-  background-color: #F2F9F9;
+  background-color: rgba(0,0,0,0.4);
 }
 
 .vendor-select-header {
   font-size: 2em;
+  letter-spacing:2.5px;
   margin: 15px 0;
   width: 40%;
-  border-bottom: 4px solid $dark_green_border_color;
+  border-bottom: 4px solid khaki;
   text-align: center;
+  color: cornsilk;
 }
 
 .search-vendors-form {
@@ -38,13 +40,15 @@
 }
 
 .search-vendors-input {
+  color: cornsilk;
+  letter-spacing: 1.5px;
   width: 30%;
-  border-radius: 20px;
-  border: 2px solid black;
-  background-color: white;
+  border: none;
+  border-bottom: 2px solid khaki;
+  background-color: transparent;
   padding: 10px;
   outline: 0;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .search-vendors-button-container {
@@ -61,8 +65,11 @@
   min-width: 65px;
   padding: 5px;
   font-size: 1em;
-  border: 2px solid #3B3D39;
-  background-color: #F0F0EF;
+  color: cornsilk;
+  border: none;
+  letter-spacing: 1.2px;
+  border: 1px solid khaki;
+  background-color: transparent;
   outline: 0;
   border-radius: 10px;
   cursor: pointer;
@@ -109,20 +116,24 @@
 .create-vendor-button {
   width: 55%;
   height: 55%;
-  border-radius: 75px;
-  font-size: .8em;
+  border-radius: 10px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   outline: 0;
+  background-color: cornsilk;
+  color: black;
+  border: none;
 }
 
 .create-vendor-button:hover,
 .create-vendor-button:focus {
   transform: scale(1.08);
-  border: 7px solid $dark_green_border_color;
+  border: 3px solid $dark_green_border_color;
 }
 
 .create-vendor-button:active {
@@ -137,6 +148,7 @@
   margin-top: 20px;
   height: 45px;
   width: 45px;
+  color: cornsilk;
 }
 
 @media screen and (max-width: 1050px) {
