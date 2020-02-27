@@ -9,6 +9,15 @@
   background-color: white;
   border-right: 2px solid black;
   margin: auto;
+  text-align: center;
+}
+.section-market-info-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
 }
 
 .market-name{
@@ -29,8 +38,8 @@
   margin-top: 30px;
   outline: 0;
   width: 50%;
-  background-color:cadetblue;
-  cursor: pointer;
+  background-color: #5E7838;
+  color: #FAF6F5;
 }
 .find-vendors-button:hover,
 .find-vendors-button:focus {
