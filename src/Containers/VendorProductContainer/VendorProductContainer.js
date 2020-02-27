@@ -18,7 +18,7 @@ export const VendorProductContainer = ({ products, setProducts }) => {
       return (<VendorProductCard products={products} setProducts={setProducts} name={product.name} price={product.price} description={product.description} id={product.id} key={product.id}/>)
     });
   } else {
-    productCards = (<p>You do not have any products on your account!</p>)
+    productCards = (<p className='no-products-text'>You do not have any products on your account!</p>)
   }
 
   return (

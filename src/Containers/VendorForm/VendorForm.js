@@ -138,16 +138,16 @@ export const VendorForm = ({ history }) => {
       </header>
       <form className='vendor-form-info' id='vendor-form-info'>
         <div className='vendor-form-input-container'>
-          <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label>
+          {/* <label for='vendor-name-input' className='vendor-name-label'>* Enter Vendor Name:</label> */}
           <input value={vendorName} onChange={(event) => {setVendorName(event.target.value); setHasError(false);}}
             type='text' className='vendor-name-input' maxlength='35'
-            placeholder='Vendor Name...' id='vendor-name-input' />
+            placeholder='Enter Vendor Name' id='vendor-name-input' />
         </div>
         <div className='vendor-form-input-container'>
-          <label for='vendor-description-textarea' className='vendor-description-label'>* Enter Vendor Description:</label>
+          {/* <label for='vendor-description-textarea' className='vendor-description-label'>* Enter Vendor Description:</label> */}
           <textarea value={vendorDescription} onChange={(event) => {setVendorDescription(event.target.value); setHasError(false);}}
             form='vendor-form-info' name='vendor-description-textarea'
-            className='vendor-description-textarea' placeholder='Vender Description...'
+            className='vendor-description-textarea' placeholder=' Enter Vendor Description'
             id='vendor-description-textarea' rows='6' columns='25' maxlength='150'>
           </textarea>
         </div>
