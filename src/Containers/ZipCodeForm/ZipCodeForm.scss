@@ -18,13 +18,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, .6);
   border-radius: 20px;
-  border: 5px solid $dark_green_border_color;
+  border: 3px solid khaki;
 }
 
 .zip-code-input-label {
   font-size: 1.5em;
+  letter-spacing: 1px;
   margin: 0 25px;
 }
 
@@ -33,6 +34,7 @@
   border-radius: 20px;
   outline: 0;
   border: 0;
+  letter-spacing: 1px;
   padding: 7px;
   text-align: center;
   appearance: none;
@@ -56,6 +58,7 @@ input::-webkit-inner-spin-button {
 .submit-zip-code-button {
   font-size: 1.5em;
   border-radius: 20px;
+  letter-spacing: 1px;
   padding: 5px;
   width: 20%;
   min-width: 100px;
