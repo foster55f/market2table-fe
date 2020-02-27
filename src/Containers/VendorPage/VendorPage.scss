@@ -1,4 +1,4 @@
-.section-vendor-page-container{
+.section-vendor-page-container {
     margin: auto;
     width: 75%;
     height: 80%;
@@ -51,8 +51,9 @@
     background-color: white;
 }
 
-.vendor-page-button{
+.vendor-page-button {
     width: 15%;
+    min-width: 155px;
     margin-top: 5px;
     text-align: center;
     cursor: pointer;

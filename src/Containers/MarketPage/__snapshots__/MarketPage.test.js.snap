@@ -4,33 +4,37 @@ exports[`MarketPage should match the snapshot 1`] = `
 <section
   className="section-market-page-container"
 >
-  <h2
-    className="market-name"
+  <div
+    className="section-market-info-container"
   >
-    Friendly Famrs
-  </h2>
-  <h3>
-    Address: 
-  </h3>
-  <p>
-    1234 Hillsbury Lane
-  </p>
-  <h3>
-    Schedule: 
-  </h3>
-  <p
-    className="market-schedule"
-  >
-    M-F ALL DAY
-  </p>
-  <h3>
-    Google Maps: 
-  </h3>
-  <a
-    href="google.com"
-  >
-    Click Here For Directions
-  </a>
+    <h2
+      className="market-name"
+    >
+      Friendly Famrs
+    </h2>
+    <h3>
+      Address: 
+    </h3>
+    <p>
+      1234 Hillsbury Lane
+    </p>
+    <h3>
+      Schedule: 
+    </h3>
+    <p
+      className="market-schedule"
+    >
+      M-F ALL DAY
+    </p>
+    <h3>
+      Google Maps: 
+    </h3>
+    <a
+      href="google.com"
+    >
+      Click Here For Directions
+    </a>
+  </div>
   <button
     className="find-vendors-button"
     onClick={[Function]}
