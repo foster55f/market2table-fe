@@ -5,10 +5,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: white;
-  border: 3px solid black;
+  background-color: rgba(0,0,0,0.4);
+  border: 2px solid khaki;
   border-radius: 20px;
-  background-color: #F2F9F9;
+  // background-color: #F2F9F9;
+  color: cornsilk;
+  letter-spacing: 1px;
+}
+
+.back-to-vendors-p {
+  font-size: 0.8em;
 }
 
 .vendor-market-list-header {
@@ -44,8 +50,8 @@
   flex-direction: column;
   overflow: auto;
   height: 80%;
-  border-top: 2px solid black;
-  background-color: white;
+  border-top: 2px solid khaki;
+  background-color: cornsilk;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

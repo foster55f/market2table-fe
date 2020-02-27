@@ -7,10 +7,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: white;
-  border: 3px solid black;
+  // background-color: white;
+  border: 2px solid khaki;
   border-radius: 20px;
-  background-color: #F2F9F9;
+  background-color: rgba(0,0,0,0.3);
+  color: cornsilk;
 }
 
 .vendor-market-search-title {
@@ -45,13 +46,19 @@
 
 .vendor-market-input {
   font-size: 1.5em;
-  border-radius: 20px;
+  // border-radius: 20px;
   outline: 0;
-  border: 0;
+  // border: 0;
   padding: 7px;
   text-align: center;
   appearance: none;
-  border: 2px solid black;
+  // border: 2px solid khaki;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid khaki;
+  caret-color: khaki;
+  letter-spacing: 1px;
+  color: cornsilk;
 }
 
 .vendor-market-search-button {
@@ -62,8 +69,9 @@
   min-width: 100px;
   cursor: pointer;
   outline: 0;
-  border: 2px solid #3B3D39;
-  background-color: #F0F0EF;
+  border: 2px solid khaki;
+  background-color: transparent;
+  color: cornsilk;
 }
 
 .vendor-market-search-button:hover,
@@ -89,7 +97,7 @@
   overflow: auto;
   height: 75%;
   border-top: 2px solid black;
-  background-color: white;
+  background-color: cornsilk;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
