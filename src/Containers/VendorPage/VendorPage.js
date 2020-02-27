@@ -11,8 +11,8 @@ export const VendorPage = ({ history }) => {
   const products = selectedVendor.products.map(product => {
     return (
       <article className='product-article' key={product.id}>
-        <p>{product.name}: ${product.price}</p>
-        <p>{product.description}</p>
+        <p className='product-name'>{product.name}: ${product.price}</p>
+        <p className='product-description'>{product.description}</p>
       </article>
     )
   })
@@ -23,15 +23,15 @@ export const VendorPage = ({ history }) => {
 
   return (
     <section className='section-vendor-page-container'>
-      <button className='vendor-page-button' onClick={handleBackToMarket}>Back to Vendors Page</button>
-      <div>
+      <div className='vendor-info'>
         <h2 className='vendor-page-vendor-name'>{selectedVendor.name}</h2>
         <h3>Description: </h3>
-          <p>{selectedVendor.description}</p>
+          <p className='description'>{selectedVendor.description}</p>
         <img className='vendor-img-vendor-page' src={selectedVendor.image_link}></img>
-          <h3>Products: </h3>
+          <h3 className='products'>Products: </h3>
             {products}
       </div>
+      <button className='vendor-page-button' onClick={handleBackToMarket} >Back to Vendors Page</button>
     </section>
   )
 }

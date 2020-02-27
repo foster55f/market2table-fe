@@ -1,15 +1,22 @@
 .section-vendor-page-container{
     margin: auto;
+    color: cornsilk;
+    letter-spacing: 1.2px;
     width: 75%;
     height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    border: 3px solid #3B3D39;
+    border: 2px solid khaki;
     border-radius: 10px;
-    background-color: #F2F9F9;
-    border-right: 2px solid black;
+    // background-color: #F2F9F9;
+    background-color: rgba(0,0,0,0.4);
+    // border-right: 2px solid black;
+}
+
+.vendor-info{
+    text-align: center;
 }
 
 .vendor-img-vendor-page{
@@ -20,19 +27,34 @@
 
 .vendor-page-vendor-name{
     text-align: center;
+    font-size: 2.2em;
 }
+
+.product-name{
+    font-weight: 500;
+}
+
+.description{
+    font-weight: 500;
+}
+
+// .products{
+//     font-weight: 500;
+// }
 
 .product-article{
     margin: auto;
 }
 
 .vendor-page-button{
-    width: 29%;
-    margin-top: 5px;
+    // width: 29%;
+    // height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: center;
     cursor: pointer;
-    line-height: 2px;
-    font-size: 12px;
+    // line-height: 2px;
+    // font-size: 12px;
 }
 
 .vendor-page-button:hover,
